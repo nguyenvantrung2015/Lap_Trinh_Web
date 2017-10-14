@@ -54,7 +54,7 @@ i.glyphicon.glyphicon-menu-hamburger {
 }
 /*--banner--*/
 .header{
-    background:url(../../img/2.jpg) no-repeat left;
+    background:url(../../img/s3.jpg) no-repeat left;
     width:100%;
     background-size:cover;
     min-height:750px;
@@ -189,11 +189,10 @@ body{
         font-size: 15px;
     } 
 }
-
 /*--banner--*/
 .banner{
     text-align:center;
-    margin-top: 10em; 
+    margin-top: 1em; 
 }
 
 .banner h4 {
