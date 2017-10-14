@@ -235,3 +235,8 @@ body{
 .logo a {
     margin-left: 15px;
 }
+
+.img-responsive
+{
+    box-shadow: 2px 5px 5px -3px #333;
+}
