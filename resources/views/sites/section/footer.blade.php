@@ -2,7 +2,15 @@
     <div class="container">
         <div class="row row-padded">
             <div class="col-md-12 text-center">
-                <p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
+                <p class="to-animate">
+                <br> 
+                {{-- Designed by <a href="#" target="_blank">FLASH TEAM</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> --}}
+                “Cooking is an art, but all art requires knowing something about the techniques and materials”
+                <br>
+                — Nathan Myhrvold
+                 <br>
+                 Desgined by 
+                 <a href="" target="_blank">TEAM 2 : Flash Team</a>
                 </p>
                 <p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
             </div>
