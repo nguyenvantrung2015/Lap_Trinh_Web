@@ -1,0 +1,17 @@
+.sidebar {
+    margin-right: 35px;
+}
+.img-avata-icon img{
+    padding: 5px;
+    border-radius: 50%;
+    width: 300px !important;
+    height: 250px !important;
+}
+
+.fullname h2 {
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

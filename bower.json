@@ -1,17 +1,18 @@
 {
   "name": "Lap_Trinh_Web",
-  "description": "custom_layout",
-  "main": "index.html",
+  "description": "",
+  "main": "",
   "authors": [
-    "Lai Quang Duong <duonglaiquang@gmail.com>"
+    "HoangDuy <hoangduyib96@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/duonglaiquang/Lap_Trinh_Web",
+  "homepage": "https://github.com/HoangManhDuy/Lap_Trinh_Web",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower",
+    "bower_components",
+    "public/bower",
     "test",
     "tests"
   ],
