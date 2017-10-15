@@ -12,7 +12,6 @@
 </head>
 <body>
     @yield('content')
-    {{-- @include('sites.header') --}}
     {{ HTML::script('js/sites/homepage.js') }} 
      @yield('script') 
 </body>   
