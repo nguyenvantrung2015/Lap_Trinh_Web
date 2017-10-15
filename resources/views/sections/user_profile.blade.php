@@ -1,4 +1,4 @@
-<div class="container bootstrap snippet">
+<div class="container bootstrap snippet background_user">
     <div class="col-sm-3 sidebar">
         <div class="row">
             <div class="img-avata-icon">
@@ -16,7 +16,7 @@
     <div class="row">
         <ul class="list-group">
             <li class="list-group-item text-center">Profile</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> {!! $users->email !!}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Email : </strong></span> {!! $users->email !!}</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Phone</strong></span> {!! $users->phone !!}</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Birthday</strong></span> {!! $users->date_of_birth !!}</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Level</strong></span> {!! $users->level !!}</li>
