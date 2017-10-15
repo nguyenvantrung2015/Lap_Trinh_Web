@@ -8,6 +8,7 @@
     {{ HTML::style('bower/owl.carousel/dist/assets/owl.theme.default.css') }}
     {{ HTML::style('bower/owl.carousel/dist/assets/owl.theme.default.css') }}
     {{ HTML::style('bower/font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('css/sites/homepage.css') }} 
     {{ HTML::style('css/sites/menu.css') }}
     {{ HTML::style('css/sites/reset.css') }}
     <link rel="stylesheet"
