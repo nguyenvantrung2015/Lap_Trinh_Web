@@ -1,52 +1,53 @@
 /*slider*/
 @font-face {
-  font-family: 'Tangerine';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Tangerine Regular'), local('Tangerine-Regular'), url(http://fonts.gstatic.com/s/tangerine/v8/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Tangerine Regular'), local('Tangerine-Regular'), url(http://fonts.gstatic.com/s/tangerine/v8/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Abril Fatface';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDn1PgMwFt2V-WJ2uOZ4WXLU.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDn1PgMwFt2V-WJ2uOZ4WXLU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Abril Fatface';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDjxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDjxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
 #owl-demo .item {
-	margin:0 auto;
+    margin:0 auto;
 }
 
 .img-responsive {
-	display: block;
-	max-width: 100%;
-	height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    height: 400px;
 }
 #owl-demo {
     margin: 0;
@@ -56,44 +57,48 @@
 }
 
 .owl-prev {
-	color:red !important;
+    color:red !important;
 }
 
 .fix-width {
-	margin:0 auto ;
-	padding:0px;
+    margin:0 auto ;
+    padding:0px;
 }
 
-.header {
-	background-color: #0080de;
-	color:#fff;
-	height: 25px;
+.header-menu {
+    background-color: #0080de;
+    color:#fff;
+    height: 25px;
 }
 
-.header div {
-	padding-top:4px;
+.header-menu div {
+    padding-top:4px;
 }
 
-.header div a {
-	color:#fff;
-	font-size:14px;
-	text-decoration: none;
+.header-menu div:nth-child(3){
+    float:right;
 }
 
-.header div a:hover {
-	color:#dcdbdb;
+.header-menu div a {
+    color:#fff;
+    font-size:14px;
+    text-decoration: none;
 }
 
-.header div a i {
-	color:yellow;
+.header-menu div a:hover {
+    color:#dcdbdb;
+}
+
+.header-menu div a i {
+    color:yellow;
 }
 
 
 .header-first {
-	background-color: #189eff;
-	color:#fff;
-	height: 102px;
-	box-shadow: 0 5px 5px -5px #333;
+    background: url('../../img/2.jpg');
+    color:#fff;
+    height: 102px;
+    box-shadow: 0 5px 5px -5px #333;
 } 
 
 .header-first h3 {
@@ -101,6 +106,11 @@
     font-size: 80px;
     font-family: 'Tangerine', serif;
     text-shadow: 4px 4px 4px #251f25;
+}
+
+.header-first img {
+    width: 55%;
+    margin-left: 82px;
 }
 
 .flipkart-navbar-input {
@@ -123,93 +133,95 @@
 }
 
 .header-navbar {
-	margin-top:35px;
+    margin-top:35px;
 }
 
 .header-navbar-btn {
-  margin-top:35px;
+    display: inline-block;
+    margin-top: 36px
 }
 
 .cart-button {
-	color:#fff;
+    color:#fff;
 }
 
 .cart-button {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .phone-navbar {
-	margin-top:48px;
+    margin-top:48px;
 }
 
 .phone-navbar a {
-	color:#fff;
-	text-decoration: none;
+    color:#fff;
+    text-decoration: none;
 }
 
 .phone-navbar a:hover {
-	color:#dcdbdb;
+    color:#dcdbdb;
 } 
 
 .cart-button {
-	padding-left: 0px;
+    padding-left: 0px;
 }
 
 .nav-top li {
-	float:left;
-	padding-right: 28px;
+    float:left;
+    padding-right: 28px;
 }
 
 .nav-top1 li {
-	float:left;
-	margin-right: 20px;
+    float:left;
+    margin-right: 20px;
 }
 
 .register {
-	padding-left:10px;
+    padding-left:10px;
 }
 
-#nav-bar-header {
-	height: 50px;
-	box-shadow: 0 5px 5px -5px #333;
-  letter-spacing: 3px;
+#nav-bar-header-menu {
+    height: 50px;
+    box-shadow: 0 5px 5px -5px #333;
+    letter-spacing: 3px;
 }
 
 .nav-bar-header-childen ul li {
-	float:left;
+    float:left;
 }
 
 .clearfix {
-	text-transform: uppercase;
-	margin-left: 27px;
+    text-transform: uppercase;
+    margin-left: 27px;
 }
 
 .clearfix li {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 .clearfix li a {
-	white-space: nowrap;
+    white-space: nowrap;
     font-size: 14px;
     display: block;
 }
 
 .nav > li > a:hover,.nav > li > a:focus {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 .content {
-	background-color:#f5f5f5;
-	height: 369px;
+    background-color:#f5f5f5;
+    height: 369px;
 }
 
 .fix-padding-slide {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .slide-content {
-	box-shadow: 8px 7px 5px -5px #332;
-	margin-top:15px;
+    box-shadow: 8px 7px 5px -5px #332;
+    margin-top:15px;
+    padding-bottom: 12px;
 }
 
 .tin-tuc figure {
@@ -253,127 +265,127 @@
     margin-top: 8px;
 }
 .tin-tuc a {
-	color:#fff;
-	text-decoration: none;
+    color:#fff;
+    text-decoration: none;
 }
 
 .tin-tuc {
-	box-shadow: 8px 7px 5px -5px #332;
+    box-shadow: 8px 7px 5px -5px #332;
 }
 
 .fix-size-sp {
-	width: 110px;
-	height: 90px;
+    width: 110px;
+    height: 90px;
 }
 
 .item-tin-tuc {
-	border-bottom: 1px solid #d8d4d4;
-	padding:2px 0px;
+    border-bottom: 1px solid #d8d4d4;
+    padding:2px 0px;
 }
 
 .item-tin-tuc a,.item-tin-tuc p {
-	color:#777677;
+    color:#777677;
 }
 
 .item-tin-tuc a:hover {
-	color:#337ab7;
+    color:#337ab7;
 }
 
 .item-tin-tuc a {
-	font-size:20px;
-	color:#05274c;
+    font-size:20px;
+    color:#05274c;
 }
 
 .item-tin-tuc p {
-	font-size:12px;
-	margin-top: 5px;
-	padding-left: 5px;
+    font-size:12px;
+    margin-top: 5px;
+    padding-left: 5px;
 }
 
 .fix-top-tintuc {
-	padding-top:24px;
+    padding-top:24px;
 }
 
 .item-tin-tuc col-md-4 {
-	padding:0px;
+    padding:0px;
 }
 
 .fix-padding-item {
-	padding:0px;
+    padding:0px;
 }
 
 .change {
-	background-color: red;
+    background-color: red;
 }
 
 .sales {
-	text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .header-product-hot {
-	text-align: center;
+    text-align: center;
 }
 
 .header-product-hot h1 {
-	font-size:40px;
-	font-weight: 600px;
-	font-family: "AbrilFatface-Regular";
-	border-bottom: 2px solid currentColor;
+    font-size:40px;
+    font-weight: 600px;
+    font-family: "AbrilFatface-Regular";
+    border-bottom: 2px solid currentColor;
 
 }
 
 .header-product-hot p {
-	font-size:30px;
+    font-size:30px;
 }
 
 .product-hot {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .owl-product-hot1 a,.owl-product-hot2 a {
-	font-size:20px;
-	font-weight: 600px;
-	color:red;
-	text-decoration: none;
+    font-size:20px;
+    font-weight: 600px;
+    color:red;
+    text-decoration: none;
 } 
 
 .owl-product-hot1 .item,.owl-product-hot2 .item {
-	text-align: center;
-	margin:20px;
+    text-align: center;
+    margin:20px;
 
 } 
 
 .owl-product-hot1 .item img,.owl-product-hot2 .item  img{
-	width: 250px;
-	height: 300px;
-	border-radius: 9px;
+    width: 250px;
+    height: 300px;
+    border-radius: 9px;
 }
 /*.owl-product-hot1 div:nth-child(4) img,.owl-product-hot2 div:nth-child(4) img{
-	float:right;
-	margin-right: 0px;
+float:right;
+margin-right: 0px;
 }  */
 
 .owl-product-hot1  {
-	border-bottom: 1px solid #333;
-	box-shadow: 0 5px 5px -5px #333;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 5px 5px -5px #333;
 }
 .item ul{
-	padding-left: 80px;
+    padding-left: 80px;
 }
 .item ul li{
-	float:left;
+    float:left;
 }
 
 .sales-new{
-	font-size:15px;
-	margin-top: 9px;
+    font-size:15px;
+    margin-top: 9px;
 }
 
 .sales-old {
-	padding-left:10px;
-	font-size:12px;
-	text-decoration: line-through;
-	margin-top: 11px;
+    padding-left:10px;
+    font-size:12px;
+    text-decoration: line-through;
+    margin-top: 11px;
 }
 
 .product-sale {
@@ -429,22 +441,27 @@ a.btn.btn-readmore:hover {
 }
 
 .button-product {
-	margin: 20px 0px;
+    margin: 20px 0px;
 }
 
 .image_style {
-  box-shadow: 0px 5px 5px -5px #131111;
+    box-shadow: 0px 5px 5px -5px #131111;
 }
 
 .header-navbar {
-  padding: 0px;
-  box-shadow: 0px 5px 5px -5px #333;
+    padding: 0px;
+    box-shadow: 0px 5px 5px -5px #333;
 }
 
 .header-navbar input[type = "text"]:hover {
-  box-shadow: 0px 5px 5px -5px #333;
+    box-shadow: 0px 5px 5px -5px #333;
 }
 
 .header-left h1 a {
-  font-family: Abril Fatface !important;
+    font-family: Abril Fatface !important;
+}
+
+.nav-icon {
+    float: right;
+    margin-top: 69px;
 }
