@@ -14,5 +14,4 @@
     @yield('content')
     {{ HTML::script('js/sites/homepage.js') }} 
      @yield('script') 
-</body>   
-</html>
+</body>

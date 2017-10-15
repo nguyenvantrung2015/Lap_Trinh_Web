@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/bower
+/public/storage
 /storage/*.key
 /vendor
 /.idea
@@ -8,5 +10,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 public/bower
-#.env
+/.env
 composer.lock
