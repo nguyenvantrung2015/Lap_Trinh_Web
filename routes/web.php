@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 Route::get('/menu', 'MenuController@index');
 
+
+Route::get('/content', function () {
+    return view('sites.content');
+});
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');

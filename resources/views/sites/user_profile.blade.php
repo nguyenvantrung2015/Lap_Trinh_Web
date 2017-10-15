@@ -1,36 +1,7 @@
-{{-- @extends('layouts.master_menu')
-@section('style') 
-    {{ HTML::style('css/sites/profile.css') }}
-@endsection
-    
-@section('content')
-    <div class="nav-icon">      
-        <a href="#" class="navicon"></a>
-        <div class="toggle">
-            <ul class="toggle-menu">
-                <li><a  href="index.html">Home</a></li>
-                <li><a  class="active" href="menu.html">Menu</a></li>
-                <li><a  href="blog.html">Blog</a></li>
-                <li><a  href="events.html">Events</a></li>
-                <li><a  href="contact.html">Contact</a></li>
-                <li><a  href="typo.html">Login</a></li>
-                <li><a  href="typo.html">Sign in</a></li>
-            </ul>
-        </div>
-    </div>
-    @include('sections.header_menu')
-    @include('sections.user_profile')
-@endsection
-    
-@section('script')
-    
-@endsection
- --}}
-
 @extends('layouts.master_menu')
 @section('style') 
 @endsection
-    {{-- {{ HTML::style('css/sites/profile.css') }} --}}
+    {{ HTML::style('css/sites/profile.css') }}
 @section('content')
     <div class="nav-icon">      
         <a href="#" class="navicon"></a>

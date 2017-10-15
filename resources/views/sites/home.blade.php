@@ -91,7 +91,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="fh5co-v-half">
                             <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
                                 <div class="fh5co-v-col-2 fh5co-bg-img"
@@ -121,10 +120,8 @@
                                     Consonantia, there live the blind texts.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
         <div id="fh5co-type" style="background-image: url(../img/s3.jpg);" data-stellar-background-ratio="0.5">
@@ -162,7 +159,7 @@
                 </div>
             </div>
         </div>
-        <div id="fh5co-menus" data-section="menu">
+        {{-- <div id="fh5co-menus" data-section="menu">
             <div class="container">
                 <div class="row text-center fh5co-heading row-padded">
                     <div class="col-md-8 col-md-offset-2">
@@ -431,7 +428,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div id="fh5co-events" data-section="events" style="background-image: url(../img/slide_2.jpg);"
              data-stellar-background-ratio="0.5">
             <div class="fh5co-overlay"></div>
