@@ -533,7 +533,6 @@
             </div>
         </div>
     </div>
-
     @include('sections.footer')
 @endsection
 
