@@ -1,0 +1,450 @@
+/*slider*/
+@font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tangerine Regular'), local('Tangerine-Regular'), url(http://fonts.gstatic.com/s/tangerine/v8/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDn1PgMwFt2V-WJ2uOZ4WXLU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDjxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+#owl-demo .item {
+	margin:0 auto;
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+#owl-demo {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative
+}
+
+.owl-prev {
+	color:red !important;
+}
+
+.fix-width {
+	margin:0 auto ;
+	padding:0px;
+}
+
+.header {
+	background-color: #0080de;
+	color:#fff;
+	height: 25px;
+}
+
+.header div {
+	padding-top:4px;
+}
+
+.header div a {
+	color:#fff;
+	font-size:14px;
+	text-decoration: none;
+}
+
+.header div a:hover {
+	color:#dcdbdb;
+}
+
+.header div a i {
+	color:yellow;
+}
+
+
+.header-first {
+	background-color: #189eff;
+	color:#fff;
+	height: 102px;
+	box-shadow: 0 5px 5px -5px #333;
+} 
+
+.header-first h3 {
+    padding: 4px 3%;
+    font-size: 80px;
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #251f25;
+}
+
+.flipkart-navbar-input {
+    padding: 11px 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 15px;
+    color:black !important;
+}
+
+.flipkart-navbar-button {
+    background-color: #ffe11b;
+    border: 1px solid #ffe11b;
+    border-radius: 0 2px 2px 0;
+    color: #565656;
+    padding: 10px 0;
+    height: 39px;
+    cursor: pointer;
+}
+
+.header-navbar {
+	margin-top:35px;
+}
+
+.header-navbar-btn {
+  margin-top:35px;
+}
+
+.cart-button {
+	color:#fff;
+}
+
+.cart-button {
+	text-decoration: none;
+}
+
+.phone-navbar {
+	margin-top:48px;
+}
+
+.phone-navbar a {
+	color:#fff;
+	text-decoration: none;
+}
+
+.phone-navbar a:hover {
+	color:#dcdbdb;
+} 
+
+.cart-button {
+	padding-left: 0px;
+}
+
+.nav-top li {
+	float:left;
+	padding-right: 28px;
+}
+
+.nav-top1 li {
+	float:left;
+	margin-right: 20px;
+}
+
+.register {
+	padding-left:10px;
+}
+
+#nav-bar-header {
+	height: 50px;
+	box-shadow: 0 5px 5px -5px #333;
+  letter-spacing: 3px;
+}
+
+.nav-bar-header-childen ul li {
+	float:left;
+}
+
+.clearfix {
+	text-transform: uppercase;
+	margin-left: 27px;
+}
+
+.clearfix li {
+	margin-left: 20px;
+}
+
+.clearfix li a {
+	white-space: nowrap;
+    font-size: 14px;
+    display: block;
+}
+
+.nav > li > a:hover,.nav > li > a:focus {
+	background-color: transparent;
+}
+
+.content {
+	background-color:#f5f5f5;
+	height: 369px;
+}
+
+.fix-padding-slide {
+	margin-top: 20px;
+}
+
+.slide-content {
+	box-shadow: 8px 7px 5px -5px #332;
+	margin-top:15px;
+}
+
+.tin-tuc figure {
+    display: block;
+    overflow: hidden;
+    border-bottom: 3px solid #189eff;
+    background: #f0f0f0;
+}
+
+.tin-tuc figure h2 {
+    float: left;
+    padding: 12px 11px 11px;
+    background: #189eff;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    line-height: 1.1;
+    color: inherit;
+}
+.tin-tuc figure b {
+    float: left;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 38px solid #0084e4;
+}
+
+.tin-tuc figure .readmore {
+    float: right;
+    padding: 3px 10px;
+    background: #fff;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #189eff;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+.tin-tuc a {
+	color:#fff;
+	text-decoration: none;
+}
+
+.tin-tuc {
+	box-shadow: 8px 7px 5px -5px #332;
+}
+
+.fix-size-sp {
+	width: 110px;
+	height: 90px;
+}
+
+.item-tin-tuc {
+	border-bottom: 1px solid #d8d4d4;
+	padding:2px 0px;
+}
+
+.item-tin-tuc a,.item-tin-tuc p {
+	color:#777677;
+}
+
+.item-tin-tuc a:hover {
+	color:#337ab7;
+}
+
+.item-tin-tuc a {
+	font-size:20px;
+	color:#05274c;
+}
+
+.item-tin-tuc p {
+	font-size:12px;
+	margin-top: 5px;
+	padding-left: 5px;
+}
+
+.fix-top-tintuc {
+	padding-top:24px;
+}
+
+.item-tin-tuc col-md-4 {
+	padding:0px;
+}
+
+.fix-padding-item {
+	padding:0px;
+}
+
+.change {
+	background-color: red;
+}
+
+.sales {
+	text-decoration: line-through;
+}
+
+.header-product-hot {
+	text-align: center;
+}
+
+.header-product-hot h1 {
+	font-size:40px;
+	font-weight: 600px;
+	font-family: "AbrilFatface-Regular";
+	border-bottom: 2px solid currentColor;
+
+}
+
+.header-product-hot p {
+	font-size:30px;
+}
+
+.product-hot {
+	margin-top: 20px;
+}
+
+.owl-product-hot1 a,.owl-product-hot2 a {
+	font-size:20px;
+	font-weight: 600px;
+	color:red;
+	text-decoration: none;
+} 
+
+.owl-product-hot1 .item,.owl-product-hot2 .item {
+	text-align: center;
+	margin:20px;
+
+} 
+
+.owl-product-hot1 .item img,.owl-product-hot2 .item  img{
+	width: 250px;
+	height: 300px;
+	border-radius: 9px;
+}
+/*.owl-product-hot1 div:nth-child(4) img,.owl-product-hot2 div:nth-child(4) img{
+	float:right;
+	margin-right: 0px;
+}  */
+
+.owl-product-hot1  {
+	border-bottom: 1px solid #333;
+	box-shadow: 0 5px 5px -5px #333;
+}
+.item ul{
+	padding-left: 80px;
+}
+.item ul li{
+	float:left;
+}
+
+.sales-new{
+	font-size:15px;
+	margin-top: 9px;
+}
+
+.sales-old {
+	padding-left:10px;
+	font-size:12px;
+	text-decoration: line-through;
+	margin-top: 11px;
+}
+
+.product-sale {
+    position: absolute;
+    z-index: 1;
+    margin: 13px 20px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    background: #00a7f4;
+    border-width: thin;
+    border-style: solid;
+    border-color: #00a7f4;
+    left: 0;
+    top: 0;
+}
+
+a.btn.btn-readmore {
+    background: #ffffff;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0px;
+}
+
+a.btn.btn-readmore:hover {
+    background: #00a7f4;
+    color: #ffffff;
+}
+
+.btn.btn-readmore:hover {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn.btn-readmore {
+    padding: 0 30px;
+    outline: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    height: 36px;
+    line-height: 38px;
+    border: none;
+    text-align: center;
+    letter-spacing: 0px;
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s, opacity 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.button-product {
+	margin: 20px 0px;
+}
+
+.image_style {
+  box-shadow: 0px 5px 5px -5px #131111;
+}
+
+.header-navbar {
+  padding: 0px;
+  box-shadow: 0px 5px 5px -5px #333;
+}
+
+.header-navbar input[type = "text"]:hover {
+  box-shadow: 0px 5px 5px -5px #333;
+}
+
+.header-left h1 a {
+  font-family: Abril Fatface !important;
+}

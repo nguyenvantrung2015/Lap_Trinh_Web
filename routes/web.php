@@ -11,8 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/menu', 'MenuController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
