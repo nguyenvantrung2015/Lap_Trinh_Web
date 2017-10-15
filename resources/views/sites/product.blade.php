@@ -1,10 +1,9 @@
 @extends('layouts.master_menu')
 @section('style')
-    {{ HTML::style('css/sites/profile.css') }}
 @endsection
 
 @section('content')
-    <div class="nav-icon">      
+    <div class="nav-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">
             <ul class="toggle-menu">
@@ -19,10 +18,10 @@
         </div>
     </div>
     @include('sections.header_menu')
-    @include('sections.user_profile')
+    @include('sections.product')
 @endsection
-    
+
 @section('script')
-    {{ HTML::script('js/sites/homepage.js') }} 
+    {{ HTML::script('js/sites/homepage.js') }}
 @endsection
 
