@@ -24,8 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin', 'AdminController@admin');
 
-Route::get('user/profile', 'UserController@profile')->name('profile');
+Route::get('user/{id}', ['as' => 'user.profile', 'uses' => 'UserController@profile', 'middleware' => 'auth']);
 
-Route::post('user/edit', 'UserController@editProfile')->name('edit.profile');
+Route::post('user/{id}', 'UserController@editProfile')->name('user.edit');
 
-Route::get('product/detail', 'ProductController@detail')->name('product.detail');
+Route::get('product/{id}', 'ProductController@detail')->name('product.detail');

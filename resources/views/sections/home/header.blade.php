@@ -26,7 +26,7 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Events</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="{{route('user.profile',Auth::user()->id)}}">Profile</a></li>
                         <li>
                             <a href="javascript:void(0)" id="logout-1">
                                 Logout
