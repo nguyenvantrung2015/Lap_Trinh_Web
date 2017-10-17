@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use Validator;
 use Auth;
+use Illuminate\Http\Request;
+use Validator;
 
 class UserController extends Controller
 {
@@ -16,13 +16,11 @@ class UserController extends Controller
         $this->information = $information;
     }
 
-    public function profile()
+    public function profile(Request $request)
     {
-//        if (!\Auth::check()) {
-//
-//            return redirect()->route('home');
-//        }
-        $users = $this->information->first();
+
+        $users = User::find($request->id);
+
         return view('sites.user_profile', compact('users'));
     }
 

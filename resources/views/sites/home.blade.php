@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    @include('sections.header')
+    @include('sections.home.header')
     <div id="fh5co-container">
         <div id="fh5co-sayings">
             <div class="container">
@@ -530,7 +530,7 @@
             </div>
         </div>
     </div>
-    @include('sections.footer')
+    @include('sections.home.footer')
 @endsection
 
 @section('script')
