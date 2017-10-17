@@ -5,29 +5,30 @@
     src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDjxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
-body{
-    background:#fff;  
+
+body {
+    background: #fff;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-body a{
+body a {
     transition: 0.5s all;
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6,label,p{
-    margin:0; 
+h1, h2, h3, h4, h5, h6, label, p {
+    margin: 0;
 }
 
-.logo{
-    float:left;
+.logo {
+    float: left;
 }
 
-.logo h1  {
+.logo h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 4em;
     font-weight: 700;
@@ -36,7 +37,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 
 .logo a {
     color: #fff;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .logo a img {
@@ -52,22 +53,23 @@ i.glyphicon.glyphicon-menu-hamburger {
     color: #fff;
     font-size: 2em;
 }
+
 /*--banner--*/
-.header{
-    background:url(../../img/s3.jpg) no-repeat left;
-    width:100%;
-    background-size:cover;
-    min-height:750px;
-    display:block;
+.header {
+    background: url(../../img/2.jpg) no-repeat left;
+    width: 100%;
+    background-size: cover;
+    min-height: 750px;
+    display: block;
     padding-top: 1em;
 }
 
-.head{
-    min-height:89px;
+.head {
+    min-height: 89px;
 }
 
-body{
-    background:#fff;  
+body {
+    background: #fff;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -78,7 +80,7 @@ body{
     display: inline-block;
     z-index: 99;
     transition: linear 0.5s all;
-    width:50px;
+    width: 50px;
 }
 
 .navicon:before, .navicon:after {
@@ -129,8 +131,8 @@ body{
     opacity: 0;
     transition: ease-in 0.5s all;
     transform: translateY(-200%);
-    position:absolute;
-    left:35%;
+    position: absolute;
+    left: 35%;
 }
 
 .toggle--active {
@@ -138,9 +140,8 @@ body{
     opacity: 1;
     transition: ease-in 0.5s all;
     transform: translateY(0);
-    z-index:999;
+    z-index: 999;
 }
-
 
 .toggle-menu li {
     width: 25%;
@@ -161,42 +162,49 @@ body{
     padding: 5px 0;
 }
 
-.toggle-menu li a span { text-transform: lowercase; }
+.toggle-menu li a span {
+    text-transform: lowercase;
+}
 
-.toggle-menu li a:hover,.toggle-menu li a.active {
-    color:#97824B;
+.toggle-menu li a:hover, .toggle-menu li a.active {
+    color: #97824B;
     border-bottom: 2px solid #97824B;
     transition: linear 0.5s all;
     transform: scale(1.15);
     font-weight: 700;
 }
-@media(max-width:991px){
+
+@media (max-width: 991px) {
     .toggle {
         width: 50%;
         left: 25%;
     }
 }
-@media(max-width:414px){
+
+@media (max-width: 414px) {
     .navicon {
         width: 35px;
     }
+
     .toggle {
         width: 70%;
         left: 15%;
         padding: 10px;
     }
+
     .toggle-menu li a {
         font-size: 15px;
-    } 
+    }
 }
+
 /*--banner--*/
-.banner{
-    text-align:center;
-    margin-top: 1em; 
+.banner {
+    text-align: center;
+    margin-top: 1em;
 }
 
 .banner h4 {
-    color:#fff;
+    color: #fff;
     font-size: 3em;
     border: 2px solid #fff;
     padding: 1em;
@@ -236,8 +244,7 @@ body{
     margin-left: 15px;
 }
 
-.img-responsive
-{
+.img-responsive {
     box-shadow: 2px 5px 5px -3px #333;
 }
 
@@ -248,4 +255,11 @@ body{
     font-size: 21px !important;
     box-shadow: 3px 5px 5px -3px white;
     margin-top: 20px;
+}
+
+.toggle-menu h3 {
+    color: white;
+    text-align: center;
+    font-family: "Merriweather", serif;
+    text-transform: capitalize;
 }
