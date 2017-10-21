@@ -29,3 +29,7 @@ Route::get('user/{id}', ['as' => 'user.profile', 'uses' => 'UserController@profi
 Route::post('user/{id}', 'UserController@editProfile')->name('user.edit');
 
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
+
+// login facebook
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
