@@ -3,7 +3,6 @@
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
 @section('content')
-    @include('sections.menu.header')
     <div class="nav-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">
@@ -39,6 +38,7 @@
             </ul>
         </div>
     </div>
+    @include('sections.menu.header')
     <div id="work" class="page">
         <div class="container">
             <div class="row">
