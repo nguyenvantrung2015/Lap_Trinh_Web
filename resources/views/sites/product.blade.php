@@ -1,108 +1,96 @@
 @extends('layouts.menu')
 @section('style')
+    {{ HTML::style('/css/sites/product_detail.css') }}
 @endsection
 
 @section('content')
     @include('sections.menu.header')
 
-    <div class="nav-icon">
-        <a href="#" class="navicon"></a>
-        <div class="toggle">
-            <ul class="toggle-menu">
-                @if (Auth::guest())
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @else
-                    <h3>Hello {{Auth::user()->name}}</h3>
-                    @if(Auth::user()->level == 1)
-                        <li><a class="active" href="#">ADMIN</a></li>
-                    @endif
-                    <li><a class="active" href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li>
-                        <a href="javascript:void(0)" id="logout-1">
-                            Logout
-                        </a>
-                        {!! Form::open(['role'=>'form', 'route'=> 'logout', 'method'=>'POST', 'id'=>'logout-form']) !!}
-                        {{ csrf_field() }}
-                        {!! Form::close() !!}
-                    </li>
-                @endif
-            </ul>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="card">
-            <div class="container-fliud">
-                <div class="wrapper">
-                    <div class="preview col-md-5">
-                        <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="http://lorempixel.com/300/300/animals/"/>
-                            </div>
-                            <div class="tab-pane" id="pic-2"><img src="http://lorempixel.com/300/300/animals/"/></div>
-                            <div class="tab-pane" id="pic-3"><img src="http://lorempixel.com/300/300/animals/"/></div>
-                        </div>
-                        <ul class="preview-thumbnail nav nav-tabs" id="myTab">
-                            <li class="active"><a href="#pic-1" data-target="#pic-1" data-toggle="tab">
-                                    <img src="http://lorempixel.com/200/126/animals/"/></a>
-                            </li>
-                            <li><a href="#pic-2" data-target="#pic-2" data-toggle="tab">
-                                    <img src="http://lorempixel.com/200/126/animals/"/></a>
-                            </li>
-                            <li><a href="#pic-3" data-target="#pic-3" data-toggle="tab">
-                                    <img src="http://lorempixel.com/200/126/animals/"/></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="details col-md-7">
-                        <div class="row">
-                            <h3 class="product-title">{!! $prd_detail->name !!}</h3>
-                        </div>
-                        <div class="row">
-                            <div class="rating">
-                                <div class="stars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+        <div class="row">
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper">
+                        <div class="preview col-md-7">
+                            <div id='ninja-slider'>
+                                <div>
+                                    <div class="slider-inner">
+                                        <ul>
+                                            @foreach($prd_img as $pi)
+                                                <li><a class="ns-img" href="{!! $pi->image !!}"></a></li>
+                                            @endforeach
+                                        </ul>
+                                        <div class="fs-icon" title="Expand/Close"></div>
+                                    </div>
+                                    <div id="thumbnail-slider">
+                                        <div class="inner">
+                                            <ul>
+                                                @foreach($prd_img as $pi)
+                                                    <li>
+                                                        <a class="thumb" href="{!! $pi->image !!}"></a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span class="review-no">41 reviews</span>
                             </div>
                         </div>
-                        <div class="row">
-                            <p class="product-description">{!! $prd_detail->description !!}</p>
-                        </div>
-                        <div class="row">
-                            <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i
-                                        class="fa fa-dollar"></i></h4>
-                            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87
-                                    votes)</strong></p>
-                        </div>
-                        <div class="row">
-                            <div class="action">
-                                <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                                <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span>
-                                </button>
+                        <div class="details col-md-5">
+                            <div class="row">
+                                <h3 class="product-title">{!! $prd_detail->name !!}</h3>
+                            </div>
+                            <div class="row">
+                                <div class="rating">
+                                    <div class="stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review-no">41 reviews</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="product-description">{!! $prd_detail->description !!}</p>
+                            </div>
+                            <div class="row">
+                                <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i class="fa fa-dollar"></i></h4>
+                                <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                            </div>
+                            <div class="row">
+                                <div class="action">
+                                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                                    <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
-        <div>
-            <h2>San pham tương tu</h2>
+        <div class="row">
+            <div class="product-other">
+                <div class="row">
+                    <hr>
+                    <div class="product-other-title">
+                        <h2>sản phẩm tương tự</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product-other-content">
+                        @foreach($prd_similar as $ps)
+                            <div class="col-md-3 col-xs-2">
+                                <a href="{{ route('product.detail', [ 'id' => $ps->id ]) }}">
+                                    <img src="{!! $ps->avatar !!}">
+                                    <h3>{!! $ps->name !!}</h3>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -110,6 +98,7 @@
 @endsection
 
 @section('script')
-    {{ HTML::script('js/sites/homepage.js') }}
+    {{ HTML::script('/js/sites/homepage.js') }}
+    {{ HTML::script('/js/sites/product_detail.js') }}
 @endsection
 
