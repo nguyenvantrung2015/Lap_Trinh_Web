@@ -61,7 +61,7 @@
                             Dont Have An Account ?
                             <a href="{{route('register')}}">Register Here</a>
                             <p>-OR-</p>
-                            <a href="#">
+                            <a href="{{route('facebook')}}">
                                 <button class="fb" type="button">Log In With Facebook</button>
                             </a>
                         </div>
