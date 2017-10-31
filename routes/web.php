@@ -31,5 +31,21 @@ Route::post('user/{id}', 'UserController@editProfile')->name('user.edit');
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 
 // login facebook
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+    
+//API
+Route::group(['prefix' => 'api/v1'], function () {
+Route::get('foods','ProductController@getdata_food');
+Route::get('drinks','ProductController@getdata_drink');
+// Route::get('delete_customer/{id}',function($id){
+// 	return App\Customer::destroy($id);
+// });
+// Route::get('delete_food/{id}',function($id){
+// 	return App\Product::destroy($id);
+// });
+// Route::get('delete_drink/{id}',function($id){
+// 	return App\Product::destroy($id);
+// });
+});
+

@@ -52,96 +52,47 @@
             <div class="row">
                 <section id="projects">
                     <ul id="thumbs">
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">assie</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" href="facebook">
+                        <li v-for="food in foods" class="item-thumbs span3 design">
+                            <h1><span class="name-product">
+                            @{{ food.name }}
+                            </span><span class="price-product">$@{{food.price}}</span></h1>
+                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+food.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img src="../img/assie.jpeg">
+                            <img v-bind:src="food.avatar">
                         </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">bach tuoc</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="work" class="page">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page">
+                        <h2 class="title">Show Drink </h2>
+                        <h3 class="title-description">Check Out Our Projects on <a href="#">Dribbble</a>.</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <section id="projects">
+                    <ul id="thumbs">
+                        <li v-for="drink in drinks" class="item-thumbs span3 design">
+                            <h1><span class="name-product">
+                            @{{ drink.name }}
+                            </span><span class="price-product">$@{{drink.price}}</span></h1>
+                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+drink.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
+                                <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img src="../img/bachtuoc.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banh.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh3</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banh3.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh bo</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banhbo.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh kep</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banhkep.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh chay</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banhchay.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh dau</span><span class="price-product">$25</span></h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banhdau2.jpg">
-                        </li>
-                        <li class="item-thumbs span3 design">
-                            <h1><span class="name-product">banh doremon</span><span class="price-product">$25</span>
-                            </h1>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn "><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img src="../img/banhdoremon.jpg">
+                            <img v-bind:src="drink.avatar">
                         </li>
                     </ul>
                 </section>
@@ -227,5 +178,6 @@
 
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
+    {{ HTML::script('js/sites/page_menu.js') }}
 @endsection
 

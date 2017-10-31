@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Response;
 use App\Models\Gallery;
 
 class ProductController extends Controller
@@ -25,5 +26,14 @@ class ProductController extends Controller
             ->whereBetween('price', [ $prd_detail->price - 10000, $prd_detail->price + 10000 ])
             ->take(4)->get();
         return view('sites.product', compact('prd_detail', 'prd_img', 'prd_similar'));
+    }
+
+    public function getdata_food(){
+        $food = Product::all()->where('category','=','Food');
+        return Response::json($food) ;
+    }
+    public function getdata_drink(){
+        $drink = Product::all()->where('category','=','Drink');
+        return Response::json($drink) ;
     }
 }
