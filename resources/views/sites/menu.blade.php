@@ -3,7 +3,7 @@
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
 @section('content')
-    <div class="nav-icon">
+    <div class="nastv-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">
             <ul class="toggle-menu">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row fix-height-menu">
                 <section id="projects">
                     <ul id="thumbs">
                         <li v-for="food in foods" class="item-thumbs span3 design">
@@ -69,6 +69,25 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li v-for="pageNo in last_page_food "><a @click="show_food(pageNo)">@{{ pageNo }}</a></li>
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
     <div id="work" class="page">
         <div class="container">
             <div class="row">
@@ -79,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row fix-height-menu" >
                 <section id="projects">
                     <ul id="thumbs">
                         <li v-for="drink in drinks" class="item-thumbs span3 design">
@@ -98,6 +117,25 @@
                 </section>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+        <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li v-for="pageNo in last_page_drink "><a @click="show_drink(pageNo)">@{{ pageNo }}</a></li>
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     </div>
     <div id="about" class="page-alternate">
         <div class="container">
