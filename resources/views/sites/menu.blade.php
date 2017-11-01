@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center bottom-pagination ">
         <nav>
         <ul class="pagination">
             <li>
@@ -118,7 +118,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center bottom-pagination ">
         <nav>
         <ul class="pagination">
             <li>

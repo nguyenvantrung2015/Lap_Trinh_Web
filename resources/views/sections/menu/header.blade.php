@@ -1,8 +1,7 @@
 <div class="header-menu"></div>
 <div class="header-first">
     <div class="col-md-3"><img src="../img/logo2.svg" alt=""></h3></div>
-    <div class="col-md-6 header-navbar"><input class="flipkart-navbar-input col-xs-11" type="text"
-                                               placeholder="Search for Products, Brands and more" name="">
+    <div class="col-md-6 header-navbar"><input class="flipkart-navbar-input col-xs-11" type="text" placeholder="Search for Products, Brands and more" name="">
         <button class="flipkart-navbar-button col-xs-1">
             {{ __('Search') }}
         </button>

@@ -467,7 +467,7 @@ a.btn.btn-readmore:hover {
 
 /*conten*/
 .page {
-    padding: 100px 0;
+    padding: 25px 0;
     position: relative;
     z-index: 99;
     padding-bottom: 0px;
@@ -486,7 +486,8 @@ a.btn.btn-readmore:hover {
 
 .title-page .title {
     font-size: 48px;
-    margin: 0 0 10px 0
+    margin: 0 0 10px 0;
+    text-shadow: 1px 4px 4px #7f7676;
 }
 
 .title-page .title-description {
@@ -920,7 +921,13 @@ margin-left: -38px;
 }
 
 .design h1 {
+    padding-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.design {
+    box-shadow: 1px 2px 11px -3px #333;
 }
 
 .hr-fix {
@@ -931,4 +938,15 @@ margin-left: -38px;
 
 .fix-height-menu {
     height: 550px;
+}
+
+.nastv-icon {
+    float: right;
+    margin-top: 67px;
+}
+
+.bottom-pagination {
+    border-bottom: 2px solid #b2acac;
+    width: 900px;
+    margin: 0 auto;
 }
