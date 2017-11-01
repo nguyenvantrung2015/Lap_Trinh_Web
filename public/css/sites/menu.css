@@ -470,6 +470,7 @@ a.btn.btn-readmore:hover {
     padding: 100px 0;
     position: relative;
     z-index: 99;
+    padding-bottom: 0px;
 }
 
 .page-alternate {
@@ -926,4 +927,8 @@ margin-left: -38px;
     margin-bottom:0px;
     margin-top:30px; 
     padding:0px;
+}
+
+.fix-height-menu {
+    height: 550px;
 }
