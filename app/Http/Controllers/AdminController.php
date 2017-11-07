@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminController extends Controller
 {
     public function home()
     {
-        return view('admin.index2');
+        if (Auth::check()) {
+            if (Auth::User()->level == '1') {
+                return view('admin.index2');
+            } else
+                return view('sites.home');
+        }
+        return view('sites.home');
     }
+
     public function manage_food()
     {
         return view('admin.manage_food');
