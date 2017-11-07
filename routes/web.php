@@ -57,3 +57,4 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('manage_drink','AdminController@manage_drink')->name('manage_drink');
 	Route::get('manage_customer','AdminController@manage_customer');
 });
+
