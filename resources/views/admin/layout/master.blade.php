@@ -19,7 +19,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="{{route('admin_index2')}}" class="logo">
+            <a href="#" class="logo">
                 <span class="logo-mini"><b>A</b>LT</span>
                 <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>
