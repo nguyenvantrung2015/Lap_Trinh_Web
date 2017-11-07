@@ -905,15 +905,15 @@ margin-left: -38px;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 .name-product{
-    font-size: 9px;
+    font-size: 15px;
     text-transform: uppercase;
     font-family: 'Abril Fatface';
 } 
 
 .price-product {
     float: right;
-    width: 15%;
-    font-size: 10px;
+    width: 25%;
+    font-size: 15px;
     text-transform: uppercase;
     font-family: 'Abril Fatface';
     margin-right: 24px;
