@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function admin()
-    {
-        return view('admin.index');
-    }
-    public function admin2()
+    public function home()
     {
         return view('admin.index2');
     }
-
-    public function widget()
+    public function manage_food()
     {
-        return view('admin.pages.widgets');
+        return view('admin.manage_food');
+    }
+
+    public function manage_drink()
+    {
+        return view('admin.manage_drink');
     }
 
     public function top()

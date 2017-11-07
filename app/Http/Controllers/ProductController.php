@@ -36,4 +36,12 @@ class ProductController extends Controller
         $drink = Product::where('category','=','Drink')->paginate(8);
         return Response::json($drink) ;
     }
+     public function all_food(){
+        $food = Product::all()->where('category','=','Food');
+        return Response::json($food) ;
+    }
+     public function all_drink(){
+        $drink = Product::all()->where('category','=','Drink');
+        return Response::json($drink) ;
+    }
 }

@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert(
  [
 	[
-	'name'		=>	'GFS Three Pepper Salsa',	
+	'name'		=>	'GFS Three',	
 	'category'	=>	'Food',
 	'price' 	=>	'40000',
 	'description'	=>	'A blend of jalapeño, Anaheim and chipotle peppers, it delivers back-of-the house quality and authentic flavor with a medium-spicy kick to the table.',
@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'GFS Cheese Grits',
+	'name'		=>	'GFS Cheese',
 	'category'	=>	'Food',
 	'price' 	=>	'50000',
 	'description'	=>	'Industry research shows that new riffs on Southern-style cuisine offer big opportunities. Authentic ingredients—especially grits—are critical to satisfying cravings for Southern cuisine. Traditionally a slow-cooked, thick porridge made from ground, dried corn, grits have long been a Southern breakfast staple. Our Cheese Grits deliver big flavor with little work. They’re ready to serve or ready to reinvent according to capabilities or creativity.',
@@ -31,7 +31,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Seasoned Pork Loin Roasts',
+	'name'		=>	'Seasoned Pork',
 	'category'	=>	'Food',
 	'price' 	=>	'300000',
 	'description'	=>	'Bathed in a proprietary brine and bag-cooked, our ready-to-use Seasoned Pork Loin is moist, tender and delivers rich flavor inspired by porchetta without all the fuss. Use it throughout your menus and across dayparts. You can’t go wrong, no matter how you serve it.',
@@ -39,7 +39,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Whole Pork Belly',
+	'name'		=>	'Whole Pork',
 	'category'	=>	'Food',
 	'price' 	=>	'200000',
 	'description'	=>	'Today’s diners seek flavor, indulgence, variety and items they can’t or don’t care to prepare at home. Satisfy them with our Seasoned Pork Belly. Pre-cooked and infused with flavor from our proprietary sweet-salty rub, it crisps up beautifully on the outside and is meltingly tender on the inside. Utterly craveable, it lends itself to countless applications across dayparts and segments. Use pork belly any time you want to add a wallop of umami-rich flavor and render diners practically unable to resist.',
@@ -47,7 +47,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Korean BBQ Sauce',
+	'name'		=>	'Korean BBQ',
 	'category'	=>	'Food',
 	'price' 	=>	'400000',
 	'description'	=>	'Our distinctive Korean BBQ Sauce offers exciting new global flavor in a popular format that customers can relate to. With its mid-level heat and rich glaze, this sauce is an easy and delicious way to bring the Far East closer to home.',
@@ -55,7 +55,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Smokehouse Rub Seasoning',
+	'name'		=>	'Smokehouse',
 	'category'	=>	'Food',
 	'price' 	=>	'20000',
 	'description'	=>	'Striking the perfect balance between sweet and savory, with just a tiny kick of sassy spiciness, our Smokehouse Rub offers satisfying, well-rounded flavor. While designed specifically for pork, it pairs nicely nonetheless with other proteins and veggies too. Given rising beef prices, use this rub as one more way to make cost-effective pork more appealing—and anytime you want go-to BBQ flavor.',
@@ -63,7 +63,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Mushroom & Swiss Ground Beef Patties',
+	'name'		=>	'Mushroom',
 	'category'	=>	'Food',
 	'price' 	=>	'90000',
 	'description'	=>	'Mushroom and Swiss is one of the most familiar and top-selling combinations on burger menus. And now our grill-ready Mushroom & Swiss burger makes it easy to menu. Pieces of Swiss cheese and mushrooms enhance the texture and deliver satisfying mouthfeel in this umami-packed patty. Serve it as is, or add even more layers of flavor by piling on extra toppings.',
@@ -71,7 +71,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Honey Wheat Bread Loaves',
+	'name'		=>	'Honey Wheat',
 	'category'	=>	'Food',
 	'price' 	=>	'95000',
 	'description'	=>	'Consumers are seeking more flavor, choice and diversity of ingredients and “better-for-you” options on all parts of the menu—including bread. Richly textured and slightly sweet, this bread incorporates on-trend sprouted grain that delivers superior nutrition and digestibility.',
@@ -79,7 +79,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Malted Barley Bread Loaves',
+	'name'		=>	'Malted Barley',
 	'category'	=>	'Food',
 	'price' 	=>	'13000',
 	'description'	=>	'Good bread isn’t defined by wheat alone. Barley gives this wheat bread a bit of heft and satisfying chew, while malt adds richness, depth of flavor and appealing color.',
@@ -87,7 +87,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Chicken Soup, with Kale & Quinoa',
+	'name'		=>	'Chicken Soup',
 	'category'	=>	'Food',
 	'price' 	=>	'120000',
 	'description'	=>	'In this hearty kale and quinoa chicken soup, comfort food gets a contemporary update. This is one flavorful chicken soup that’s as good for the body as the soul.',
@@ -95,7 +95,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Ancient Grain Oatmeal',
+	'name'		=>	'Ancient Grain',
 	'category'	=>	'Food',
 	'price' 	=>	'300000',
 	'description'	=>	'Satisfy diners seeking nutrient-dense ancient grains with our blend of steel-cut oats, amaranth, red quinoa, millet, bulgur wheat and freekeh that’s lightly seasoned with cane syrup, butter, salt and cinnamon.',
@@ -103,7 +103,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Sun-Fry Sunflower Oil',
+	'name'		=>	'Sun-Fry ',
 	'category'	=>	'Food',
 	'price' 	=>	'90000',
 	'description'	=>	'Satisfy consumer demand for foods that offer both indulgence and a health halo. With its unique blend of high oleic and mid-oleic sunflower oils, Sun-Fry answers the call. Ideal for deep-frying, sautéing and other applications, this versatile sunflower oil is a shining star that delivers superior quality, performance and flavor cost-effectively.',
@@ -119,7 +119,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Maryland-Style Crab Cakes',
+	'name'		=>	'Maryland Cakes',
 	'category'	=>	'Food',
 	'price' 	=>	'60000',
 	'description'	=>	'Satisfy seafood lovers cravings with our premium Maryland-style Crab Cakes. Exceptionally flavorful and loaded with colorful chunks of bell peppers, they deliver both the rich, buttery flavor and indulgence so many of today’s diners seek.',
@@ -127,7 +127,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Sweet Potato Veggie Burgers',
+	'name'		=>	'Sweet Potato',
 	'category'	=>	'Food',
 	'price' 	=>	'80000',
 	'description'	=>	'With roasted sweet potato, wild rice, beans, red and white quinoa, cannellini beans, roasted portobello mushrooms, fresh carrots, caramelized onions, rolled oats, scallions and roasted garlic, this colorful burger adds roasted root vegetables and a comfort-food element to the veggie-burger experience.',
@@ -135,7 +135,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Mini Naan Bites',
+	'name'		=>	'Mini Naan',
 	'category'	=>	'Food',
 	'price' 	=>	'300000',
 	'description'	=>	'Our Mini Naan Bites make it easy to menu this Indian flatbread as an appetizer. The hand-stretched dough is made with real buttermilk and ghee, then baked in a tandoor oven for authenticity. They are soft to the bite, but durable to stand up to hearty spreads and toppings.',
@@ -143,7 +143,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Pepper Mill Blood Orange Vinaigrette Dressing',
+	'name'		=>	'Pepper Mill',
 	'category'	=>	'Food',
 	'price' 	=>	'30000',
 	'description'	=>	'Sour and bitter flavors are on-trend—especially with millennial diners—in everything from cocktails and beers to entrées and desserts. With its tart taste and intense color, this distinctive vinaigrette offers the variety and flavor diners crave.',
@@ -151,7 +151,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Pepper Mill Green Goddess Dressing',
+	'name'		=>	'Pepper Mill',
 	'category'	=>	'Food',
 	'price' 	=>	'95000',
 	'description'	=>	'Our luscious, herby Green Goddess dressing is a flavor-forward take on a retro classic. Creamy, but without the heaviness of mayonnaise-based dressings, its light, fresh tarragon-infused flavor and health halo give it broad appeal.',
@@ -159,7 +159,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Pineapple Beet Veggie Burgers',
+	'name'		=>	'Pineapple Beet',
 	'category'	=>	'Food',
 	'price' 	=>	'40000',
 	'description'	=>	'Hearty and delicious, this veggie burger boasts wild rice, beans, red and white quinoa, hummus, roasted red and yellow beets, roasted fresh pineapple, kale, rolled oats, caramelized onion, roasted garlic, honey and fresh ginger. ',
@@ -167,7 +167,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Almond Rabdi Frappe',
+	'name'		=>	'Almond Rabdi',
 	'category'	=>	'Drink',
 	'price' 	=>	'40000',
 	'description'	=>	'Classic Rabdi flavored smooth frappe, with a shot of whipped cream and crunchy almond flakes. Get the beach party started.',
@@ -231,7 +231,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Creamy Toffee Frappe',
+	'name'		=>	'Creamy Toffee',
 	'category'	=>	'Drink',
 	'price' 	=>	'15000',
 	'description'	=>	'Rich toffee sauce blended with Coffee frappe, topped with whipped cream, butterscotch . Just chill! ',
@@ -239,7 +239,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Enliven With Chamomile',
+	'name'		=>	'Enliven With',
 	'category'	=>	'Drink',
 	'price' 	=>	'20000',
 	'description'	=>	'The calm of chamomile and lemon oils will give you the inspiration you need to make the most of your day.',
@@ -247,7 +247,7 @@ class ProductsTableSeeder extends Seeder
 	],
 
 	[
-	'name'		=>	'Green Apple Soda',
+	'name'		=>	'Green Apple',
 	'category'	=>	'Drink',
 	'price' 	=>	'90000',
 	'description'	=>	'Cool down with this thirst quenching mix of the freshness of green apples with the fizz of soda.',

@@ -36,17 +36,24 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
     
 //API
 Route::group(['prefix' => 'api/v1'], function () {
-Route::get('foods','ProductController@getdata_food');
-Route::get('drinks','ProductController@getdata_drink');
-// Route::get('delete_customer/{id}',function($id){
-// 	return App\Customer::destroy($id);
-// });
-// Route::get('delete_food/{id}',function($id){
-// 	return App\Product::destroy($id);
-// });
-// Route::get('delete_drink/{id}',function($id){
-// 	return App\Product::destroy($id);
-// });
+	Route::get('foods','ProductController@getdata_food');
+	Route::get('drinks','ProductController@getdata_drink');
+	Route::get('all_foods','ProductController@all_food');
+	Route::get('all_drinks','ProductController@all_drink');
+	// Route::get('delete_customer/{id}',function($id){
+	// 	return App\Customer::destroy($id);
+	// });
+	// Route::get('delete_food/{id}',function($id){
+	// 	return App\Product::destroy($id);
+	// });
+	// Route::get('delete_drink/{id}',function($id){
+	// 	return App\Product::destroy($id);
+	// });
 });
-Route::get('/index', 'AdminController@admin')->name('admin_index');
-Route::get('index2', 'AdminController@admin2')->name('admin_index2');
+
+Route::group(['prefix' => 'admin'], function () {
+	Route::get('home','AdminController@home')->name('admin_home');
+	Route::get('manage_food','AdminController@manage_food')->name('manage_food');
+	Route::get('manage_drink','AdminController@manage_drink')->name('manage_drink');
+	Route::get('manage_customer','AdminController@manage_customer');
+});
