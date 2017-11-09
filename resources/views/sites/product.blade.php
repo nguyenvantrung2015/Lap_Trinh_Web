@@ -4,6 +4,41 @@
 @endsection
 
 @section('content')
+    <div class="nastv-icon">
+        <a href="#" class="navicon"></a>
+        <div class="toggle">
+            <ul class="toggle-menu">
+                @if (Auth::guest())
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a class="active" href="{{route('menu')}}">Menu</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                    <h3>Hello {{Auth::user()->name}}</h3>
+                    @if(Auth::user()->level == 1)
+                        <li><a class="active" href="#">ADMIN</a></li>
+                    @endif
+                    <li><a class="active" href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('menu')}}">Menu</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{route('user.profile',Auth::user()->id)}}">Profile</a></li>
+                    <li>
+                        <a href="javascript:void(0)" id="logout-1">
+                            Logout
+                        </a>
+                        {!! Form::open(['role'=>'form', 'route'=> 'logout', 'method'=>'POST', 'id'=>'logout-form']) !!}
+                        {{ csrf_field() }}
+                        {!! Form::close() !!}
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
     @include('sections.menu.header')
 
     <div class="container">
@@ -56,8 +91,25 @@
                                 <p class="product-description">{!! $prd_detail->description !!}</p>
                             </div>
                             <div class="row">
-                                <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i class="fa fa-dollar"></i></h4>
-                                <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                                <div class="col-md-7">
+                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i class="fa fa-dollar"></i></h4>
+                                </div>
+                                <div class="col-md-5">
+                                    <span>Avability :</span>
+                                    <span style="color: red">In stock</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2" 
+                                style="padding-left: -10px">
+                                    <p>Quantity</p> 
+                                </div>
+                                <div class="col-md-1">
+                                    <input type="number" class="quantity" name="number_product" min = "1" value="1">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                             </div>
                             <div class="row">
                                 <div class="action">

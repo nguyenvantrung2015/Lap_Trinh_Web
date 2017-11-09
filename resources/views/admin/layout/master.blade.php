@@ -11,6 +11,7 @@
     {{ HTML::style('bower/jvectormap/jquery-jvectormap.css') }}
     {{ HTML::style('bower/admin-lte/dist/css/AdminLTE.min.css') }}
     {{ HTML::style('bower/admin-lte/dist/css/skins/_all-skins.min.css') }}
+    {{ HTML::style('bower/toastr/toastr.min.css') }}
     {{ HTML::style('css/admin/manage.css') }}
 {{--     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> --}}

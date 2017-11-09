@@ -3,6 +3,7 @@
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
 @section('content')
+
     <div class="nastv-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">

@@ -595,3 +595,10 @@ img {
         display: none;
     }
 }
+
+.quantity {
+    width: 70px;
+    color: red;
+    background: #eeeeef;
+    text-align: center;
+}

@@ -13,8 +13,8 @@ class AdminSeeder extends Seeder
     {
         DB::table('users')->delete();
         DB::table('users')->insert([
-            'name' => 'Admin',
-            'email' => 'nguyenngocdongfa@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@123.com',
             'address' => 'Ha Noi',
             'password' => bcrypt('admin'),
             'avatar' => 'http://i.9mobi.vn/cf/images/2015/03/nkk/anh-gai-dep-13.jpg',
