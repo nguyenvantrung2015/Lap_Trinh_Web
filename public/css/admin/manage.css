@@ -18,3 +18,13 @@
 	padding-left: 55px !important;
 	padding-top: 44px !important;
 }
+
+/*edit_food*/
+
+.edit_food {
+	color:red;
+}
+
+.fix-width-edit-food {
+	width: 890px;
+}

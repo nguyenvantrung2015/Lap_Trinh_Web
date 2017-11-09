@@ -9,14 +9,16 @@ class AdminController extends Controller
 {
     public function home()
     {
-        if (Auth::check()) {
-            if (Auth::User()->level == '1') {
-                return view('admin.index2');
-            } else
-                return view('sites.home');
-        }
-        return view('sites.home');
+        // if (Auth::check()) {
+        //     if (Auth::User()->level == '1') {
+        //         return view('admin.index2');
+        //     } else
+        //         return view('sites.home');
+        // }
+        // return view('sites.home');
+        return view('admin.index2');
     }
+
 
     public function manage_food()
     {

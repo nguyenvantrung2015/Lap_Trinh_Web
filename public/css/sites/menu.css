@@ -548,6 +548,7 @@ Section Portfolio
     overflow: hidden;
     margin-bottom: 30px;
     cursor: pointer;
+    height: 265px;
 }
 
 .item-thumbs a + img {

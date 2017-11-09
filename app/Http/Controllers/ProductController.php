@@ -40,8 +40,34 @@ class ProductController extends Controller
         $food = Product::all()->where('category','=','Food');
         return Response::json($food) ;
     }
-     public function all_drink(){
+    public function all_drink(){
         $drink = Product::all()->where('category','=','Drink');
         return Response::json($drink) ;
+    }
+
+    // Food
+    public function delete_food(Request $req)
+    {
+       return Product::destroy($req->id);
+    }
+
+    public function update_food(Request $request, $id)
+    {
+        $product =Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+
+        $product->save();
+        return Response::json($product);
+    }
+
+    public function create_food(Request $request){
+        return Product::create( 
+        [   'name'=>$request->input(['name']),
+            'price'=>$request->input(['price']),
+            'description'=>$request->input(['description']),
+            'category'=>$request->input(['category']),
+        ]);
     }
 }
