@@ -500,53 +500,53 @@
     </div>
     {{--<!--//end edit information -->--}}
     {{--<!-- dialog edit password-->--}}
-    {{--<div id="modalPassword" class="modal fade" role="dialog">--}}
-        {{--<div class="modal-dialog form-edit">--}}
-            {{--<!-- Modal content-->--}}
-            {{--<div class="modal-content">--}}
-                {{--{{ Form::open([ 'route' => 'change.password', 'method' => 'post' ]) }}--}}
-                {{--<div class="modal-header">--}}
-                    {{--{{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}--}}
-                    {{--<h4 class="modal-title">{{ __('edit password') }}</h4>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body ">--}}
-                    {{--<form>--}}
-                        {{--<div class="form-group">--}}
-                            {{--{{ Form::label('old_password', __('old password')) }}--}}
-                            {{--{{ Form::password('old_password',--}}
-                                {{--[--}}
-                                {{--'class' => 'form-control',--}}
-                                {{--'placeholder' => 'old password'--}}
-                                {{--]--}}
-                            {{--) }}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                            {{--{{ Form::label('new_password', __('new password')) }}--}}
-                            {{--{{ Form::password('new_password',--}}
-                                {{--[--}}
-                                {{--'class' => 'form-control',--}}
-                                {{--'placeholder' => 'new password'--}}
-                                {{--]--}}
-                            {{--) }}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                            {{--{{ Form::label('confirm', __('confirm password')) }}--}}
-                            {{--{{ Form::password('confirm',--}}
-                                {{--[--}}
-                                {{--'class' => 'form-control',--}}
-                                {{--'placeholder' => 'confirm password'--}}
-                                {{--]--}}
-                            {{--) }}--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<button class="btn btn-success user-change-password">{{ __('change') }}</button>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--{{ Form::close() }}--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    <div id="modalPassword" class="modal fade" role="dialog">
+        <div class="modal-dialog form-edit">
+            <!-- Modal content-->
+            <div class="modal-content">
+                {{ Form::open([ 'route' => 'user.change.password', 'method' => 'post' ]) }}
+                <div class="modal-header">
+                    {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                    <h4 class="modal-title">{{ __('edit password') }}</h4>
+                </div>
+                <div class="modal-body ">
+                    <form>
+                        <div class="form-group">
+                            {{ Form::label('old_password', __('Old password:')) }}
+                            {{ Form::password('old_password',
+                                [
+                                'class' => 'form-control',
+                                'placeholder' => 'enter old password'
+                                ]
+                            ) }}
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('new_password', __('New password:')) }}
+                            {{ Form::password('new_password',
+                                [
+                                'class' => 'form-control',
+                                'placeholder' => 'enter new password'
+                                ]
+                            ) }}
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('confirm', __('Confirm password:')) }}
+                            {{ Form::password('confirm',
+                                [
+                                'class' => 'form-control',
+                                'placeholder' => 'confirm'
+                                ]
+                            ) }}
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button class="btn btn-success user-change-password">{{ __('Change') }}</button>
+                    </div>
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
     {{--<!-- //end dialog edit password-->--}}
     @include('sections.menu.footer')
 @endsection

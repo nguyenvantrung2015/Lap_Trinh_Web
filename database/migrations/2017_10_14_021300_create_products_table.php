@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
                 $table->text('description', 1000)->nullable()->default(null);
                 $table->float('rated')->nullable()->default(0);
                 $table->integer('comment')->nullable()->default(0);
-                $table->string('status')->nullable()->default(null);
+                $table->integer('status')->nullable()->default(null);
                 $table->string('avatar')->nullable()->default(null);
                 $table->timestamps();
             });
