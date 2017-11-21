@@ -17,8 +17,13 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('user/{id}', ['as' => 'user.profile', 'uses' => 'UserController@profile', 'middleware' => 'auth']);
-Route::post('user/{id}', 'UserController@editProfile')->name('user.edit');
+
+Route::get('admin', 'AdminController@admin');
+
+Route::get('user/profile/{id}', ['as' => 'user.profile', 'uses' => 'UserController@profile', 'middleware' => 'auth']);
+
+Route::post('user/edit/{id}', 'UserController@editProfile')->name('user.edit');
+
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
