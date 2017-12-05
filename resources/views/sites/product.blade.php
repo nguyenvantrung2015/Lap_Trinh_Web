@@ -51,20 +51,32 @@
                                 <div>
                                     <div class="slider-inner">
                                         <ul>
-                                            @foreach($prd_img as $pi)
-                                                <li><a class="ns-img" href="{!! $pi->image !!}"></a></li>
-                                            @endforeach
+                                            @if($prd_img->count() > 0 )
+                                                @foreach($prd_img as $pi)
+                                                        <li><a class="ns-img" href="{!! $pi->image !!}"></a></li>
+                                                @endforeach
+                                            @else
+                                                <li>
+                                                    <a class="ns-img" href="{!! asset('img/no_image.jpg') !!}"></a>
+                                                </li>
+                                            @endif
                                         </ul>
                                         <div class="fs-icon" title="Expand/Close"></div>
                                     </div>
                                     <div id="thumbnail-slider">
                                         <div class="inner">
                                             <ul>
-                                                @foreach($prd_img as $pi)
+                                                @if($prd_img->count() > 0)
+                                                    @foreach($prd_img as $pi)
+                                                        <li>
+                                                            <a class="thumb" href="{!! $pi->image !!}"></a>
+                                                        </li>
+                                                    @endforeach
+                                                @else
                                                     <li>
-                                                        <a class="thumb" href="{!! $pi->image !!}"></a>
+                                                        <a class="thumb" href="{!! asset('img/no_image.jpg') !!}"></a>
                                                     </li>
-                                                @endforeach
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -92,11 +104,17 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i class="fa fa-dollar"></i></h4>
+                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}
+                                        </span><i class="fa fa-dollar"></i>
+                                    </h4>
                                 </div>
                                 <div class="col-md-5">
                                     <span>Avability :</span>
-                                    <span style="color: red">In stock</span>
+                                    @if($prd_detail->status == 1)
+                                        <span style="color: red">In stock</span>
+                                    @else
+                                        <span style="color: red">Out stock</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row">
