@@ -35,16 +35,13 @@ class UserController extends Controller
     public function profile(Request $request)
     {
         $users = User::find($request->id);
-        $order = $this->order->where('user_id', '=', $users->id)
-            ->orderBy('id','desc')->first();
-        $orderDetail = $this->orderDetail->first();
-        $productDetail = $this->product->where('id', '=', $orderDetail->product_id)
-            ->first();
+        // $order = $this->order->where('user_id', '=', $users->id)
+        //     ->orderBy('id','desc')->get();
+        // // $orderDetail = $this->orderDetail->first();
+        // // $productDetail = $this->product->where('id', '=', $orderDetail->product_id)
+        // //     ->first();
         return view('sites.user.user_profile', compact(
-            'users',
-            'orderDetail',
-            'productDetail',
-            'order'
+            'users'
         ));
     }
 

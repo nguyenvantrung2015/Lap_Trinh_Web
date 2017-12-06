@@ -1,6 +1,8 @@
 @extends('admin.layout.master')
 @section('style')
 {{ HTML::style('bower/datatables.net-bs/css/dataTables.bootstrap.min.css') }}
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
 @endsection
 
 @section('content')
@@ -21,7 +23,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">
-                            <div class="btn btn-success"@click="show_create">CREATE</div>
+                            <div class="btn btn-success" @click="show_create">CREATE</div>
                         </h3>
                     </div>
                     <div class="box-body">
@@ -38,11 +40,15 @@
                             <tbody>
                                 <tr v-for="food in foods">
                                     <td class="table_food">@{{ food.id }}</td>
-                                    <td><img v-bind:src="food.avatar" class="fix-img">
+                                    <td><img v-bind:src="url+food.avatar" class="fix-img">
                                         @{{ food.name }}
                                     </td>
-                                    <td class="table_food">@{{ food.price }}</td>
-                                    <td class="table_food">@{{food.status }}</td>
+                                    <td class="table_food">
+                                    <span id="element">
+                                        @{{ food.price | currency('',0)}}<sup><ins>đ</ins></sup>
+                                    </span>
+                                    </td>
+                                    <td class="table_food">@{{ food.status }}</td>
                                     <td class="table_food">
                                         <a href="javascript:void(0)" @click="edit_food(food)">
                                             <i class="fa fa-pencil-square-o fa-2x " aria-hidden="true"></i>
@@ -154,7 +160,6 @@
 
 </div>
 @endsection
-
 @section('script')
 {{ HTML::script('bower/datatables.net/js/jquery.dataTables.min.js') }}
 {{ HTML::script('bower/datatables.net-bs/js/dataTables.bootstrap.min.js') }}
@@ -169,8 +174,8 @@
             'ordering'    : true,
             'info'        : true,
             'autoWidth'   : false
-        })
-    })
+        });
+    });
 </script>
 {{ HTML::script('js/admin/manage_food.js') }}
 @endsection

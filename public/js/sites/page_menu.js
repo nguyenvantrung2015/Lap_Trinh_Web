@@ -7,6 +7,7 @@ new Vue	({
 		last_page_drink:0,
 		current_page_food:1,
 		current_page_drink:1,
+		url:"http://localhost:8000/img/"
 
 	},
 	mounted :function(){

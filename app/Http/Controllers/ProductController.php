@@ -29,19 +29,13 @@ class ProductController extends Controller
 
         return view('sites.product', compact('prd_id', 'prd_detail', 'prd_img', 'prd_similar'));
     }
-
-    public function getdata_food()
-    {
-        $food = Product::where('category', '=', 'Food')->paginate(8);
-
-        return Response::json($food);
+    public function getdata_food(){
+        $food = Product::where('category','=','Food')->paginate(12);
+        return Response::json($food) ;
     }
-
-    public function getdata_drink()
-    {
-        $drink = Product::where('category', '=', 'Drink')->paginate(8);
-
-        return Response::json($drink);
+    public function getdata_drink(){
+        $drink = Product::where('category','=','Drink')->paginate(12);
+        return Response::json($drink) ;
     }
 
     public function all_food()

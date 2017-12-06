@@ -1,9 +1,13 @@
+Vue.filter('currency', function (value) {
+        return (value/1000).toFixed(3)
+});
 var manage_food = new Vue	({
 	el:'#manage_food',
 	data : {
 		foods:[],
 		item_food:{'name':'','price':'','description':'',},
 		new_food:{'name':'','price':'','description':'','category':'',},
+        url:"http://localhost:8000/img/",
 	},
 	computed: {
 	},

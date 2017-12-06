@@ -65,7 +65,7 @@
                             <tr>
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
-                                        <a href={{route('product.detail',$product->id)}}> <img class="media-object" src={{$product->avatar}}>
+                                        <a href={{route('product.detail',$product->id)}}> <img class="media-object" src="../img/{{$product->avatar}}">
                                         </a>
                                         <div class="media-body">
                                             <h4 class="media-heading"><a href={{route('product.detail',$product->id)}}>{{$product->name}}</a></h4>
@@ -77,10 +77,14 @@
                                     </div>
                                 </td>
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="number" class="form-control qty" id="exampleInputEmail1" value={{$product->quantity}}>
+                                    <input type="number" class="qty" name="qty" value={{$product->quantity}}>
                                 </td>
-                                <td class="col-sm-1 col-md-1 text-center"><span>${{$product->price}}</span></td>
-                                <td class="col-sm-1 col-md-1 text-center"><span>1234</span> </td>
+                                <td class="col-sm-1 col-md-1 text-center">
+                                    <span class="price" >${{$product->price}}</span>
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center">
+                                   <span id="amount" class="amount">0</span>
+                                </td>
                                 <td class="col-sm-1 col-md-1">
                                     <a class="remove" href={{route('deleteCart',$product->id)}}
                                        onclick="bootbox.confirm();">
@@ -164,6 +168,28 @@
                 },
             });
         });
+        function calculator() {
+        var amt = $('.amount'),
+            tot = $('#total');
+            console.log(amt);
+        amt.text(function () {
+            var tr = $(this).closest('tr');
+            var qty = tr.find('.qty').val();
+            var price = $('.price').text().substr(1);
+            return parseFloat(qty) * parseFloat(price);
+        });
+        tot.text(function () {
+            var sum = 0;
+            amt.each(function () {
+                sum += parseFloat($(this).text())
+            });
+            console.log(sum);
+            return sum;
+        });
+    }
+        calculator();
+        $('.qty,.price').change(calculator);
+        
     </script>
 @endsection
 

@@ -2,6 +2,7 @@
 @section('style')
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
+{{ HTML::style('css/sites/search-list.css') }}
 @section('content')
 
     <div class="nastv-icon">
@@ -48,22 +49,41 @@
                         <h2 class="title">Show Food </h2>
                         <h3 class="title-description">Check Out Our Projects on <a href="#">Dribbble</a>.</h3>
                     </div>
+                    <div id='cssmenu'>
+                        <ul>
+                            <li class='active has-sub'><a href='#'><span>Products</span></a>
+                                <ul>
+                                    <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                                        <ul>
+                                            <li><a href='#'><span>Sub Product</span></a></li>
+                                            <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                                        <ul>
+                                            <li><a href='#'><span>Sub Product</span></a></li>
+                                            <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="row fix-height-menu">
                 <section id="projects">
                     <ul id="thumbs">
                         <li v-for="food in foods" class="item-thumbs span3 design">
-                            <h1><span class="name-product">
-                            @{{ food.name }}
-                            </span><span class="price-product">$@{{food.price}}</span></h1>
+                            <h1 class="name-product">@{{ food.name }}</h1>
+                            <h3 class="price-product text-right">$@{{food.price | currency('',0)}} <sup>đ</sup></h3>
                             <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+food.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img v-bind:src="food.avatar">
+                            <img v-bind:src="url+food.avatar" alt="">
                         </li>
                     </ul>
                 </section>
@@ -103,16 +123,15 @@
                 <section id="projects">
                     <ul id="thumbs">
                         <li v-for="drink in drinks" class="item-thumbs span3 design">
-                            <h1><span class="name-product">
-                            @{{ drink.name }}
-                            </span><span class="price-product">$@{{drink.price}}</span></h1>
+                            <h1 class="name-product">@{{ drink.name }}</h1>
+                            <h3 class="price-product text-right">$@{{drink.price| currency('',0)}} <sup>đ</sup></h3>
                             <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+drink.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img v-bind:src="drink.avatar">
+                            <img v-bind:src="url+drink.avatar">
                         </li>
                     </ul>
                 </section>

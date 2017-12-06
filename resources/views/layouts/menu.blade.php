@@ -25,6 +25,7 @@
     {{ HTML::script('bower/bootstrap/dist/js/bootstrap.js') }}
     {{ HTML::script('bower/owl.carousel/dist/owl.carousel.min.js') }}
     {{ HTML::script('js/sites/menu.js') }}
+    {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
     <script>
         $(document).ready(function () {
             $('#logout-1').on('click', function () {

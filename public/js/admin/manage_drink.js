@@ -2,6 +2,7 @@ var manage_drink = new Vue	({
 	el:'#manage_drink',
 	data : {
 		drinks:[],
+		url:"http://localhost:8000/img/",
 	},
 	computed: {
 	},

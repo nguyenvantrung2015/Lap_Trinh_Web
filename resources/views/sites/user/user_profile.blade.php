@@ -99,118 +99,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="items">
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button type="button" class="update btn btn-warning btn-sm">Huy</button>
-                                        </td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                
                                 </tbody>
                             </table>
                             <hr>
@@ -236,58 +125,12 @@
                                 </tr>
                                 </thead>
                                 <tbody id="items">
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">{!! $order->create_at !!}</td>
-                                        <td class="text-center">{!! $productDetail->name !!}</td>
-                                        <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                        <td class="text-center">{!! $productDetail->price !!}</td>
-                                        <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                        <td>
-                                            <button data-toggle="collapse" data-target="#demo1"
-                                                    class="accordion-toggle btn btn-default btn-xs">
-                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tbody>
                             </table>
                             <hr>
@@ -313,77 +156,12 @@
                                 </tr>
                                 </thead>
                                 <tbody id="items">
-                                <tr>
-                                    <td class="text-center">{!! $order->create_at !!}</td>
-                                    <td class="text-center">{!! $productDetail->name !!}</td>
-                                    <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                    <td class="text-center">{!! $productDetail->price !!}</td>
-                                    <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                    <td>
-                                        <button type="button" class="update btn btn-warning btn-sm">Đặt Lại</button>
-                                    </td>
-                                    <td>
-                                        <button data-toggle="collapse" data-target="#demo1"
-                                                class="accordion-toggle btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">{!! $order->create_at !!}</td>
-                                    <td class="text-center">{!! $productDetail->name !!}</td>
-                                    <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                    <td class="text-center">{!! $productDetail->price !!}</td>
-                                    <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                    <td>
-                                        <button type="button" class="update btn btn-warning btn-sm">Đặt Lại</button>
-                                    </td>
-                                    <td>
-                                        <button data-toggle="collapse" data-target="#demo1"
-                                                class="accordion-toggle btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">{!! $order->create_at !!}</td>
-                                    <td class="text-center">{!! $productDetail->name !!}</td>
-                                    <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                    <td class="text-center">{!! $productDetail->price !!}</td>
-                                    <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                    <td>
-                                        <button type="button" class="update btn btn-warning btn-sm">Đặt Lại</button>
-                                    </td>
-                                    <td>
-                                        <button data-toggle="collapse" data-target="#demo1"
-                                                class="accordion-toggle btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">{!! $order->create_at !!}</td>
-                                    <td class="text-center">{!! $productDetail->name !!}</td>
-                                    <td class="text-center">{!! $orderDetail->quantity !!}</td>
-                                    <td class="text-center">{!! $productDetail->price !!}</td>
-                                    <td class="text-center">{!! $productDetail->price*$orderDetail->quantity !!}</td>
-                                    <td>
-                                        <button type="button" class="update btn btn-warning btn-sm">Đặt Lại</button>
-                                    </td>
-                                    <td>
-                                        <button data-toggle="collapse" data-target="#demo1"
-                                                class="accordion-toggle btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="12" class="hiddenRow">
-                                        <div class="accordian-body collapse" id="demo1">
-
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tbody>
                             </table>
                             <hr>
@@ -442,8 +220,6 @@
             </div>
         </div>
     </div>
-    <!-- //end dialog edit avatar-->
-    {{--<!-- dialog edit information-->--}}
     <div id="modalProfile" class="modal fade" role="dialog">
         <div class="modal-dialog form-edit">
             <!-- Modal content-->
@@ -498,8 +274,6 @@
             </div>
         </div>
     </div>
-    {{--<!--//end edit information -->--}}
-    {{--<!-- dialog edit password-->--}}
     <div id="modalPassword" class="modal fade" role="dialog">
         <div class="modal-dialog form-edit">
             <!-- Modal content-->
