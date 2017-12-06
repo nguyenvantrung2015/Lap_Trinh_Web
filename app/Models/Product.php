@@ -32,4 +32,9 @@ class Product extends Model
     {
         return $this->hasMany(Gallery::class);
     }
+
+    function cart()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
 }
