@@ -51,20 +51,32 @@
                                 <div>
                                     <div class="slider-inner">
                                         <ul>
-                                            @foreach($prd_img as $pi)
-                                                <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
-                                            @endforeach
+                                            @if($prd_img->count() > 0 )
+                                                @foreach($prd_img as $pi)
+                                                        <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
+                                                @endforeach
+                                            @else
+                                                <li>
+                                                    <a class="ns-img" href="{!! asset('img/no_image.jpg') !!}"></a>
+                                                </li>
+                                            @endif
                                         </ul>
                                         <div class="fs-icon" title="Expand/Close"></div>
                                     </div>
                                     <div id="thumbnail-slider">
                                         <div class="inner">
                                             <ul>
-                                                @foreach($prd_img as $pi)
+                                                @if($prd_img->count() > 0)
+                                                    @foreach($prd_img as $pi)
+                                                        <li>
+                                                            <a class="thumb" href="../img/{!! $pi->image !!}"></a>
+                                                        </li>
+                                                    @endforeach
+                                                @else
                                                     <li>
-                                                        <a class="thumb" href="../img/{!! $pi->image !!}"></a>
+                                                        <a class="thumb" href="../img/{!! asset('img/no_image.jpg') !!}"></a>
                                                     </li>
-                                                @endforeach
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -92,31 +104,46 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i class="fa fa-dollar"></i></h4>
+                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i
+                                                class="fa fa-dollar"></i></h4>
                                 </div>
                                 <div class="col-md-5">
                                     <span>Avability :</span>
-                                    <span style="color: red">In stock</span>
+                                    @if($prd_detail->status == 1)
+                                        <span style="color: red">In stock</span>
+                                    @else
+                                        <span style="color: red">Out stock</span>
+                                    @endif
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-2" 
-                                style="padding-left: -10px">
-                                    <p>Quantity</p> 
+                            <form action="{{route('addToCart',Auth::user()->id)}}" method="POST">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-md-2"
+                                         style="padding-left: -10px">
+                                        <p>Quantity</p>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input type="number" class="quantity" name="quantity" min="1" value="1">
+                                    </div>
                                 </div>
-                                <div class="col-md-1">
-                                    <input type="number" class="quantity" name="number_product" min = "1" value="1">
+                                <div class="row">
+                                    <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product!
+                                        <strong>(87
+                                            votes)</strong></p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                            </div>
-                            <div class="row">
-                                <div class="action">
-                                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                                    <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                <input type="hidden" name="product_id" value={{$prd_id}}>
+                                <div class="row">
+                                    <div class="action">
+                                        <button class="add-to-cart btn btn-default" type="submit">add to cart
+                                        </button>
+
+                                        <button class="like btn btn-default" type="button"><span
+                                                    class="fa fa-heart"></span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
