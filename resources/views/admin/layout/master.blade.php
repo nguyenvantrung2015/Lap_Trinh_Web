@@ -524,6 +524,7 @@
     {{ HTML::script('bower/jquery-slimscroll/jquery.slimscroll.min.js') }}
     {{ HTML::script('bower/chart.js/Chart.js') }}
     {{ HTML::script('bower/admin-lte/dist/js/demo.js') }}
+    {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
     @yield('script')
 </body>
 </html>

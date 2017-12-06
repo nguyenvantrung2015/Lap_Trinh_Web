@@ -29,11 +29,11 @@ class ProductController extends Controller
     }
 
     public function getdata_food(){
-        $food = Product::where('category','=','Food')->paginate(8);
+        $food = Product::where('category','=','Food')->paginate(12);
         return Response::json($food) ;
     }
     public function getdata_drink(){
-        $drink = Product::where('category','=','Drink')->paginate(8);
+        $drink = Product::where('category','=','Drink')->paginate(12);
         return Response::json($drink) ;
     }
      public function all_food(){

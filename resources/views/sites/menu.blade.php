@@ -76,14 +76,14 @@
                     <ul id="thumbs">
                         <li v-for="food in foods" class="item-thumbs span3 design">
                             <h1 class="name-product">@{{ food.name }}</h1>
-                            <h3 class="price-product">$@{{food.price}}</h3>
+                            <h3 class="price-product text-right">$@{{food.price | currency('',0)}} <sup>đ</sup></h3>
                             <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+food.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img v-bind:src="food.avatar">
+                            <img v-bind:src="url+food.avatar" alt="">
                         </li>
                     </ul>
                 </section>
@@ -124,14 +124,14 @@
                     <ul id="thumbs">
                         <li v-for="drink in drinks" class="item-thumbs span3 design">
                             <h1 class="name-product">@{{ drink.name }}</h1>
-                            <h3 class="price-product">$@{{drink.price}}</h3>
+                            <h3 class="price-product text-right">$@{{drink.price| currency('',0)}} <sup>đ</sup></h3>
                             <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+drink.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
                             </span>
                             </a>
-                            <img v-bind:src="drink.avatar">
+                            <img v-bind:src="url+drink.avatar">
                         </li>
                     </ul>
                 </section>

@@ -52,7 +52,7 @@
                                     <div class="slider-inner">
                                         <ul>
                                             @foreach($prd_img as $pi)
-                                                <li><a class="ns-img" href="{!! $pi->image !!}"></a></li>
+                                                <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
                                             @endforeach
                                         </ul>
                                         <div class="fs-icon" title="Expand/Close"></div>
@@ -62,7 +62,7 @@
                                             <ul>
                                                 @foreach($prd_img as $pi)
                                                     <li>
-                                                        <a class="thumb" href="{!! $pi->image !!}"></a>
+                                                        <a class="thumb" href="../img/{!! $pi->image !!}"></a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -135,7 +135,7 @@
                         @foreach($prd_similar as $ps)
                             <div class="col-md-3 col-xs-2">
                                 <a href="{{ route('product.detail', [ 'id' => $ps->id ]) }}">
-                                    <img src="{!! $ps->avatar !!}">
+                                    <img src="../img/{!! $ps->avatar !!}">
                                     <h3>{!! $ps->name !!}</h3>
                                 </a>
                             </div>

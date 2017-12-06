@@ -36,7 +36,7 @@
                                 <tbody>
                                     <tr v-for="drink in drinks">
                                         <td class="table_drink">@{{ drink.id }}</td>
-                                        <td><img v-bind:src="drink.avatar" class="fix-img">
+                                        <td><img v-bind:src="url+drink.avatar" class="fix-img">
                                         @{{ drink.name }}
                                         </td>
                                         <td class="table_drink">@{{ drink.price }}</td>
