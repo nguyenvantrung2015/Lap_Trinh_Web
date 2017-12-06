@@ -104,9 +104,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}
-                                        </span><i class="fa fa-dollar"></i>
-                                    </h4>
+                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i
+                                                class="fa fa-dollar"></i></h4>
                                 </div>
                                 <div class="col-md-5">
                                     <span>Avability :</span>
@@ -117,24 +116,34 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-2" 
-                                style="padding-left: -10px">
-                                    <p>Quantity</p> 
+                            <form action="{{route('addToCart',Auth::user()->id)}}" method="POST">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-md-2"
+                                         style="padding-left: -10px">
+                                        <p>Quantity</p>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input type="number" class="quantity" name="quantity" min="1" value="1">
+                                    </div>
                                 </div>
-                                <div class="col-md-1">
-                                    <input type="number" class="quantity" name="number_product" min = "1" value="1">
+                                <div class="row">
+                                    <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product!
+                                        <strong>(87
+                                            votes)</strong></p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                            </div>
-                            <div class="row">
-                                <div class="action">
-                                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                                    <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                <input type="hidden" name="product_id" value={{$prd_id}}>
+                                <div class="row">
+                                    <div class="action">
+                                        <button class="add-to-cart btn btn-default" type="submit">add to cart
+                                        </button>
+
+                                        <button class="like btn btn-default" type="button"><span
+                                                    class="fa fa-heart"></span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Http\Request;
-
 Route::get('/menu', 'MenuController@index')->name('menu');
 Auth::routes();
 Route::get('/', 'HomeController@index');
@@ -28,7 +26,12 @@ Route::post('user/editProfile', 'UserController@editProfile')->name('user.edit.p
 
 Route::post('user/changePassword', 'UserController@changePassword')->name('user.change.password');
 
+Route::get('cart/{id}', ['as' => 'showCart', 'uses' => 'PagesController@showCart', 'middleware' => 'auth']);
+
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
+Route::post('product/{id}', ['as' => 'addToCart', 'uses' => 'PagesController@addToCart', 'middleware' => 'auth']);
+
+Route::get('delete/{id}', ['as' => 'deleteCart', 'uses' => 'PagesController@deleteCart']);
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
@@ -40,9 +43,9 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::get('all_foods', 'ProductController@all_food');
     Route::get('all_drinks', 'ProductController@all_drink');
     // food
-    Route::get('delete_food/{id}','ProductController@delete_food');
-    Route::post('update_food/{id}','ProductController@update_food');
-    Route::post('create_food','ProductController@create_food');
+    Route::get('delete_food/{id}', 'ProductController@delete_food');
+    Route::post('update_food/{id}', 'ProductController@update_food');
+    Route::post('create_food', 'ProductController@create_food');
     // drink
 });
 // Admin
