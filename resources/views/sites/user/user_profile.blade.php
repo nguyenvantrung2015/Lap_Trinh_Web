@@ -9,13 +9,11 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if(Auth::user()->level == 1)
-                    <li><a class="active" href="#">ADMIN</a></li>
+                    <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                 @endif
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('menu')}}">Menu</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{route('showCart')}}">Your Cart</a></li>
                 <li><a class="active" href="#">Profile</a></li>
                 <li>
                     <a href="javascript:void(0)" id="logout-1">
@@ -37,7 +35,7 @@
                     @if((Auth::user()->avatar) != null)
                         <img src="{!! url(Auth::user()->avatar) !!}" class="img-responsive"/>
                     @else
-                        <img src="{!! asset('/img/avata.png') !!}" class ="img-responsive"/>
+                        <img src="{!! asset('/img/avata.png') !!}" class="img-responsive"/>
                     @endif
                     <div class="edit-icon">
                         <a data-toggle="modal" data-target="#modalAvatar">
@@ -89,17 +87,17 @@
                         <div class="table-responsive status-order">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
-                                        <th class="text-center weight-title">Thời gian</th>
-                                        <th class="text-center weight-title">Tên hàng</th>
-                                        <th class="text-center weight-title">Số lượng</th>
-                                        <th class="text-center weight-title">Đơn giá</th>
-                                        <th class="text-center weight-title">Thành tiền</th>
-                                        <th class="text-center weight-title" colspan="2">Action </th>
-                                    </tr>
+                                <tr>
+                                    <th class="text-center weight-title">Thời gian</th>
+                                    <th class="text-center weight-title">Tên hàng</th>
+                                    <th class="text-center weight-title">Số lượng</th>
+                                    <th class="text-center weight-title">Đơn giá</th>
+                                    <th class="text-center weight-title">Thành tiền</th>
+                                    <th class="text-center weight-title" colspan="2">Action</th>
+                                </tr>
                                 </thead>
                                 <tbody id="items">
-                                
+
                                 </tbody>
                             </table>
                             <hr>
@@ -121,16 +119,16 @@
                                     <th class="text-center weight-title">Số lượng</th>
                                     <th class="text-center weight-title">Đơn giá</th>
                                     <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action </th>
+                                    <th class="text-center weight-title" colspan="2">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="items">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                             <hr>
@@ -152,16 +150,16 @@
                                     <th class="text-center weight-title">Số lượng</th>
                                     <th class="text-center weight-title">Đơn giá</th>
                                     <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action </th>
+                                    <th class="text-center weight-title" colspan="2">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="items">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                             <hr>

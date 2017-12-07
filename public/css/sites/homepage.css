@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, label, p {
 
 .logo h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -40,13 +40,9 @@ h1, h2, h3, h4, h5, h6, label, p {
     text-decoration: none;
 }
 
-.logo a img {
-    margin: 0px 4px;
-}
-
 .nav-icon {
     float: right;
-    margin-top: 1.5em;
+    margin-top: 2.5em;
 }
 
 i.glyphicon.glyphicon-menu-hamburger {
@@ -125,7 +121,7 @@ body {
     display: block;
     margin: 20px auto;
     width: 30%;
-    background-color: rgb(66, 49, 26);
+    background-color: rgba(66, 49, 26,0.9);
     padding: 15px;
     display: block;
     opacity: 0;
@@ -200,7 +196,7 @@ body {
 /*--banner--*/
 .banner {
     text-align: center;
-    margin-top: 1em;
+    margin-top: 10% !important;
 }
 
 .banner h4 {
@@ -208,7 +204,7 @@ body {
     font-size: 3em;
     border: 2px solid #fff;
     padding: 1em;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     font-weight: 700;
     font-family: 'Raleway', sans-serif;
@@ -220,6 +216,14 @@ body {
     text-transform: uppercase;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: white !important;
+}
+
 .banner label {
     width: 78px;
     height: 2px;
@@ -228,20 +232,12 @@ body {
 }
 
 .down {
-    margin-top: 8em;
+    margin-top: 5em;
     display: block;
-}
-
-.logo img {
-    width: 22%;
 }
 
 .logo h3 {
     font-family: abril fatface;
-}
-
-.logo a {
-    margin-left: 15px;
 }
 
 .img-responsive {
@@ -262,4 +258,13 @@ body {
     text-align: center;
     font-family: "Merriweather", serif;
     text-transform: capitalize;
+}
+
+#fh5co-container {
+    background: whitesmoke !important;
+}
+
+.flexslider{
+    background: whitesmoke !important;
+    border: whitesmoke !important;
 }

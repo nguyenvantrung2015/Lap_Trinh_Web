@@ -1,5 +1,6 @@
 @extends('layouts.menu')
 @section('style')
+    <title>Menu</title>
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
 {{ HTML::style('css/sites/search-list.css') }}
@@ -12,21 +13,16 @@
                 @if (Auth::guest())
                     <li><a href="{{route('home')}}">Home</a></li>
                     <li><a class="active" href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
                     <h3>Hello {{Auth::user()->name}}</h3>
                     @if(Auth::user()->level == 1)
-                        <li><a class="active" href="#">ADMIN</a></li>
+                        <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                     @endif
-                    <li><a class="active" href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a class="active" href="{{route('menu')}}">Menu</a></li>
+                    <li><a href="{{route('showCart')}}">Your Cart</a></li>
                     <li><a href="{{route('user.profile',Auth::user()->id)}}">Profile</a></li>
                     <li>
                         <a href="javascript:void(0)" id="logout-1">
@@ -47,7 +43,6 @@
                 <div class="span12">
                     <div class="title-page">
                         <h2 class="title">Show Food </h2>
-                        <h3 class="title-description">Check Out Our Projects on <a href="#">Dribbble</a>.</h3>
                     </div>
                     <div id='cssmenu'>
                         <ul>
@@ -125,7 +120,7 @@
                         <li v-for="drink in drinks" class="item-thumbs span3 design">
                             <h1 class="name-product">@{{ drink.name }}</h1>
                             <h3 class="price-product text-right">$@{{drink.price| currency('',0)}} <sup>đ</sup></h3>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+drink.id">
+                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://../product/'+drink.id">
                                 <span class="overlay-img"></span>
                                 <span class="overlay-img-thumb btn_mua">
                                 <div class="btn"><b>Mua Ngay</b></div>
