@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('cart', ['as' => 'showCart', 'uses' => 'PagesController@showCart']);
     Route::post('product/{id}', ['as' => 'addToCart', 'uses' => 'PagesController@addToCart']);
     Route::get('delete/{id}', ['as' => 'deleteCart', 'uses' => 'PagesController@deleteCart']);
+    Route::get('cart/checkout', 'PagesController@checkout')->name('checkout');
 });
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
@@ -53,4 +54,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('manage_drink', 'AdminController@manage_drink')->name('manage_drink');
     Route::get('manage_customer', 'AdminController@manage_customer');
 });
-

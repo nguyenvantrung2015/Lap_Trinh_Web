@@ -1,8 +1,10 @@
 @extends('layouts.menu')
 @section('style')
+    <title>Cart</title>
+    {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
+    {{ HTML::style('css/sites/cart.css') }}
 @endsection
-{{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
-{{ HTML::style('css/sites/cart.css') }}
+
 @section('content')
 
     <div class="nastv-icon">
@@ -11,7 +13,7 @@
             <ul class="toggle-menu">
                 <h3>Hello {{Auth::user()->name}}</h3>
                 @if(Auth::user()->level == 1)
-                    <li><a href="#">ADMIN</a></li>
+                    <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                 @endif
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('menu')}}">Menu</a></li>
@@ -31,8 +33,8 @@
     </div>
 
     @include('sections.menu.header')
-    <div style="min-height: 74%">
-        @if($count == 0)
+    <div style="min-height: 544px">
+        @if(Auth::user()->cart == 0)
             <div class="cart-header">
                 <label id="title">Your Shopping Cart</label>
             </div>
@@ -53,7 +55,7 @@
                                 <th class="product-col">Product</th>
                                 <th>Quantity</th>
                                 <th class="text-center">Price</th>
-                                <th class="text-center">Total</th>
+                                <th class="text-center">Subtotal</th>
                                 <th> </th>
                             </tr>
                             </thead>
@@ -84,13 +86,14 @@
                                         <span class="price">${{$product->price}}</span>
                                     </td>
                                     <td class="col-sm-1 col-md-1 text-center">
-                                        <span id="amount" class="amount">0</span>
+                                        $<span id="amount" class="amount">0</span>
                                     </td>
                                     <td class="col-sm-1 col-md-1">
 
 
                                         <a class="remove" href={{route('deleteCart',$product->id)}}
                                                 onclick="bootbox.confirm();">
+                                            {{--product->id == cart->id,product->product_id=product->id--}}
                                             <button data-bb-handler="cancel" type="button" class="btn btn-danger"><i
                                                         class="fa fa-times" style="margin-right: 10px"></i>Remove
                                             </button>
@@ -98,31 +101,37 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <a href="{{route('menu')}}">
+                                        <button type="button" class="btn btn-warning"
+                                                style="font-size: 18px !important;float: left;">
+                                            <i class="fa fa-angle-left"></i>
+                                            Continue Shopping
+                                        </button>
+                                    </a>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
 
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
+                                    <h3><strong>Total : </strong></h3>
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
+                                    <h3><strong>$<span id="total" class="total"></span></strong></h3>
+                                </td>
+                                <td class="col-sm-1 col-md-1">
+                                    <a href="{{route('checkout')}}">
+                                        <button type="button" class="btn btn-success"
+                                                style="font-size: 18px !important;padding: 5px !important;float: right; margin-right: 15%;">
+                                            Checkout <i class="fa fa-angle-right"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-
-            <div class="cart">
-                <div class="ttl" style="width: 20%;margin-top: 2.5%;">
-                    <h3><strong>Total : </strong></h3>
-                </div>
-                <div class="ttl" style="width: 20%;margin-top: 2.5%;">
-                    <h3><strong>$<span id="total" class="total"></span></strong></h3>
-                </div>
-                <div class="ttl" style="width: 50%">
-                    <a href={{route('menu')}}>
-                        <button type="button" class="btn btn-default"
-                                style="font-size: 18px !important;float: left;margin-left: 27%">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button>
-                        <button type="button" class="btn btn-success"
-                                style="font-size: 18px !important;padding: 5px !important;float: right; margin-right: 15%;">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button>
-                    </a>
                 </div>
             </div>
         @endif
