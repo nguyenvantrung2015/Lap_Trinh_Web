@@ -116,7 +116,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <form action="{{route('addToCart',Auth::user()->id)}}" method="POST">
+                            <form action="{{route('addToCart',$prd_id)}}" method="POST">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-2"
@@ -132,7 +132,6 @@
                                         <strong>(87
                                             votes)</strong></p>
                                 </div>
-                                <input type="hidden" name="product_id" value={{$prd_id}}>
                                 <div class="row">
                                     <div class="action">
                                         <button class="add-to-cart btn btn-default" type="submit">add to cart

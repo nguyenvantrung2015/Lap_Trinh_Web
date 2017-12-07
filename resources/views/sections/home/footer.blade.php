@@ -1,7 +1,7 @@
-<div id="fh5co-footer">
+<div id="fh5co-footer" style="padding: 5px !important;">
     <div class="container">
-        <div class="row row-padded">
-            <div class="col-md-12 text-center">
+        <div class="row row-padded" style="padding-bottom: 0px !important;">
+            <div class="col-md-12 text-center" style="font-size: 17px !important;">
                 <p class="to-animate">
                 <br> 
                 “Cooking is an art, but all art requires knowing something about the techniques and materials”
