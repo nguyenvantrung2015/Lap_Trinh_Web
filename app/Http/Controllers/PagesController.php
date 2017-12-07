@@ -11,10 +11,12 @@ class PagesController extends Controller
 {
     public function showCart()
     {
+        $user = Auth::user();
         $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->distinct()->get();
-        $count = $products->count();
+        $user->cart = $products->count();
+        $user->save();
 
-        return view('sites.cart', compact('products', 'count'));
+        return view('sites.cart', compact('products'));
     }
 
     public function addToCart(Request $request)
@@ -31,6 +33,9 @@ class PagesController extends Controller
             $cart->product_id = $request->id;
             $cart->quantity = $request->quantity;
             $cart->save();
+            $user = Auth::user();
+            $user->cart += 1;
+            $user->save();
         }
 
         return redirect(route('showCart'));
@@ -38,9 +43,16 @@ class PagesController extends Controller
 
     public function deleteCart(Request $request)
     {
-        $cart = Cart::where('product_id', '=', $request->id)->first();
-        Cart::destroy($cart->id);
+        Cart::destroy($request->id);
+        $user = Auth::user();
+        $user->cart -= 1;
+        $user->save();
 
         return redirect(route('showCart'));
+    }
+
+    public function checkout()
+    {
+        return view('sites.checkout');
     }
 }
