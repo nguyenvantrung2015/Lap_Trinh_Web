@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Food & Drink </title>
+    <title>Foodee</title>
     {{HTML::style('bower/bootstrap/dist/css/bootstrap.min.css')}}
     <script src="//code.jquery.com/jquery.js"></script>
     {{HTML::style('bower/bootstrap/dist/js/bootstrap.min.js')}}
