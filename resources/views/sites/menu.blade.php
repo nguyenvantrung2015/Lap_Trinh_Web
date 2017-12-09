@@ -20,8 +20,8 @@
                     @if(Auth::user()->level == 1)
                         <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                     @endif
-                    <li><a class="active" href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('menu')}}">Menu</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a class="active" href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{route('showCart')}}">Your Cart</a></li>
                     <li><a href="{{route('user.profile',Auth::user()->id)}}">Profile</a></li>
                     <li>
@@ -39,30 +39,6 @@
     @include('sections.menu.header')
     <div id="work" class="page">
         <div class="container">
-            {{--<div class="footer" id="footer-sub">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="row" id="sub-two">--}}
-                        {{--<div class="col-md-4">--}}
-                            {{--<div class="vertical-line text-center">--}}
-                                {{--<span class="glyphicon glyphicon-map-marker"></span>--}}
-                                {{--<h4>TRACK YOUR ORDER</h4>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-4">--}}
-                            {{--<div class="vertical-line text-center">--}}
-                                {{--<span class="glyphicon glyphicon-refresh"></span>--}}
-                                {{--<h4>FREE & EASY RETURNS</h4>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-4">--}}
-                            {{--<div class="text-center">--}}
-                                {{--<span class="glyphicon glyphicon-remove-circle"></span>--}}
-                                {{--<h4>ONLINE CANCELLATIONS</h4>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
             <div class="row">
                 <div class="span12">
                     <div class="title-page">

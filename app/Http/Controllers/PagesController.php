@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -53,6 +54,53 @@ class PagesController extends Controller
 
     public function checkout()
     {
-        return view('sites.checkout');
+        $user = Auth::user();
+        $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->distinct()->get();
+
+        return view('sites.checkout', compact('user', 'products'));
+    }
+
+    public function saveCart(Request $request)
+    {
+        $i = 0;
+        $carts = Cart::orderBy('created_at', 'asc')->get();
+        $count = Auth::user()->cart;
+        foreach ($carts as $cart) {
+            $cart->quantity = $_POST["qty"][ $i++ ];
+            if ($cart->quantity == 0) {
+                Cart::destroy($cart->id);
+                $user = Auth::user();
+                $user->cart -= 1;
+                $user->save();
+            }
+            else {
+                $cart->save();
+            }
+        }
+
+        return redirect(route('checkout'));
+    }
+
+    public function thankyou()
+    {
+        return view('sites.thankyou');
+    }
+
+    public function checkoutSubmit(Request $request)
+    {
+        $user = Auth::user();
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->product_count = $user->cart;
+        $order->sum = $request->sum;
+        $order->save();
+        $user->cart = 0;
+        $user->save();
+        $carts = Cart::where('user_id', '=', $user->id)->get();
+        foreach ($carts as $cart) {
+            Cart::destroy($cart->id);
+        }
+
+        return redirect(route('thankyou'));
     }
 }

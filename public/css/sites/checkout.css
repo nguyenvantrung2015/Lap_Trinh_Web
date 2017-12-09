@@ -2,6 +2,10 @@ html, body, .wrapper {
     background: #f7f7f7;
 }
 
+body {
+    font-family: "Playfair Display", serif !important;
+}
+
 .steps {
     margin-top: -41px;
     display: inline-block;
@@ -86,7 +90,7 @@ html, body, .wrapper {
     -webkit-box-shadow: 0 0 7px #9acc9a !important;
     -moz-box-shadow: 0 0 7px #9acc9a !important;
     box-shadow: 0 0 7px #9acc9a !important;
-    background: #f9f9f9 url(../images/valid.png) no-repeat 98% center !important
+    background: #f9f9f9 url("../img/valid.png") no-repeat 98% center !important
 }
 
 .btn-xs {
@@ -153,7 +157,7 @@ html, body, .wrapper {
 }
 
 .asterix {
-    background: #f9f9f9 url(../images/red_asterisk.png) no-repeat 98% center !important;
+    background: #f9f9f9 url("../img/red_asterisk.png") no-repeat 98% center !important;
 }
 
 /* images*/
@@ -319,6 +323,7 @@ hr {
 
 .form-control {
     border-radius: 1px;
+    font-size: 17px;
 }
 
 @media only screen and (max-width: 486px) {
@@ -345,4 +350,26 @@ hr {
 
 .img-responsive {
     height: auto !important;
+}
+
+#review .col-xs-12 {
+    margin-top: 10px;
+}
+
+.text-right {
+    margin-top: 10px;
+}
+
+/*.prdName {*/
+/*font-size: 1.2em;*/
+/*font-weight: bold;*/
+/*}*/
+
+.panel-heading {
+    font-size: 1.2em;
+}
+
+.panel-heading .glyphicon {
+    font-size: inherit !important;
+    color: inherit !important;
 }
