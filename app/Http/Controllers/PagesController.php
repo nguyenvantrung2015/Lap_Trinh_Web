@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -98,6 +100,13 @@ class PagesController extends Controller
         $user->save();
         $carts = Cart::where('user_id', '=', $user->id)->get();
         foreach ($carts as $cart) {
+            $ord_detail = new OrderDetail();
+            $ord_detail->order_id = $order->id;
+            $ord_detail->product_id = $cart->product_id;
+            $ord_detail->quantity = $cart->quantity;
+            $product = Product::find($cart->product_id);
+            $ord_detail->total = $cart->quantity * $product->price;
+            $ord_detail->save();
             Cart::destroy($cart->id);
         }
 
