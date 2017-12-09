@@ -13,6 +13,7 @@ use Response;
 use Validator;
 use Auth;
 
+
 class UserController extends Controller
 {
     protected $information;
