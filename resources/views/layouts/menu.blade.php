@@ -10,6 +10,7 @@
     {{ HTML::style('/css/sites/homepage.css') }}
     {{ HTML::style('/css/sites/menu.css') }}
     {{ HTML::style('/css/sites/reset.css') }}
+    {{ HTML::style('bower/jquery-ui/themes/base/jquery-ui.css') }}
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
     @yield('style')
@@ -23,6 +24,8 @@
     {{ HTML::script('bower/jquery/dist/jquery.js') }}
     {{ HTML::script('bower/bootstrap/dist/js/bootstrap.js') }}
     {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     <script>
         $(document).ready(function () {
             $('#logout-1').on('click', function () {
@@ -30,6 +33,8 @@
             });
         });
     </script>
+     {{ HTML::script('js/sites/homepage.js') }}
+    {{ HTML::script('js/sites/page_menu.js') }}
 @yield('script')
 </body>
 </HTML>

@@ -34,11 +34,11 @@ class ProductController extends Controller
         return Response::json($product) ;
     }
     public function getdata_food(){
-        $food = Product::where('category','=','Food')->paginate(12);
+        $food = Product::where('category','=','Food')->paginate(20);
         return Response::json($food) ;
     }
     public function getdata_drink(){
-        $drink = Product::where('category','=','Drink')->paginate(12);
+        $drink = Product::where('category','=','Drink')->paginate(20);
         return Response::json($drink) ;
     }
 
