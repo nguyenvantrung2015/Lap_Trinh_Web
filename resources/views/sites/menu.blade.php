@@ -9,7 +9,7 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if (Auth::guest())
-                        <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a class="active" href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
@@ -35,107 +35,117 @@
         </div>
     </div>
     @include('sections.menu.header')
-    <div id="work" class="page">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <div class="title-page">
-                        <h2 class="title">Show Food </h2>
+    {{-- slider --}}
+    <section class="slider-pages" height="360px">
+
+        <article class="js-scrolling__page js-scrolling__page-1 js-scrolling--active">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
                     </div>
+                    <!-- /.slider-page__content -->
                 </div>
+                <!-- /.slider-page--skew -->
             </div>
-            <div class="row fix-height-menu">
-                <section id="projects">
-                    <ul id="thumbs">
-                        <li v-for="food in foods" class="item-thumbs span3 design">
-                            <h1 class="name-product">@{{ food.name }}</h1>
-                            <h3 class="price-product text-right">$@{{food.price }} </h3>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://localhost:8000/product/'+food.id">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn"><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img v-bind:src="url+food.avatar" alt="">
-                        </li>
-                    </ul>
-                </section>
+            <!-- /.slider-page slider-page--left -->
+
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content" style="height: 400px">
+                        <h1 class="slider-page__title slider-page__title--big">
+                            Gray & White - Skewed Slider with Scrolling
+                        </h1>
+                        <!-- /.slider-page__title slider-page__title--big -->
+                        <h2 class="slider-page__title">
+                            Start of your story
+                        </h2>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Please scroll down or press the down arrow on your keyboard
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
             </div>
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-1 js-scrolling--active -->
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-1 js-scrolling--active -->
 
-  <article class="js-scrolling__page js-scrolling__page-2">
-    <div class="slider-page slider-page--left">
-      <div class="slider-page--skew">
-        <div class="slider-page__content" >
-          <h1 class="slider-page__title">
-            Now you are here
-          </h1>
-          <!-- /.slider-page__title -->
-          <p class="slider-page__description">
-            Please continue scrolling
-          </p>
-          <!-- /.slider-page__description -->
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--left -->
 
-    <div class="slider-page slider-page--right">
-      <div class="slider-page--skew">
-        <div class="slider-page__content" >
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-2 -->
+        <article class="js-scrolling__page js-scrolling__page-2">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content" >
+                        <h1 class="slider-page__title">
+                            Now you are here
+                        </h1>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Please continue scrolling
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--left -->
 
-  <article class="js-scrolling__page js-scrolling__page-3">
-    <div class="slider-page slider-page--left">
-      <div class="slider-page--skew">
-        <div class="slider-page__content">
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--left -->
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content" >
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-2 -->
 
-    <div class="slider-page slider-page--right">
-      <div class="slider-page--skew">
-        <div class="slider-page__content">
-          <h1 class="slider-page__title">
-            Final is just the beginning
-          </h1>
-          <!-- /.slider-page__title -->
-          <p class="slider-page__description">
-            Feel free to follow me on <a class="slider-page__link" href="https://twitter.com/WispProxy"
-                                         target="_blank">Twitter</a>
-            and check of <a class="slider-page__link" href="https://codepen.io/WispProxy/pens/public"
-                            target="_blank">my other works</a>
-          </p>
-          <!-- /.slider-page__description -->
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-3 -->
-</section>
-<!-- /.slider-pages -->
+
+        <article class="js-scrolling__page js-scrolling__page-3">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--left -->
+
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                        <h1 class="slider-page__title">
+                            Final is just the beginning
+                        </h1>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Feel free to follow me on <a class="slider-page__link" href="https://twitter.com/WispProxy"
+                                                         target="_blank">Twitter</a>
+                            and check of <a class="slider-page__link" href="https://codepen.io/WispProxy/pens/public"
+                                            target="_blank">my other works</a>
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-3 -->
+
+    </section>
+    <!-- /.slider-pages -->
+
+
+
+
     <div class="tabs">
         <div class="tab-2">
             <label for="tab2-1" class="title-label">SHOW FOOD</label>
@@ -179,25 +189,47 @@
                     </nav>
                 </div>
             </div>
-            <div class="row fix-height-menu" >
-                <section id="projects">
-                    <ul id="thumbs">
-                        <li v-for="drink in drinks" class="item-thumbs span3 design">
-                            <h1 class="name-product">@{{ drink.name }}</h1>
-                            <h3 class="price-product text-right">$@{{drink.price}} </h3>
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" v-bind:href="'http://../product/'+drink.id">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-img-thumb btn_mua">
-                                <div class="btn"><b>Mua Ngay</b></div>
-                            </span>
-                            </a>
-                            <img v-bind:src="url+drink.avatar">
-                        </li>
-                    </ul>
-                </section>
+        </div>
+        <div class="tab-2">
+            <label for="tab2-2" class="title-label">SHOW DRINK</label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div>
+                <div id="work" class="page">
+                    <div class="container">
+                        <div class="row fix-height-menu" >
+                            <section id="projects">
+                                <div class="container">
+                                    <div class="thumbex" v-for="drink in drinks">
+                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center bottom-pagination ">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li v-for="pageNo in last_page_drink "><a @click="show_drink(pageNo)">@{{ pageNo }}</a></li>
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>   
+    </div>
     <div id="about" class="page-alternate">
         <div class="container">
             <div class="row">
@@ -215,54 +247,54 @@
                         Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
                         diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                         himenaeos.</p>
+                </div>
+                <div class="span4 profile">
+                    <div class="image-wrap">
+                        <div class="hover-wrap">
+                            <span class="overlay-img"></span>
+                            <span class="overlay-text-thumb">Creative Director</span>
+                        </div>
+                        <img src="../img/cherf2.jpg" alt="Jane Helf">
                     </div>
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Creative Director</span>
-                            </div>
-                            <img src="../img/cherf2.jpg" alt="Jane Helf">
-                        </div>
-                        <h3 class="profile-name">Jane Helf</h3>
-                        <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
-                            augue at erat <a href="#">hendrerit dictum</a>.
-                            Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
-                            diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                            himenaeos.</p>
-                            <div class="social">
-                                <ul class="social-icons">
-                                    <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="font-icon-social-email"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="span4 profile">
-                            <div class="image-wrap">
-                                <div class="hover-wrap">
-                                    <span class="overlay-img"></span>
-                                    <span class="overlay-text-thumb">Lead Designer</span>
-                                </div>
-                                <img src="../img/cherf6.jpg" alt="Joshua Insanus">
-                            </div>
-                            <h3 class="profile-name">Joshua Insanus</h3>
-                            <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
-                                augue at erat <a href="#">hendrerit dictum</a>.
-                                Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
-                                diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                himenaeos.</p>
-                                <div class="social">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-vimeo"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="profile-name">Jane Helf</h3>
+                    <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
+                        augue at erat <a href="#">hendrerit dictum</a>.
+                        Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
+                        diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos.</p>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-email"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="span4 profile">
+                    <div class="image-wrap">
+                        <div class="hover-wrap">
+                            <span class="overlay-img"></span>
+                            <span class="overlay-text-thumb">Lead Designer</span>
+                        </div>
+                        <img src="../img/cherf6.jpg" alt="Joshua Insanus">
+                    </div>
+                    <h3 class="profile-name">Joshua Insanus</h3>
+                    <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
+                        augue at erat <a href="#">hendrerit dictum</a>.
+                        Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
+                        diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos.</p>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-linkedin"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-google-plus"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-vimeo"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include('sections.menu.footer')
 @endsection
 
