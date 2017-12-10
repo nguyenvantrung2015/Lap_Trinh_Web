@@ -34,30 +34,6 @@
 
     @include('sections.menu.header')
     <div class="container wrapper">
-        <div class="footer" id="footer-sub">
-            <div class="container">
-                <div class="row" id="sub-two">
-                    <div class="col-md-4">
-                        <div class="vertical-line text-center">
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                            <h4>TRACK YOUR ORDER</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="vertical-line text-center">
-                            <span class="glyphicon glyphicon-refresh"></span>
-                            <h4>FREE & EASY RETURNS</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="vertical-line text-center">
-                            <span class="glyphicon glyphicon-remove-circle"></span>
-                            <h4>ONLINE CANCELLATIONS</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row cart-body" style="margin-top: 5%">
             <div class="form-horizontal">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
@@ -145,11 +121,20 @@
                                     <div class="col-md-12"><input type="text" name="email" class="form-control"
                                                                   value="{{$user->email}}" readonly="readonly"/></div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12"><strong>Payment Method:</strong></div>
+                                    <div class="col-md-12">
+                                        <label><input type="radio" name="option" value="Yes" id="cash"/>Cash</label>
+                                        <label style="margin-left: 20px"><input type="radio" name="option" value="No"
+                                                                                id="card"/>Credit Card</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--SHIPPING METHOD END-->
                         <!--CREDIT CART PAYMENT-->
-                        <div class="panel panel-info">
+                        <div class="panel panel-info" id="credit-card" style="display: none">
                             <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure
                                 Payment
                             </div>
@@ -248,5 +233,18 @@
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
     {{ HTML::script('bower/bootbox/bootbox.js') }}
+    <script>
+        $('#cash').prop('checked', true);
+        $card=$('#card');
+        $cash=$('#cash');
+        $('input[type="radio"]').on('click change', function(e) {
+            if ($card.is(":checked")) {
+                $("#credit-card").show();
+            }
+            if ($cash.is(":checked")) {
+                $("#credit-card").hide();
+            }
+        });
+    </script>
 @endsection
 

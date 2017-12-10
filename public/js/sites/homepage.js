@@ -27,3 +27,26 @@ jQuery(document).ready(function ($) {
     });
 });
 
+$(document).ready(function () {
+    $('.orderID').on('click', function () {
+        $id = $(this).parent('.aaa').find('.inputID').val();
+        console.log($id);
+        getID($id);
+    })
+
+    function getID($id) {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            url: '/getDetail/' + $id,
+            type: 'get',
+            data: {},
+            success: function (data) {
+                $('#result').html(data);
+            }
+        })
+    }
+
+})
+

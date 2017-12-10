@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Foodee</title>
-    {{HTML::style('bower/bootstrap/dist/css/bootstrap.min.css')}}
+    {{HTML::style('bower/bootstrap/dist/css/bootstrap.css')}}
     <script src="//code.jquery.com/jquery.js"></script>
     {{HTML::style('bower/bootstrap/dist/js/bootstrap.min.js')}}
     {{ HTML::style('css/sites/homepage.css') }}

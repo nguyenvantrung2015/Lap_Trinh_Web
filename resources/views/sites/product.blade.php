@@ -103,8 +103,8 @@
                                 </div>
                                 <div class="col-md-5">
                                     <span>Avability :</span>
-                                    @if($prd_detail->status == 1)
-                                        <span style="color: red">In stock</span>
+                                    @if($prd_detail->status == 0)
+                                        <span style="color: green">In stock</span>
                                     @else
                                         <span style="color: red">Out stock</span>
                                     @endif
@@ -125,7 +125,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-default" type="submit">add to cart</button>
+                                        <button class="add-to-cart btn btn-default" type="submit"
+                                                style="margin-top: 20px;">add to cart
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -269,7 +271,7 @@
                 <div class="row">
                     <hr>
                     <div class="product-other-title">
-                        <h2>sản phẩm tương tự</h2>
+                        <h2>Similar Products</h2>
                     </div>
                 </div>
                 <div class="row">
