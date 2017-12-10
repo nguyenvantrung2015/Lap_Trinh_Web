@@ -1,9 +1,13 @@
 @extends('layouts.menu')
 @section('style')
+    <title>Profile</title>
     {{ HTML::style('css/sites/profile.css') }}
 @endsection
 
 @section('content')
+    <?php
+    $i = 1;
+    ?>
     <div class="nav-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">
@@ -28,7 +32,7 @@
     </div>
     @include('sections.menu.header')
 
-    <div class="container bootstrap snippet background_user user-profile">
+    <div class="container bootstrap snippet background_user user-profile" style="height: 700px">
         <div class="col-sm-3 sidebar">
             <div class="row fix-profile-bottom">
                 <div class="img-avata-icon">
@@ -49,7 +53,6 @@
             </div>
             <div class="row"><!--left col-->
                 <ul class="list-group list-info">
-                    <li class="list-group-item text-center pull">Profile</li>
                     <li class="list-group-item text-right">
                         <span class="pull-left"><strong>Email:</strong></span> {!! Auth::user()->email !!}
                     </li>
@@ -64,105 +67,54 @@
                     </li>
                 </ul>
             </div><!--/col-3-->
-            <div class="row edit">
-                <a href="javascript:void(0)" data-toggle="modal" data-target="#modalProfile">
-                    (<i class="fa fa-pencil"></i> {{ __('Edit Profile') }})
+            <div class="row edit" style="text-align: center">
+                <a data-toggle="modal" data-target="#modalProfile">
+                    (<i class="fa fa-pencil"></i> {{ __('Update Profile') }})
                 </a>
-                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalPassword">
-                    (<i class="fa fa-pencil"></i> {{ __('Edit Password') }})
+                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalPassword"
+                   style="margin-left: 5px;">
+                    (<i class="fa fa-pencil"></i> {{ __('Change Password') }})
                 </a>
             </div>
         </div>
-        <div class="col-sm-8">
-            <div class="title-thongtindonhang">Thong tin don hang</div>
+        <div class="col-sm-8" style="margin-left: 25px;">
+            <div class="title-thongtindonhang">Purchase History</div>
             <hr>
             <div class="row">
-                <ul class="nav nav-tabs" id="myTab">
-                    <li class="active"><a href="#order-doing" data-toggle="tab">Các đơn hàng đang thực hiện</a></li>
-                    <li><a href="#order-done" data-toggle="tab">Các đơn hàng đã đặt</a></li>
-                    <li><a href="#order-cancel" data-toggle="tab">Các đơn hàng đã hủy</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="order-doing">
-                        <div class="table-responsive status-order">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody id="items">
 
-                                </tbody>
-                            </table>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-4 text-center">
-                                    <ul class="pagination" id="myPager"></ul>
-                                </div>
-                            </div>
-                        </div><!--/table-resp-->
-                        <hr>
-                    </div><!--/tab-pane-->
-                    <div class="tab-pane" id="order-done">
-                        <div class="table-responsive status-order">
+                <div id="content">
+                    <div id="tab1">
+                        <div class="table-responsive status-order" style="border-radius: 10px;">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
+                                    <th class="text-center weight-title">Order No.</th>
+                                    <th class="text-center weight-title">Time</th>
+                                    <th class="text-center weight-title">Products</th>
+                                    <th class="text-center weight-title">Total</th>
+                                    <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody id="items">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tbody>
+                                @foreach($orders as $order)
+                                    <tbody id="items">
+                                    <td>{{$i++}}</td>
+                                    <td>{{$order->created_at}}</td>
+                                    <td>{{$order->product_count}}</td>
+                                    <td>${{$order->sum}}</td>
+                                    <td>
+                                        <div class="aaa">
+                                            <a class="orderID" href="javascript:void(0)" data-toggle="modal"
+                                               data-target="#modalOrder"
+                                               data-id="{{$order->id}}">
+                                                <span class="glyphicon glyphicon-eye-open"></span>
+                                            </a>
+                                            <input class="inputID" type="hidden" value="{{$order->id}}" name="orderID">
+                                        </div>
+                                    </td>
+                                    </tbody>
+                                @endforeach
+                                <tr></tr>
                             </table>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-4 text-center">
-                                    <ul class="pagination" id="myPager"></ul>
-                                </div>
-                            </div>
-                        </div><!--/table-resp-->
-                        <hr>
-                    </div><!--/tab-pane-->
-                    <div class="tab-pane" id="order-cancel">
-                        <div class="table-responsive status-order">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody id="items">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tbody>
-                            </table>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4 text-center">
                                     <ul class="pagination" id="myPager"></ul>
@@ -171,7 +123,7 @@
                         </div><!--/table-resp-->
                         <hr>
                     </div>
-                </div><!--/tab-pane-->
+                </div>
             </div><!--/tab-content-->
         </div><!--/col-9-->
     </div><!--/row-->
@@ -232,7 +184,7 @@
                         <div class="form-group col-md-6 col-xs-12">
                             {{ Form::label('name', __('Name:')) }}
                             {{ Form::text('name', Auth::user()->name,
-                                [ 'class' => 'form-control display_name' ])
+                                [ 'class' => 'form-control display_name',     'required' => 'required', ])
                             }}
                         </div>
                         <div class="form-group col-md-4 col-xs-12">
@@ -251,17 +203,17 @@
                     <div class="row">
                         <div class="form-group col-md-4 col-xs-12">
                             {{ Form::label('date_of_birth', __('Birthday:')) }}
-                            {{ Form::date('date_of_birth', Auth::user()->date_of_birth, [ 'class' => 'form-control date_of_birth' ]) }}
+                            {{ Form::date('date_of_birth', Auth::user()->date_of_birth, [ 'class' => 'form-control date_of_birth',     'required' => 'required', ]) }}
                         </div>
                         <div class="form-group col-md-4 col-xs-12">
                             {{ Form::label('phone', __('Phone:')) }}
-                            {{ Form::text('phone', Auth::user()->phone, [ 'class' => 'form-control phone' ]) }}
+                            {{ Form::text('phone', Auth::user()->phone, [ 'class' => 'form-control phone',     'required' => 'required', ]) }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6 col-xs-12">
                             {{ Form::label('address', __('Address:')) }}
-                            {{ Form::text('address', Auth::user()->address, [ 'class' => 'form-control address' ]) }}
+                            {{ Form::text('address', Auth::user()->address, [ 'class' => 'form-control address',     'required' => 'required', ]) }}
                         </div>
                     </div>
                 </div>
@@ -290,7 +242,8 @@
                             {{ Form::password('old_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter old password'
+                                'placeholder' => 'enter old password',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -299,7 +252,8 @@
                             {{ Form::password('new_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter new password'
+                                'placeholder' => 'enter new password',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -308,7 +262,8 @@
                             {{ Form::password('confirm',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'confirm'
+                                'placeholder' => 'confirm',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -322,10 +277,25 @@
         </div>
     </div>
     {{--<!-- //end dialog edit password-->--}}
+
+
+    <div id="modalOrder" class="modal fade" role="dialog">
+        <div class="modal-dialog order">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                    <h4 class="modal-title">{{ __('order detail') }}</h4>
+                </div>
+                <div class="modal-body" id="result" style="padding: 0 15px 15px 15px !important;">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     @include('sections.menu.footer')
 @endsection
 
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
 @endsection
-

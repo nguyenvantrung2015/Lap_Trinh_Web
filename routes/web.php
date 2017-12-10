@@ -13,13 +13,13 @@
 
 
 Auth::routes();
+
 Route::get('/', 'HomeController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu', 'MenuController@index')->name('menu');
 Route::post('/product_search/{name}', 'MenuController@search')->name('search');
-
-Route::post('user/changePassword', 'UserController@changePassword')->name('user.change.password');
 
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 
@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('checkout/{sum}', 'PagesController@checkoutSubmit')->name('chSubmit');
     Route::get('thankyou', 'PagesController@thankyou')->name('thankyou');
 });
+
+Route::get('/getDetail/{id}', 'PagesController@getDetail');
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
@@ -60,7 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('manage_food', 'AdminController@manage_food')->name('manage_food');
     Route::get('manage_drink', 'AdminController@manage_drink')->name('manage_drink');
     Route::get('manage_customer', 'AdminController@manage_customer');
-    Route::post('postProducts','AdminController@post_products')->name('postProducts');
+    Route::post('postProducts', 'AdminController@post_products')->name('postProducts');
 });
-Route::get('addcomment','ProductController@postcomment')->name('addComment');
+Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
 //Route::get('getcomment','ProductController@getcomment')->name('getcomment');

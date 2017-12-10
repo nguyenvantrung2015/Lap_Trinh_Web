@@ -66,18 +66,9 @@ class PagesController extends Controller
     {
         $i = 0;
         $carts = Cart::orderBy('created_at', 'asc')->get();
-        $count = Auth::user()->cart;
         foreach ($carts as $cart) {
             $cart->quantity = $_POST["qty"][ $i++ ];
-            if ($cart->quantity == 0) {
-                Cart::destroy($cart->id);
-                $user = Auth::user();
-                $user->cart -= 1;
-                $user->save();
-            }
-            else {
-                $cart->save();
-            }
+            $cart->save();
         }
 
         return redirect(route('checkout'));
@@ -111,5 +102,14 @@ class PagesController extends Controller
         }
 
         return redirect(route('thankyou'));
+    }
+
+    public function getDetail($id)
+    {
+        $products = DB::table('products')->join('order_details', 'products.id', '=', 'order_details.product_id')
+            ->distinct()
+            ->get();
+
+        return view('sites.user.detail', compact('id', 'products'));
     }
 }

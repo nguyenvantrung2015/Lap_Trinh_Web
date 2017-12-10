@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Helpers\HelpText;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
-use App\Helpers\HelpText;
+use App\Models\User;
+use Auth;
 use Hash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Response;
 use Validator;
-use Auth;
 
 
 class UserController extends Controller
@@ -26,7 +27,8 @@ class UserController extends Controller
         OrderDetail $orderDetail,
         Order $order,
         Product $product
-    ){
+    )
+    {
         $this->information = $information;
         $this->order = $order;
         $this->orderDetail = $orderDetail;
@@ -36,14 +38,14 @@ class UserController extends Controller
     public function profile(Request $request)
     {
         $users = User::find($request->id);
-        // $order = $this->order->where('user_id', '=', $users->id)
-        //     ->orderBy('id','desc')->get();
-        // // $orderDetail = $this->orderDetail->first();
-        // // $productDetail = $this->product->where('id', '=', $orderDetail->product_id)
-        // //     ->first();
-        return view('sites.user.user_profile', compact(
-            'users'
-        ));
+        $orders = Order::where('user_id', '=', $users->id)->orderBy('created_at', 'desc')->get();
+        $products = DB::table('products')->join('order_details', 'products.id', '=', 'order_details.product_id')
+            ->distinct()
+            ->get();
+
+        $count = $orders->count();
+
+        return view('sites.user.user_profile', compact('users', 'orders', 'count', 'products'));
     }
 
     public function editProfile(Request $request)
@@ -63,10 +65,11 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function updateAvatar(Request $request) {
+    public function updateAvatar(Request $request)
+    {
         $user = User::find(Auth::user()->id);
 
-        if($request->hasFile('image_upload')){
+        if ($request->hasFile('image_upload')) {
             HelpText::deleteFile($user->avatar);
 
             $nameFile = $request->image_upload->hashName();
@@ -83,13 +86,13 @@ class UserController extends Controller
         $messages = [
             'old_password.required' => 'Please enter old password',
             'new_password.required' => 'Please enter new password',
-            'confirm.required' => 'Please confirm password'
+            'confirm.required'      => 'Please confirm password'
         ];
 
         $validator = Validator::make($data, [
             'old_password' => 'required',
             'new_password' => 'required|min:4|max:30',
-            'confirm' => 'required|same:new_password|min:4|max:30',
+            'confirm'      => 'required|same:new_password|min:4|max:30',
         ], $messages);
 
         return $validator;
@@ -97,29 +100,26 @@ class UserController extends Controller
 
     public function changePassword(Request $request)
     {
-        if(Auth::Check())
-        {
+        if (Auth::Check()) {
             $request_data = $request->All();
             $validator = $this->admin_credential_rules($request_data);
-            if($validator->fails())
-            {
-                return response()->json(array('error' => $validator->getMessageBag()->toArray()), 400);
+            if ($validator->fails()) {
+                return response()->json(['error' => $validator->getMessageBag()->toArray()], 400);
             }
-            else
-            {
+            else {
                 $old_password = Auth::User()->password;
-                if(Hash::check($request_data['old_password'], $old_password))
-                {
+                if (Hash::check($request_data['old_password'], $old_password)) {
                     $user_id = Auth::User()->id;
                     $obj_user = User::find($user_id);
                     $obj_user->password = Hash::make($request_data['new_password']);
                     $obj_user->save();
+
                     return "Change password success";
                 }
-                else
-                {
-                    $error = array('old_password' => 'Please enter correct current password');
-                    return response()->json(array('error' => $error), 400);
+                else {
+                    $error = ['old_password' => 'Please enter correct current password'];
+
+                    return response()->json(['error' => $error], 400);
                 }
             }
         }
