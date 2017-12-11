@@ -18,7 +18,6 @@ class CreatCommentsTable extends Migration
                 $table->increments('id');
                 $table->integer('user_id')->unsigned();
                 $table->integer('product_id')->unsigned();
-                $table->string('title')->nullable()->default(null);
                 $table->string('content')->nullable()->default(null);
                 $table->float('rated')->nullable()->default(0);
                 $table->timestamps();

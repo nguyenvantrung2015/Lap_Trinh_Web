@@ -19,7 +19,6 @@ class CreatOrderDetailsTable extends Migration
                 $table->integer('order_id')->unsigned();
                 $table->integer('product_id')->unsigned();
                 $table->integer('quantity')->nullable()->default(0);
-                $table->string('note')->nullable()->default(null);
                 $table->integer('total')->nullable()->default(0);
                 $table->timestamps();
             });
