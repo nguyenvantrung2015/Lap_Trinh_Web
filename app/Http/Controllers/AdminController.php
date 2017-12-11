@@ -111,4 +111,11 @@ class AdminController extends Controller
             'products'
         ));
     }
+
+    public function getUserID($id)
+    {
+        $inforUser = $this->information->where('id', '=', $id)->get();
+
+        return view('admin.pages.user_profile_manage', compact('inforUser','id'));
+    }
 }

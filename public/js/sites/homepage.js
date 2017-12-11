@@ -50,3 +50,25 @@ $(document).ready(function () {
 
 })
 
+$(document).ready(function () {
+    $('.userID').on('click', function () {
+        $id = $(this).parent('.aaa').find('.inputID').val();
+        console.log($id);
+        getUserID($id);
+    })
+
+    function getUserID($id) {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            url: '/getUserID/' + $id,
+            type: 'get',
+            data: {},
+            success: function (data) {
+                $('#result').html(data);
+            }
+        })
+    }
+
+})
