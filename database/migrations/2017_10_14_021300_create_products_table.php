@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         if (!Schema::hasTable('products')) {
             Schema::create('products', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('name')->nullable()->default(null);
+                $table->string('name')->unique()->nullable()->default(null);
                 $table->string('category')->nullable()->default(null);
                 $table->integer('price')->nullable()->default(0);
                 $table->text('description', 1000000)->nullable()->default(null);
