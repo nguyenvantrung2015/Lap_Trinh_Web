@@ -37,9 +37,14 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>
-                                        <a class="orderID" href="">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </a>
+                                        <div class="aaa">
+                                            <a class="userID" href="javascript:void(0)" data-toggle="modal"
+                                               data-target="#modalUser"
+                                               data-id="{{ $user->id }}">
+                                                <span class="glyphicon glyphicon-eye-open"></span>
+                                            </a>
+                                            <input class="inputID" type="hidden" value="{{ $user->id }}" name="orderID">
+                                        </div>
                                     </td>
                                     </tbody>
                                 @endforeach
@@ -55,6 +60,19 @@
                     </div>
                 </div>
             </div><!--/tab-content-->
+            <div id="modalUser" class="modal fade" role="dialog">
+                <div class="modal-dialog ">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                            <h4 class="modal-title">{{ __('User Information') }}</h4>
+                        </div>
+                        <div class="modal-body" id="result" style="padding: 0 15px 15px 15px !important;">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 @endsection

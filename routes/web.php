@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/getDetail/{id}', 'PagesController@getDetail');
+Route::get('/getUserID/{id}', 'AdminController@getUserID');
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

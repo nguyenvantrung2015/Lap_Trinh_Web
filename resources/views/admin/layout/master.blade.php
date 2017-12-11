@@ -266,7 +266,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Manager User</a></li>
+                            <li><a href="{{ route('manage.customer') }}"><i class="fa fa-circle-o"></i> Manager User</a></li>
                             <li><a href="{{ route('manage_food') }}"><i class="fa fa-circle-o"></i> Manager Food</a>
                             </li>
                             <li><a href="{{ route('manage_drink') }}"><i class="fa fa-circle-o"></i> Manager Drink</a></li>
