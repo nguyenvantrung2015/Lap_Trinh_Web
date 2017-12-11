@@ -1,54 +1,32 @@
 <div class="container">
     @foreach($listCmt as $comment)
         <div class="row">
-            <div class="col-sm-7">
-                <hr/>
-                <div class="review-block">
-                    <div class="row">
-                        @foreach( $listUser as $users1)
-                            @if($users1->id==$comment->user_id)
-                                <div class="col-sm-3">
-                                    @if(isset($users1->avatar))
-                                        <img src="{{$users1->avatar}}" class="img-rounded" style="max-width: 25% !important;">
-                                    @else
-                                        <img src="http://www.surreyvale.co.uk/wp-content/uploads/2015/06/default_avatar-man.png"
-                                             class="img-rounded" style=" max-width: 25% !important;">
-                                    @endif
-                                    <div class="review-block-name"><a href="#">
-                                            {{$users1->name}}
-                                        </a></div>
-                                    <div class="review-block-date">{{$comment->created_at}}</div>
+            <div class="review-block">
+                <div class="row">
+                    @foreach( $listUser as $users1)
+                        @if($users1->id==$comment->user_id)
+                            <div class="col-sm-2" style="text-align: center">
+                                @if(isset($users1->avatar))
+                                    <img src="{{asset('../img/$users1->avatar')}}" class="img-rounded">
+                                @else
+                                    <img src="{{asset('../img/user.png')}}"
+                                         class="img-rounded">
+                                @endif
+                                <div class="review-block-name">
+                                    <label style="text-align: center;font-size: 17px !important;font-weight: bold !important;">{{$users1->name}}</label>
                                 </div>
-                            @endif
-                        @endforeach
-                        <div class="col-sm-9">
-                            <div class="review-block-rate">
-                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-star" style="font-size:13px;"
-                                          aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-star" style="font-size:13px;"
-                                          aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-star" style="font-size:13px;"
-                                          aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-star" style="font-size:13px;"
-                                          aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-star" style="font-size:13px;"
-                                          aria-hidden="true"></span>
-                                </button>
+                                <div class="review-block-date">{{$comment->created_at}}</div>
                             </div>
-                            <div class="review-block-title">
-                            </div>
-
-                            <div class="review-block-description">{{$comment->content}}
-                            </div>
+                        @endif
+                    @endforeach
+                    <div class="col-sm-9">
+                        <input id="input" type="text" class="rating"
+                               value="{{ $comment->rated }}"
+                               data-readonly="true" data-max="5" data-min="0"
+                               data-step="0.5"
+                               size="sm" title="">
+                        <div class="review-block-description">
+                            {{ $comment->content }}
                         </div>
                     </div>
                 </div>
