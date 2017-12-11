@@ -77,7 +77,7 @@
         <article class="js-scrolling__page js-scrolling__page-2">
             <div class="slider-page slider-page--left">
                 <div class="slider-page--skew">
-                    <div class="slider-page__content" >
+                    <div class="slider-page__content">
                         <h1 class="slider-page__title">
                             Now you are here
                         </h1>
@@ -95,7 +95,7 @@
 
             <div class="slider-page slider-page--right">
                 <div class="slider-page--skew">
-                    <div class="slider-page__content" >
+                    <div class="slider-page__content">
                     </div>
                     <!-- /.slider-page__content -->
                 </div>
@@ -105,6 +105,29 @@
         </article>
         <!-- /.js-scrolling__page js-scrolling__page-2 -->
 
+        <div class="slider-page slider-page--right">
+            <div class="slider-page--skew">
+                <div class="slider-page__content" style="height: 400px">
+                    <h1 class="slider-page__title slider-page__title--big">
+                        Gray & White - Skewed Slider with Scrolling
+                    </h1>
+                    <!-- /.slider-page__title slider-page__title--big -->
+                    <h2 class="slider-page__title">
+                        Start of your story
+                    </h2>
+                    <!-- /.slider-page__title -->
+                    <p class="slider-page__description">
+                        Please scroll down or press the down arrow on your keyboard
+                    </p>
+                    <!-- /.slider-page__description -->
+                </div>
+                <!-- /.slider-page__content -->
+            </div>
+            <!-- /.slider-page--skew -->
+        </div>
+        <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-1 js-scrolling--active -->
 
         <article class="js-scrolling__page js-scrolling__page-3">
             <div class="slider-page slider-page--left">
@@ -143,19 +166,16 @@
     </section>
     <!-- /.slider-pages -->
 
-
-
-
     <div class="tabs">
         <div class="tab-2">
-            <label for="tab2-1" class="title-label">SHOW FOOD</label>
-            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <label for="tab2-1" class="title-label">FOOD</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked" style="width: 80%;margin: auto">
             <div>
                 <div id="work" class="page">
                     <div class="container">
                         <div class="row fix-height-menu">
                             <section id="projects">
-                                <div class="row fix-height-menu" >
+                                <div class="row fix-height-menu">
                                     <div class="thumbex" v-for="food in foods">
                                         <div class="thumbnail">
                                             <a v-bind:href="'../product/'+food.id">
@@ -191,16 +211,17 @@
             </div>
         </div>
         <div class="tab-2">
-            <label for="tab2-2" class="title-label">SHOW DRINK</label>
-            <input id="tab2-2" name="tabs-two" type="radio">
+            <label for="tab2-2" class="title-label">DRINK</label>
+            <input id="tab2-2" name="tabs-two" type="radio" style="width: 80%; margin: auto;">
             <div>
                 <div id="work" class="page">
                     <div class="container">
-                        <div class="row fix-height-menu" >
+                        <div class="row fix-height-menu">
                             <section id="projects">
                                 <div class="container">
                                     <div class="thumbex" v-for="drink in drinks">
-                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
+                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img
+                                                        v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -303,4 +324,3 @@
     {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     {{ HTML::script('js/sites/page_menu.js') }}
 @endsection
-{{--  --}}
