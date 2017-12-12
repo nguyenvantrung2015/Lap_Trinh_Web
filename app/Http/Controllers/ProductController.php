@@ -82,8 +82,21 @@ class ProductController extends Controller
         return Product::destroy($req->id);
     }
 
-    public function update_food(Request $request, $id)
-    {
+     public function update_food(Request $request, $id)
+    {   
+        // dd($request);
+        $this->validate($request,
+            [
+                'name'=>'required|unique:products,name|min:3|max:30|',
+                'price'=>'required|min:0',
+                'description'=>'required',
+            ],
+            [
+                'name.required'=>'Please Insert Name',
+                'price.required'=>'Please Insert Price',
+                'description.required'=>'Please Insert Description',
+            ]);
+        // dd($request->img);
         $product = Product::find($id);
         $product->name = $request->name;
         $product->price = $request->price;
@@ -96,14 +109,81 @@ class ProductController extends Controller
 
     public function create_food(Request $request)
     {
+        $this->validate($request,
+        [
+            'name'=>'required|unique:products,name|min:3|max:30|',
+            'price'=>'required|min:0',
+            'description'=>'required',
+        ],
+        [
+            'name.required'=>'Please Insert Name',
+            'price.required'=>'Please Insert Price',
+            'description.required'=>'Please Insert Description',
+        ]);
         return Product::create(
-            ['name' => $request->input(['name']),
+            [
+                
+                'name' => $request->input(['name']),
                 'price' => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category' => $request->input(['category']),
+                'category' => "Food",
+            
+            ]);
+    }
+    //drink
+      public function delete_drink(Request $req)
+    {
+        return Product::destroy($req->id);
+    }
+
+    public function update_drink(Request $request, $id)
+    {
+        $this->validate($request,
+            [
+                'name'=>'required|unique:products,name|min:3|max:30|',
+                'price'=>'required|min:0',
+                'description'=>'required',
+            ],
+            [
+                'name.required'=>'Please Insert Name',
+                'price.required'=>'Please Insert Price',
+                'description.required'=>'Please Insert Description',
+            ]);
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->avatar = $request->file('avatar');
+        $product->save();
+
+        return Response::json($product);
+    }
+
+    public function create_drink(Request $request)
+    {
+         $this->validate($request,
+            [
+                'name'=>'required|unique:products,name|min:3|max:30|',
+                'price'=>'required|min:0',
+                'description'=>'required',
+            ],
+            [
+                'name.required'=>'Please Insert Name',
+                'price.required'=>'Please Insert Price',
+                'description.required'=>'Please Insert Description',
+            ]);
+        return Product::create(
+            [
+                
+                'name' => $request->input(['name']),
+                'price' => $request->input(['price']),
+                'description' => $request->input(['description']),
+                'category' => "Drink",
+            
             ]);
     }
 
+    
     public function postcomment(Request $request)
     {
         $product = $request->product_1;

@@ -49,13 +49,14 @@ class AdminController extends Controller
         ));
     }
 
-    public function manage_food()
+     public function manage_food()
     {
         $Order = $this->order->all();
         $totalorder = $Order->count();
+        $all_foods = Product::where('category','=','Food')->get();
         return view('admin.pages.manage_food', compact(
-        'totalorder'
-    ));
+        'totalorder','all_foods'
+        ));
     }
 
     public function post_products(Request $request)
@@ -76,8 +77,9 @@ class AdminController extends Controller
     {
         $Order = $this->order->all();
         $totalorder = $Order->count();
+        $all_drinks = Product::where('category','=','drink')->get();
         return view('admin.pages.manage_drink', compact(
-            'totalorder'
+        'totalorder','all_drinks'
         ));
     }
 

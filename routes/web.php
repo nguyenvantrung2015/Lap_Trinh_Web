@@ -56,9 +56,15 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::post('update_food/{id}', 'ProductController@update_food');
     Route::post('create_food', 'ProductController@create_food');
     // drink
+    Route::get('delete_drink/{id}', 'ProductController@delete_drink');
+    Route::post('update_drink/{id}', 'ProductController@update_drink');
+    Route::post('create_drink', 'ProductController@create_drink');
 });
 // Admin
-Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], function () {
+Route::group(['prefix' => 'admin', 
+    // 'middleware' => ['isAdmin', 'auth']
+
+    ], function () {
     Route::get('home', 'AdminController@home')->name('admin_home');
     Route::get('manage_food', 'AdminController@manage_food')->name('manage_food');
     Route::get('manage_drink', 'AdminController@manage_drink')->name('manage_drink');
