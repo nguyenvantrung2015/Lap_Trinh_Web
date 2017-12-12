@@ -17,7 +17,7 @@ var manage_food = new Vue	({
                 url: '/api/v1/all_foods',
                 json: true,
             }
-            axios(authOptions).then(response => {
+            axios(authOptions).then(response = > {
                 this.$set(this, 'foods', response.data);
             console.log(this.foods);
         });
@@ -30,7 +30,7 @@ var manage_food = new Vue	({
             console.log(id);
             var authOptions = {
                 method: 'get',
-                url: '/api/v1/delete_food/'+ id,
+                url: '/api/v1/delete_food/' + id,
                 json: true,
             }
             axios(authOptions).then(response => {
@@ -47,7 +47,7 @@ var manage_food = new Vue	({
         edit : function(id){
             var authOptions = {
                 method: 'post',
-                url: '../api/v1/update_food/'+ id,
+                url: '../api/v1/update_food/' + id,
                 params: this.item_food,
                 json: true,
             }
