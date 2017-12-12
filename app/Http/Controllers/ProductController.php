@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Gallery;
 use App\Models\Product;
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Response;
-use App\Models\User;
-use App\Models\Comment;
-use Auth;
 use Session;
 
 class ProductController extends Controller
@@ -28,17 +28,20 @@ class ProductController extends Controller
     {
         $listPrd = Product::all();
         foreach ($listPrd as $prd1) {
-            $prd1->rated = Comment::where('product_id', '=', $prd1->id)->where('rated', '>', '0')
+            $rating = Comment::where('product_id', '=', $prd1->id)->where('rated', '>', '0')
                 ->avg('rated');
+//            $prd1->rated = round($rating * 2) / 2;
+            $prd1->rated = $rating;
             $prd1->save();
         }
+
         $prd_detail = $this->prd_detail->where('id', '=', "$id")->first();
         $prd_img = $this->prd_img->where('product_id', '=', "$id")->get();
         $prd_similar = $this->prd_detail
             ->whereBetween('price', [$prd_detail->price - 10, $prd_detail->price + 10])
             ->take(5)->get();
         $prd_id = $id;
-        $listCmt = $this->cmt->where('product_id', $prd_detail->id)->get();
+        $listCmt = $this->cmt->where('product_id', $prd_detail->id)->orderBy('created_at', 'desc')->get();
         $listUser = User::all();
 
         return view('sites.product', compact('prd_id', 'prd_detail', 'prd_img', 'prd_similar', 'listCmt', 'listUser'));
@@ -47,18 +50,21 @@ class ProductController extends Controller
     public function getdata_product()
     {
         $product = Product::all();
+
         return Response::json($product);
     }
 
     public function getdata_food()
     {
         $food = Product::where('category', '=', 'Food')->paginate(30);
+
         return Response::json($food);
     }
 
     public function getdata_drink()
     {
         $drink = Product::where('category', '=', 'Drink')->paginate(30);
+
         return Response::json($drink);
     }
 
@@ -82,19 +88,19 @@ class ProductController extends Controller
         return Product::destroy($req->id);
     }
 
-     public function update_food(Request $request, $id)
-    {   
+    public function update_food(Request $request, $id)
+    {
         // dd($request);
         $this->validate($request,
             [
-                'name'=>'required|unique:products,name|min:3|max:30|',
-                'price'=>'required|min:0',
-                'description'=>'required',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
+                'description' => 'required',
             ],
             [
-                'name.required'=>'Please Insert Name',
-                'price.required'=>'Please Insert Price',
-                'description.required'=>'Please Insert Description',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
+                'description.required' => 'Please Insert Description',
             ]);
         // dd($request->img);
         $product = Product::find($id);
@@ -110,28 +116,30 @@ class ProductController extends Controller
     public function create_food(Request $request)
     {
         $this->validate($request,
-        [
-            'name'=>'required|unique:products,name|min:3|max:30|',
-            'price'=>'required|min:0',
-            'description'=>'required',
-        ],
-        [
-            'name.required'=>'Please Insert Name',
-            'price.required'=>'Please Insert Price',
-            'description.required'=>'Please Insert Description',
-        ]);
+            [
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
+                'description' => 'required',
+            ],
+            [
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
+                'description.required' => 'Please Insert Description',
+            ]);
+
         return Product::create(
             [
-                
-                'name' => $request->input(['name']),
-                'price' => $request->input(['price']),
+
+                'name'        => $request->input(['name']),
+                'price'       => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category' => "Food",
-            
+                'category'    => "Food",
+
             ]);
     }
+
     //drink
-      public function delete_drink(Request $req)
+    public function delete_drink(Request $req)
     {
         return Product::destroy($req->id);
     }
@@ -140,14 +148,14 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'=>'required|unique:products,name|min:3|max:30|',
-                'price'=>'required|min:0',
-                'description'=>'required',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
+                'description' => 'required',
             ],
             [
-                'name.required'=>'Please Insert Name',
-                'price.required'=>'Please Insert Price',
-                'description.required'=>'Please Insert Description',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
+                'description.required' => 'Please Insert Description',
             ]);
         $product = Product::find($id);
         $product->name = $request->name;
@@ -161,29 +169,30 @@ class ProductController extends Controller
 
     public function create_drink(Request $request)
     {
-         $this->validate($request,
+        $this->validate($request,
             [
-                'name'=>'required|unique:products,name|min:3|max:30|',
-                'price'=>'required|min:0',
-                'description'=>'required',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
+                'description' => 'required',
             ],
             [
-                'name.required'=>'Please Insert Name',
-                'price.required'=>'Please Insert Price',
-                'description.required'=>'Please Insert Description',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
+                'description.required' => 'Please Insert Description',
             ]);
+
         return Product::create(
             [
-                
-                'name' => $request->input(['name']),
-                'price' => $request->input(['price']),
+
+                'name'        => $request->input(['name']),
+                'price'       => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category' => "Drink",
-            
+                'category'    => "Drink",
+
             ]);
     }
 
-    
+
     public function postcomment(Request $request)
     {
         $product = $request->product_1;
@@ -197,7 +206,7 @@ class ProductController extends Controller
         $this->checkcmt($comment_1);
         $comment_1->save();
         $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
-        $listCmt = $this->cmt->where('product_id', $product)->get();
+        $listCmt = $this->cmt->where('product_id', $product)->orderBy('created_at', 'desc')->get();
         $listUser = User::all();
 
         return view('sites.comment', compact('listCmt', 'listUser', 'prd_detail'));
@@ -227,18 +236,7 @@ class ProductController extends Controller
         $ratetb = $prd_detail->rated + $rate;
         $prd_detail->rated = $ratetb;
         $prd_detail->save();
+
         return view('sites.rate', compact('prd_detail'));
-
     }
-
-//    public function getcomment(Request $request)
-//
-//        $prd1 = $request->prd;
-//        $prd_detail = $this->prd_detail->where('id', '=', "$prd1")->first();
-//        $listCmt = $this->cmt->where('product_id',$prd1)->get();
-//        $listUser = User::all();
-//
-//        return view('sites.comment', compact( 'listCmt', 'listUser','prd_detail'));
-//    }
-
 }

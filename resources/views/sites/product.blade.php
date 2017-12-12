@@ -3,7 +3,6 @@
     <title>Product</title>
     {{ HTML::style('css/sites/product_detail.css') }}
     {{ HTML::style('bower/bootstrap-star-rating/css/star-rating.css') }}
-    {{ HTML::style('bower/bootstrap-star-rating/themes/krajee-svg/theme.css')}}
 @endsection
 
 @section('content')
@@ -131,6 +130,10 @@
                         <div id="right">
                             <div id="row">
                                 <div class="action">
+                                    <a href="#reviews-anchor" id="open-review-box" style="float: left">
+                                        <button class="add-to-cart btn btn-success" type="button">Review Food
+                                        </button>
+                                    </a>
                                     <button class="add-to-cart btn btn-success" type="submit">add to cart
                                     </button>
                                 </div>
@@ -143,13 +146,8 @@
         </div>
         <div id="comment">
             <div class="row" id="comment-box">
-                <div class="col-md-6">
+                <div class="col-md-12" style="margin-left: 25%">
                     <div class="well well-sm">
-                        <div class="text-right">
-                            <label id="label">What do you think about our product ?</label>
-                            <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Review
-                                Food</a>
-                        </div>
 
                         <div class="row" id="post-review-box">
                             <div class="col-md-12">
@@ -158,7 +156,6 @@
                                     <form id="postComment" action="{{route('addComment')}}" method="get">
                                         <input type="hidden" id="product_1" name="product_1"
                                                value="{{$prd_detail->id}}">
-                                        {{--<input type="hidden" name="_token" value="{{  csrf_token()  }}">--}}
 
                                         <textarea class="form-control animated" cols="50"
                                                   id="new-review" name="content_1"
@@ -171,7 +168,7 @@
                                                 <input type="hidden" id="prd_1" value="{{$prd_detail->id}}">
                                                 <input id="input-send" id="cmt_star" name="cmt_star" type="text"
                                                        class="rating" data-min="0"
-                                                       data-max="5" onblur="myFunction()"
+                                                       data-max="5" onchange="myFunction()"
                                                        data-size="xs" data-step=0.5 value="0"
                                                        title="">
 
@@ -180,7 +177,7 @@
                                                         id="close-review-box">Cancel
                                                 </button>
                                                 {{--<button class="btn btn-success btn-lg" id=" save-review-box"--}}
-                                                        {{--type="submit">Save--}}
+                                                {{--type="submit">Save--}}
                                                 {{--</button>--}}
                                             </form>
                                             <button class="btn btn-success btn-lg" id=" save-review-box"
@@ -242,8 +239,6 @@
 @section('script')
     {{ HTML::script('js/sites/product_detail.js') }}
     {{ HTML::script('js/sites/star-rating.js')}}
-    {{ HTML::script('bower/bootstrap-star-rating/js/locales/LANG.js')}}
-    {{ HTML::script('bower/bootstrap-star-rating/themes/krajee-svg/theme.js')}}
     {{ HTML::script('js/sites/product_comment.js')}}
 @endsection
 
