@@ -163,10 +163,9 @@
                                                   rows="3" required></textarea>
 
                                         <div class="text-right">
-                                            <form accept-charset="UTF-8" id="update_rate"
-                                                  action="{{route('updateRate')}}" method="get">
+                                            <form accept-charset="UTF-8">
                                                 <input type="hidden" id="prd_1" value="{{$prd_detail->id}}">
-                                                <input id="input-send" id="cmt_star" name="cmt_star" type="text"
+                                                <input id="input-send" name="cmt_star" type="text"
                                                        class="rating" data-min="0"
                                                        data-max="5" onchange="myFunction()"
                                                        data-size="xs" data-step=0.5 value="0"

@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -463,10 +464,10 @@
         </aside>
         <div class="control-sidebar-bg"></div>
     </div>
-    {{ HTML::script('bower/vue/dist/vue.js') }}    
+    {{ HTML::script('bower/vue/dist/vue.js') }}
     {{ HTML::script('bower/jquery/dist/jquery.min.js') }}
     {{ Html::script('bower/toastr/toastr.min.js') }}
-    {{ HTML::script('bower/axios/dist/axios.min.js') }} 
+    {{ HTML::script('bower/axios/dist/axios.min.js') }}
     {{-- {{ HTML::script('bower/admin-lte/dist/js/pages/dashboard2.js') }} --}}
     {{ HTML::script('bower/bootstrap/dist/js/bootstrap.min.js') }}
     {{ HTML::script('bower/fastclick/lib/fastclick.js') }}

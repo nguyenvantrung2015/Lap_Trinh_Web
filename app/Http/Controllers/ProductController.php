@@ -93,13 +93,13 @@ class ProductController extends Controller
         // dd($request);
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         // dd($request->img);
@@ -117,23 +117,23 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
 
         return Product::create(
             [
 
-                'name'        => $request->input(['name']),
-                'price'       => $request->input(['price']),
+                'name' => $request->input(['name']),
+                'price' => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category'    => "Food",
+                'category' => "Food",
 
             ]);
     }
@@ -148,13 +148,13 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         $product = Product::find($id);
@@ -171,23 +171,23 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
 
         return Product::create(
             [
 
-                'name'        => $request->input(['name']),
-                'price'       => $request->input(['price']),
+                'name' => $request->input(['name']),
+                'price' => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category'    => "Drink",
+                'category' => "Drink",
 
             ]);
     }
@@ -231,12 +231,12 @@ class ProductController extends Controller
         $rate = $request->rate1;
 
         $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
-        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
-            ->avg('rated');
-        $ratetb = $prd_detail->rated + $rate;
-        $prd_detail->rated = $ratetb;
-        $prd_detail->save();
+//        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
+//            ->avg('rated');
+        $ratetb = ($prd_detail->rated + $rate) / 2;
+//        $prd_detail->rated = $ratetb;
+//        $prd_detail->save();
+        return view('sites.rate', compact('ratetb'));
 
-        return view('sites.rate', compact('prd_detail'));
     }
 }
