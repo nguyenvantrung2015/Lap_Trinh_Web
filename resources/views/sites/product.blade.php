@@ -89,13 +89,14 @@
                         <div id="header">
                             <h2><strong>{!! $prd_detail->name !!}</strong></h2>
                         </div>
-
-                        <div class="row starr" style="padding-bottom: 10px">
-                            <input id="input-id" type="text" class="rating" data-min="0"
-                                   data-max="5"
-                                   data-size="xs" data-step=0.1 value="{!! $prd_detail->rated !!}"
-                                   title="" disabled="disabled">
-                            <h4>( This product is rated by 0 People )</h4>
+                        <div id="return_rate">
+                            <div class="row starr" style="padding-bottom: 10px">
+                                <input id="input-id" type="text" class="rating" data-min="0"
+                                       data-max="5"
+                                       data-size="xs" data-step=0.1 value="{!! $prd_detail->rated !!}"
+                                       title="" disabled="disabled">
+                                <h4>( This product is rated by 0 People )</h4>
+                            </div>
                         </div>
                         <div class="row">
                             <p class="product-description"><span
@@ -160,26 +161,31 @@
                                         {{--<input type="hidden" name="_token" value="{{  csrf_token()  }}">--}}
 
                                         <textarea class="form-control animated" cols="50"
-                                                  id="new-review" name="content"
+                                                  id="new-review" name="content_1"
                                                   placeholder="Enter your review here..."
                                                   rows="3" required></textarea>
 
                                         <div class="text-right">
-                                            <form accept-charset="UTF-8" action="" method="post">
-
-                                                <input id="input-send" type="text" class="rating" data-min="0"
-                                                       data-max="5"
+                                            <form accept-charset="UTF-8" id="update_rate"
+                                                  action="{{route('updateRate')}}" method="get">
+                                                <input type="hidden" id="prd_1" value="{{$prd_detail->id}}">
+                                                <input id="input-send" id="cmt_star" name="cmt_star" type="text"
+                                                       class="rating" data-min="0"
+                                                       data-max="5" onblur="myFunction()"
                                                        data-size="xs" data-step=0.5 value="0"
                                                        title="">
 
-                                                <input id="ratings-hidden" name="rating" type="hidden">
+                                                {{--<input id="ratings-hidden" name="rating" type="hidden">--}}
                                                 <button type="button" class="btn btn-danger btn-sm"
                                                         id="close-review-box">Cancel
                                                 </button>
-                                                <button class="btn btn-success btn-lg" id="save-review-box"
-                                                        type="submit">Save
-                                                </button>
+                                                {{--<button class="btn btn-success btn-lg" id=" save-review-box"--}}
+                                                        {{--type="submit">Save--}}
+                                                {{--</button>--}}
                                             </form>
+                                            <button class="btn btn-success btn-lg" id=" save-review-box"
+                                                    type="submit">Save
+                                            </button>
                                         </div>
                                     </form>
                                 @endif
@@ -196,7 +202,16 @@
         <div id="comment_1">
             @include("sites.comment");
         </div>
+        {{--<div>--}}
+        {{--@if(Auth::check())--}}
+        {{--<form id="postComment" action="{{route('addComment')}}" method="get">--}}
+        {{--<input id="product_1" name="product_1" type="hidden" value="{{$prd_detail->id}}">--}}
+        {{--<input id="comment_text" name="comment_text" type="text" placeholder="add comment">--}}
+        {{--<button type="submit">Comment</button>--}}
+        {{--</form>--}}
+        {{--@endif--}}
 
+        {{--</div>--}}
         <div id="line1"></div>
 
         <div class="row" style="margin-top: 25px;">

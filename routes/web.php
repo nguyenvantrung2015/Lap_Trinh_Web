@@ -67,4 +67,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
     Route::get('manage_order', 'AdminController@manage_order' )->name('manage.order');
 });
 Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
+Route::get('update_rate','ProductController@updaterate')->name('updateRate');
 //Route::get('getcomment','ProductController@getcomment')->name('getcomment');

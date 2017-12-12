@@ -1,3 +1,6 @@
+{{ HTML::style('css/sites/product_detail.css') }}
+{{ HTML::style('bower/bootstrap-star-rating/css/star-rating.css') }}
+{{ HTML::style('bower/bootstrap-star-rating/themes/krajee-svg/theme.css')}}
 <div class="container">
     @foreach($listCmt as $comment)
         <div class="row">
@@ -7,7 +10,7 @@
                         @if($users1->id==$comment->user_id)
                             <div class="col-sm-2" style="text-align: center">
                                 @if(isset($users1->avatar))
-                                    <img src="{{asset('../img/$users1->avatar')}}" class="img-rounded">
+                                    <img src="{{url($users1->avatar)}}" class="img-rounded">
                                 @else
                                     <img src="{{asset('../img/user.png')}}"
                                          class="img-rounded">
@@ -36,3 +39,7 @@
 
 </div> <!-- /container -->
 {{ HTML::script('/js/sites/product_comment.js',['type' => 'text/javascript'])}}
+{{ HTML::script('js/sites/product_detail.js') }}
+{{ HTML::script('js/sites/star-rating.js')}}
+{{ HTML::script('bower/bootstrap-star-rating/js/locales/LANG.js')}}
+{{ HTML::script('bower/bootstrap-star-rating/themes/krajee-svg/theme.js')}}

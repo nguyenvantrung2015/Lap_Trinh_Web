@@ -26,6 +26,12 @@ class ProductController extends Controller
 
     public function detail($id)
     {
+        $listPrd = Product::all();
+        foreach ($listPrd as $prd1) {
+            $prd1->rated = Comment::where('product_id', '=', $prd1->id)->where('rated', '>', '0')
+                ->avg('rated');
+            $prd1->save();
+        }
         $prd_detail = $this->prd_detail->where('id', '=', "$id")->first();
         $prd_img = $this->prd_img->where('product_id', '=', "$id")->get();
         $prd_similar = $this->prd_detail
@@ -43,13 +49,17 @@ class ProductController extends Controller
         $product = Product::all();
         return Response::json($product);
     }
-    public function getdata_food(){
-        $food = Product::where('category','=','Food')->paginate(30);
-        return Response::json($food) ;
+
+    public function getdata_food()
+    {
+        $food = Product::where('category', '=', 'Food')->paginate(30);
+        return Response::json($food);
     }
-    public function getdata_drink(){
-        $drink = Product::where('category','=','Drink')->paginate(30);
-        return Response::json($drink) ;
+
+    public function getdata_drink()
+    {
+        $drink = Product::where('category', '=', 'Drink')->paginate(30);
+        return Response::json($drink);
     }
 
     public function all_food()
@@ -97,11 +107,13 @@ class ProductController extends Controller
     public function postcomment(Request $request)
     {
         $product = $request->product_1;
-        $comment = $request->comment_text;
+        $comment = $request->content_1;
+        $rate = $request->cmt_star;
         $comment_1 = new Comment();
         $comment_1->product_id = $product;
         $comment_1->content = $comment;
         $comment_1->user_id = Auth::User()->id;
+        $comment_1->rated = $rate;
         $this->checkcmt($comment_1);
         $comment_1->save();
         $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
@@ -121,6 +133,21 @@ class ProductController extends Controller
                 Comment::destroy($listcmt->id);
             }
         }
+
+    }
+
+    public function updaterate(Request $request)
+    {
+        $product = $request->prd1;
+        $rate = $request->rate1;
+
+        $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
+        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
+            ->avg('rated');
+        $ratetb = $prd_detail->rated + $rate;
+        $prd_detail->rated = $ratetb;
+        $prd_detail->save();
+        return view('sites.rate', compact('prd_detail'));
 
     }
 
