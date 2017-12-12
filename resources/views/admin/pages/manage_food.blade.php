@@ -31,34 +31,34 @@
                                     <th class="text-center">ID</th>
                                     <th class="text-center">Avatar</th>
                                     <th class="text-center">Price</th>
-                                    <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="food in foods">
-                                    <td class="table_food">@{{ food.id }}</td>
-                                    <td><img v-bind:src="'../img/'+food.avatar" class="fix-img">
-                                        @{{ food.name }}
-                                    </td>
-                                    <td class="table_food">@{{ food.price }}</td>
-                                    <td class="table_food">@{{food.status }}</td>
-                                    <td class="table_food">
-                                        <a href="javascript:void(0)" @click="edit_food(food)">
+                                @foreach($all_foods as $food )
+                                    <tr>
+                                        <td class="table_food">{{ $food->id}}</td>
+                                        <td class="table_food">
+                                            <img src="../img/{{$food->avatar}}" class="fix-img" alt="">
+                                            <i> {{$food->name}}</i>
+                                        </td>
+                                        <td class="table_food">${{$food->price}}</td>
+                                        <td class="table_food">
+                                            <a href="javascript:void(0)" @click="edit_food({{$food}})">
                                             <i class="fa fa-pencil-square-o fa-2x " aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:void(0)" @click="confirm_delete(food)">
-                                            <i class="fa fa-times fa-2x" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                            </a>
+                                            <a href="javascript:void(0)" @click="confirm_delete({{$food}})">
+                                                <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th class="text-center">ID</th>
                                     <th class="text-center">Avatar</th>
                                     <th class="text-center">Price</th>
-                                    <th class="text-center">Status</th>
                                     <th class="table-center">Action</th>
                                 </tr>
                                 </tfoot>
@@ -100,11 +100,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Price :</label>
-                                    <input type="text" class="form-control" name="price" v-model="item_food.price" >
+                                    <input type="number" min="0" class="form-control" name="price" v-model="item_food.price" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Description :</label>
-                                    <input type="text" class="form-control" name="description" v-model="item_food.description">
+                                    <textarea  rows="5" class="form-control" name="description" v-model="item_food.description"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -131,15 +131,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Price :</label>
-                                    <input type="text" class="form-control" name="price" v-model="new_food.price" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Category :</label>
-                                    <input type="text" class="form-control" name="category" v-model="new_food.category" >
+                                    <input type="number" min="0" class="form-control" name="price" v-model="new_food.price" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Description :</label>
-                                    <input type="text" class="form-control" name="description" v-model="new_food.description">
+                                    <textarea rows="5" type="text" class="form-control" name="description" v-model="new_food.description"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -160,15 +156,7 @@
     {{ HTML::script('bower/fastclick/lib/fastclick.js') }}
     <script>
         $(function () {
-            $('#example1').DataTable()
-            $('#example2').DataTable({
-                'paging'      : true,
-                'lengthChange': false,
-                'searching'   : false,
-                'ordering'    : true,
-                'info'        : true,
-                'autoWidth'   : false
-            })
+            $('#example1').DataTable();
         })
     </script>
     {{ HTML::script('js/admin/manage_food.js') }}
