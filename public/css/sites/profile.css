@@ -30,8 +30,8 @@ body {
 
 .edit-icon {
     text-align: center;
-    margin-top: -30px;
-    margin-bottom: 30px;
+    margin-top: 12px;
+    margin-bottom: 24px;
     text-transform: capitalize;
     cursor: pointer;
 }
@@ -222,10 +222,6 @@ td {
 
 #submit_photo {
     font-size: 1.2em;
-}
-
-.edit-icon a {
-    color: white;
 }
 
 .media-object {

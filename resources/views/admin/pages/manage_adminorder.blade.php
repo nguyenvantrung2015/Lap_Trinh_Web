@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="content-wrapper" >
+    <div class="content-wrapper">
         <section class="content-header">
             <h1>
                 MANAGE ORDER
@@ -33,7 +33,7 @@
                                 </thead>
                                 @foreach($orders as $order)
                                     @foreach($users as $user)
-                                        @if($order->user_id == $user->id)
+                                        @if($order->user_id == $user->user_id)
                                             <tbody id="items">
                                             <td>{{$user->name}}</td>
                                             <td>{{$order->created_at}}</td>
@@ -46,7 +46,8 @@
                                                        data-id="{{$order->id}}">
                                                         <span class="glyphicon glyphicon-eye-open"></span>
                                                     </a>
-                                                    <input class="inputID" type="hidden" value="{{$order->id}}" name="orderID">
+                                                    <input class="inputID" type="hidden" value="{{$order->id}}"
+                                                           name="orderID">
                                                 </div>
                                             </td>
                                             </tbody>
@@ -87,17 +88,17 @@
     {{ HTML::script('bower/datatables.net-bs/js/dataTables.bootstrap.min.js') }}
     {{ HTML::script('bower/fastclick/lib/fastclick.js') }}
     <script>
-    $(function () {
-        $('#example1').DataTable()
-        $('#example2').DataTable({
-          'paging'      : true,
-          'lengthChange': false,
-          'searching'   : false,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : false
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
         })
-    })
     </script>
     {{ HTML::script('js/admin/manage_drink.js') }}
     {{ HTML::script('js/sites/homepage.js') }}

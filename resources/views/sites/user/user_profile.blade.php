@@ -12,6 +12,7 @@
         <a href="#" class="navicon"></a>
         <div class="toggle">
             <ul class="toggle-menu">
+                <h3>Hello {{Auth::user()->name}}</h3>
                 @if(Auth::user()->level == 1)
                     <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                 @endif
@@ -39,7 +40,7 @@
                     @if((Auth::user()->avatar) != null)
                         <img src="{!! url(Auth::user()->avatar) !!}" class="img-responsive"/>
                     @else
-                        <img src="{!! asset('/img/avata.png') !!}" class="img-responsive"/>
+                        <img src="{!! asset('/img/user.png') !!}" class="img-responsive"/>
                     @endif
                     <div class="edit-icon">
                         <a data-toggle="modal" data-target="#modalAvatar">

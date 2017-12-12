@@ -16,119 +16,118 @@ class CommentTableSeeder extends Seeder
                 [
                     'user_id'    => '1',
                     'product_id' => '1',
-                    'content'    => 'tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
-
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '1',
-                    'content'    => 'cung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '1',
-                    'content'    => 'cung tam duoasdasdsadasdc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '2',
-                    'content'    => 'casdasdasdasdung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '2',
-                    'content'    => 'csdsadasdaungascascasc tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '2',
-                    'content'    => 'cqdqwdqwdqwdqwdqwdung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.5',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '3',
-                    'content'    => 'cuasdasdasdasdasdasdacsacng tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '3',
-                    'content'    => 'casdcunascgasc asctascasamc ascduoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '2.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '3',
-                    'content'    => 'csacaskcaslkcnaslknclsakung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '4',
-                    'content'    => 'casdasdasdasdasdung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '4',
-                    'content'    => 'csdacuavnasg tsavavasvasvam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '4',
-                    'content'    => 'cungvxzvzzzzzzzzzzzzzzzz tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '5',
-                    'content'    => 'cung xxxxxxxxxxxxxxxxtam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '5',
-                    'content'    => 'ccvvvvvvvvvvvvvung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '5',
-                    'content'    => 'ccccccung tam duoc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '6',
-                    'content'    => 'cung tam duoascascsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '6',
-                    'content'    => 'cung tam duxxcxcoascascsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
@@ -142,35 +141,35 @@ class CommentTableSeeder extends Seeder
                 [
                     'user_id'    => '1',
                     'product_id' => '7',
-                    'content'    => 'cacaslkcnaslcknaslkcnaslcung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '2.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '7',
-                    'content'    => 'cunacascsacascascacg tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '2.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '7',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '2.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '8',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '8',
-                    'content'    => 'cung tamcsacascascassssssssssssscc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
@@ -191,306 +190,306 @@ class CommentTableSeeder extends Seeder
                 [
                     'user_id'    => '4',
                     'product_id' => '9',
-                    'content'    => 'cung tamcsacascaswdwwwwwwwwwwwwwwwwwwwcascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '9',
-                    'content'    => 'cung tamcsacascascascascaasaaaaaaaaaaaaaaascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '10',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '10',
-                    'content'    => 'cuascascsacacascascng tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '11',
-                    'content'    => 'cung tcascascascamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '11',
-                    'content'    => 'cung tamcsacascabdbdsbsdbsdbsdbsdbscascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '12',
-                    'content'    => 'cung tamcsacascasca              scc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '12',
-                    'content'    => 'cung tamcccccdcdcdcdcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '13',
-                    'content'    => 'cung tamcsacascZZZZZZZZZZascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '13',
-                    'content'    => 'cung tamcsacascasCCCCCCCCCCcascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '14',
-                    'content'    => 'czxvzxvzxvzvung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '14',
-                    'content'    => 'cung tamcsac        ascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '15',
-                    'content'    => 'cavasvas    ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '15',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '16',
-                    'content'    => 'casfasvvv  ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.5',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '16',
-                    'content'    => 'cun  g tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '17',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ], [
                 'user_id'    => '2',
                 'product_id' => '17',
-                'content'    => 'c               ung tamcsacascascascc',
+                'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                 'rated'      => '4.5',
 
             ],
                 [
                     'user_id'    => '3',
                     'product_id' => '18',
-                    'content'    => 'cx    xxxung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '18',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '19',
-                    'content'    => 'ccsacascasc  ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '19',
-                    'content'    => 'cascascascsacascSSSSung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '20',
-                    'content'    => 'cascascascascascung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '20',
-                    'content'    => 'cascsacascascascascung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '21',
-                    'content'    => 'cascasc     ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '21',
-                    'content'    => 'cacasca   AAAAAung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ], [
                 'user_id'    => '1',
                 'product_id' => '22',
-                'content'    => 'casca   ung tamcsacascascascc',
+                'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                 'rated'      => '3.0',
 
             ],
                 [
                     'user_id'    => '2',
                     'product_id' => '22',
-                    'content'    => 'casc    ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '23',
-                    'content'    => 'cung tamcsascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '23',
-                    'content'    => 'c            ung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '24',
-                    'content'    => 'cung HAHAHAHAtamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '24',
-                    'content'    => 'cXXXXXXXXXXung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '25',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '25',
-                    'content'    => 'cAAAAAAAAAung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '26',
-                    'content'    => 'ccsaaaaaaaaaaaaaaaaung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '26',
-                    'content'    => 'cZZZZZZZZung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '1.0',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '27',
-                    'content'    => 'cSSSSSSSSSSSung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '27',
-                    'content'    => 'cAcascascascung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '28',
-                    'content'    => 'cavavasvasvung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '4',
                     'product_id' => '28',
-                    'content'    => 'cascascacascung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '5',
                     'product_id' => '29',
-                    'content'    => 'csacsacascsacavasvabsfngngsgwegwevsdvdsvsdvung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.5',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '29',
-                    'content'    => 'cuascascascasvasvaasvng tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '29',
-                    'content'    => 'csalkaslkvnsavaiojgupawvnpasovpaosnvpoasuvjpasnvasvung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '3.0',
 
                 ],
                 [
                     'user_id'    => '3',
                     'product_id' => '30',
-                    'content'    => 'caslknaslvnaslkvaslnvaslknvaslkvnlsaknvlasknvung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '4.0',
 
                 ],
@@ -504,21 +503,21 @@ class CommentTableSeeder extends Seeder
                 [
                     'user_id'    => '5',
                     'product_id' => '30',
-                    'content'    => 'cung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '2.5',
 
                 ],
                 [
                     'user_id'    => '1',
                     'product_id' => '31',
-                    'content'    => 'cascnsalnclanslskacung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
                 [
                     'user_id'    => '2',
                     'product_id' => '31',
-                    'content'    => 'clakflaksnfklasnflkasnflkasnflkasnflksanflkasnflaksnflkasnflskanflkasnfung tamcsacascascascc',
+                    'content'    => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
                     'rated'      => '5.0',
 
                 ],
