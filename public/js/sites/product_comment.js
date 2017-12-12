@@ -45,7 +45,7 @@ frm.submit(function (e) {
 });
 
 function myFunction() {
-    $rate1 = $('#cmt_star').val();
+    $rate1 = $('#input-send').val();
     $prd1 = $('#prd_1').val();
     $.ajax({
         headers:
