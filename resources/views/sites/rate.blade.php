@@ -7,7 +7,7 @@
                data-max="5"
                data-size="xs" data-step=0.1 value="{!! $ratetb!!}"
                title="" disabled="disabled">
-        <h4>( This product is rated by 0 People )</h4>
+        <h4>( Rated {{$ratetb}}/5 by {{$countuser}}People )</h4>
     </div>
 @else
 
@@ -16,7 +16,7 @@
                data-max="5"
                data-size="xs" data-step=0.1 value="{!! $prd_detail->rated !!}"
                title="" disabled="disabled">
-        <h4>( This product is rated by 0 People )</h4>
+        <h4>( Rated {{$prd_detail->rated}}/5 by {{$countuser}} People )</h4>
     </div>
 @endif
 {{ HTML::script('js/sites/product_detail.js') }}

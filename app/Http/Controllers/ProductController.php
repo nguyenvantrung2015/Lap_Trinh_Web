@@ -10,6 +10,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Response;
 use Session;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -43,8 +44,11 @@ class ProductController extends Controller
         $prd_id = $id;
         $listCmt = $this->cmt->where('product_id', $prd_detail->id)->orderBy('created_at', 'desc')->get();
         $listUser = User::all();
+        $countuser = $this->countUser($prd_detail);
 
-        return view('sites.product', compact('prd_id', 'prd_detail', 'prd_img', 'prd_similar', 'listCmt', 'listUser'));
+
+        return view('sites.product',
+            compact('prd_id', 'prd_detail', 'prd_img', 'prd_similar', 'listCmt', 'listUser', 'countuser'));
     }
 
     public function getdata_product()
@@ -233,10 +237,23 @@ class ProductController extends Controller
         $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
 //        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
 //            ->avg('rated');
+        $countuser = $this->countUser($prd_detail);
         $ratetb = ($prd_detail->rated + $rate) / 2;
 //        $prd_detail->rated = $ratetb;
 //        $prd_detail->save();
-        return view('sites.rate', compact('ratetb'));
+        return view('sites.rate', compact('ratetb', 'countuser'));
 
+    }
+
+    public function countUser(Product $pdt)
+    {
+        $count = 0;
+        $listCmt = $this->cmt->where('product_id', $pdt->id)->get();
+//        $listUser = User::with('comment.product')->find($pdt->id);
+        $users = DB::table('users')->join('comments', 'users.id', '=', 'comments.user_id')
+            ->where('comments.product_id', '=', $pdt->id)->select('users.id')
+            ->distinct()->get();
+        $count = $users->count();
+        return $count;
     }
 }

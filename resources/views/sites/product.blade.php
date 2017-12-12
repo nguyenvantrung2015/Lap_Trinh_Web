@@ -89,13 +89,7 @@
                             <h2><strong>{!! $prd_detail->name !!}</strong></h2>
                         </div>
                         <div id="return_rate">
-                            <div class="row starr" style="padding-bottom: 10px">
-                                <input id="input-id" type="text" class="rating" data-min="0"
-                                       data-max="5"
-                                       data-size="xs" data-step=0.1 value="{!! $prd_detail->rated !!}"
-                                       title="" disabled="disabled">
-                                <h4>( This product is rated by 0 People )</h4>
-                            </div>
+                           @include('sites.rate')
                         </div>
                         <div class="row">
                             <p class="product-description"><span
