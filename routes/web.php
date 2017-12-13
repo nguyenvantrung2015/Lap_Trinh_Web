@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('product/{id}', ['as' => 'addToCart', 'uses' => 'PagesController@addToCart']);
     Route::get('delete/{id}', ['as' => 'deleteCart', 'uses' => 'PagesController@deleteCart']);
     Route::get('cart/checkout', 'PagesController@checkout')->name('checkout');
-    Route::post('checkout/{sum}', 'PagesController@checkoutSubmit')->name('chSubmit');
+    Route::post('checkout/{sum}', array('uses' =>'PagesController@checkoutSubmit'))->name('chSubmit');
     Route::get('thankyou', 'PagesController@thankyou')->name('thankyou');
 });
 
@@ -71,4 +71,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
 });
 Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
 Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
-//Route::get('getcomment','ProductController@getcomment')->name('getcomment');
+
+Route::get('send_email','EmailController@sendEmailReminder');
