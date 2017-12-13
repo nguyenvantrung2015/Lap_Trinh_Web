@@ -28,6 +28,6 @@ class EmailController extends Controller
         // $id = 2; // điền 1 mã id bất kỳ của user trong bảng users 
         // $user = User::findOrFail($id);
  
-        Mail::to('nguyenvantrung2014@gmail.com')->send(new UserEmail());
+        Mail::to('nguyenvantrung2016@gmail.com')->send(new UserEmail());
     }
 }
