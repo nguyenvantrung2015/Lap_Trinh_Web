@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Mail;
+use App\Models\User;
+use App\Mail\OrderShipped;
+use Carbon\Carbon;
+use App\Mail\UserEmail;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Facades\View;
+
 class PagesController extends Controller
 {
     public function showCart()
@@ -58,7 +66,8 @@ class PagesController extends Controller
     {
         $user = Auth::user();
         $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->distinct()->get();
-
+        $sendmail = "trung";
+        // return view('sites.sendmail',compact('sendmail'));
         return view('sites.checkout', compact('user', 'products'));
     }
 
@@ -100,7 +109,10 @@ class PagesController extends Controller
             $ord_detail->save();
             Cart::destroy($cart->id);
         }
-
+        $user = User::findOrFail($user->id);
+        $data = new UserEmail();
+        $data->subject = "Foodee Order Success";
+        Mail::to($user)->send($data);
         return redirect(route('thankyou'));
     }
 

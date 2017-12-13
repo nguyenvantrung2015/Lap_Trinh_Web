@@ -70,7 +70,6 @@ var manage_food = new Vue	({
                 params: input,
                 json: true
             }
-
             axios(authOptions).then((response) => {
                 this.new_food ={'name':'','price':'','describle':'','category':'',};
             toastr.success('Add food success', 'Success', {timeOut: 1000});

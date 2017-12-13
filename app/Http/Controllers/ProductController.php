@@ -150,7 +150,7 @@ class ProductController extends Controller
 
     public function update_drink(Request $request, $id)
     {
-        $this->validate($request,
+        $error = $this->validate($request,
             [
                 'name' => 'required|unique:products,name|min:3|max:30|',
                 'price' => 'required|min:0',
