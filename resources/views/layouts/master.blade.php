@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodee</title>
     {{HTML::style('bower/bootstrap/dist/css/bootstrap.css')}}
     <script src="//code.jquery.com/jquery.js"></script>

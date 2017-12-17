@@ -89,7 +89,7 @@
                             <h2><strong>{!! $prd_detail->name !!}</strong></h2>
                         </div>
                         <div id="return_rate">
-                           @include('sites.rate')
+                            @include('sites.rate')
                         </div>
                         <div class="row">
                             <p class="product-description"><span
@@ -165,13 +165,9 @@
                                                        data-size="xs" data-step=0.5 value="0"
                                                        title="">
 
-                                                {{--<input id="ratings-hidden" name="rating" type="hidden">--}}
                                                 <button type="button" class="btn btn-danger btn-sm"
                                                         id="close-review-box">Cancel
                                                 </button>
-                                                {{--<button class="btn btn-success btn-lg" id=" save-review-box"--}}
-                                                {{--type="submit">Save--}}
-                                                {{--</button>--}}
                                             </form>
                                             <button class="btn btn-success btn-lg" id=" save-review-box"
                                                     type="submit">Save
@@ -192,16 +188,7 @@
         <div id="comment_1">
             @include("sites.comment");
         </div>
-        {{--<div>--}}
-        {{--@if(Auth::check())--}}
-        {{--<form id="postComment" action="{{route('addComment')}}" method="get">--}}
-        {{--<input id="product_1" name="product_1" type="hidden" value="{{$prd_detail->id}}">--}}
-        {{--<input id="comment_text" name="comment_text" type="text" placeholder="add comment">--}}
-        {{--<button type="submit">Comment</button>--}}
-        {{--</form>--}}
-        {{--@endif--}}
 
-        {{--</div>--}}
         <div id="line1"></div>
 
         <div class="row" style="margin-top: 25px;">

@@ -1,11 +1,12 @@
 {{ HTML::style('css/sites/product_detail.css') }}
 {{ HTML::style('bower/bootstrap-star-rating/css/star-rating.css') }}
 {{ HTML::style('bower/bootstrap-star-rating/themes/krajee-svg/theme.css')}}
+
 @if(isset($ratetb))
     <div class="row starr" style="padding-bottom: 10px">
         <input id="input-id" type="text" class="rating" data-min="0"
                data-max="5"
-               data-size="xs" data-step=0.1 value="{!! $ratetb!!}"
+               data-size="xs" data-step=0.1 value="{!! round($ratetb * 2) / 2 !!}"
                title="" disabled="disabled">
         <h4>( Rated {{$ratetb}}/5 by {{$countuser}}People )</h4>
     </div>
@@ -14,7 +15,7 @@
     <div class="row starr" style="padding-bottom: 10px">
         <input id="input-id" type="text" class="rating" data-min="0"
                data-max="5"
-               data-size="xs" data-step=0.1 value="{!! $prd_detail->rated !!}"
+               data-size="xs" data-step=0.1 value="{!! round($prd_detail->rated * 2) / 2 !!}"
                title="" disabled="disabled">
         <h4>( Rated {{$prd_detail->rated}}/5 by {{$countuser}} People )</h4>
     </div>
