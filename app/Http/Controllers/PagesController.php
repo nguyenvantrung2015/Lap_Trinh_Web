@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderShipped;
+use App\Mail\UserEmail;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
 use Mail;
-use App\Models\User;
-use App\Mail\OrderShipped;
-use Carbon\Carbon;
-use App\Mail\UserEmail;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Support\Facades\View;
 
 class PagesController extends Controller
 {
@@ -66,7 +62,7 @@ class PagesController extends Controller
     {
         $user = Auth::user();
         $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->distinct()->get();
-        $sendmail = "trung";
+//        $sendmail = "trung";
         // return view('sites.sendmail',compact('sendmail'));
         return view('sites.checkout', compact('user', 'products'));
     }
@@ -112,7 +108,8 @@ class PagesController extends Controller
         $user = User::findOrFail($user->id);
         $data = new UserEmail();
         $data->subject = "Foodee Order Success";
-        Mail::to($user)->send($data);
+//        Mail::to($user)->send($data);
+
         return redirect(route('thankyou'));
     }
 

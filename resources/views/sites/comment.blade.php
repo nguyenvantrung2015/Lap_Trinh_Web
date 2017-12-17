@@ -1,6 +1,6 @@
 {{ HTML::style('css/sites/product_detail.css') }}
 {{ HTML::style('bower/bootstrap-star-rating/css/star-rating.css') }}
-<div class="container">
+<div class="container" style="width: 100%;">
     @foreach($listCmt as $comment)
         <div class="row">
             <div class="review-block">
