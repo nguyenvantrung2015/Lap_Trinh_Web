@@ -1,74 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">WELCOME BACK</div>
-                    <div class="panel-body">
+    <div class="agile-login">
+        <div class="wrapper">
+            <h2>Sign In</h2>
+            <div class="w3ls-form">
+                {!! Form::open(['role' => 'form','class'=>'form-horizontal','method' =>'POST','route'=>'login']) !!}
+                {{ csrf_field() }}
+                <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label>Email</label>
+                    {!! Form::input('email','email',old('email'),['id'=>'email','autofocus'=>'true']) !!}
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
 
-                        {!! Form::open(['role' => 'form','class'=>'form-horizontal','method' =>'POST','route'=>'login']) !!}
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            {!! Form::label('email', 'E-Mail Address', ['class' => 'col-md-4 control-label']) !!}
-                            <div class="col-md-6">
-                                {!! Form::input('email','email',old('email'),['id'=>'email','class'=>'form-control','autofocus'=>'true']) !!}
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            {!! Form::label('password', 'Password', ['class' => 'col-md-4 control-label']) !!}
-                            <div class="col-md-6">
-                                {!! Form::input('password','password',null,['id'=>'password','class'=>'form-control']) !!}
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
+                <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <label>Password</label>
+                    {!! Form::input('password','password',null,['id'=>'password']) !!}
+                    @if ($errors->has('password'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        {!! Form::checkbox('remember', old('remember')) !!}
-                                        Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="form-group" id="facebook">
-                            Dont Have An Account ?
-                            <a href="{{route('register')}}">Register Here</a>
-                            <p>-OR-</p>
-                            <a href="{{route('facebook')}}">
-                                <button class="fb" type="button">Log In With Facebook</button>
-                            </a>
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
+                    @endif <a href="{{ route('password.request') }}" class="pass">Forgot Password ?</a>
                 </div>
+
+                <input type="submit" value="Log In"/>
+                {!! Form::close() !!}
             </div>
+            <div class="agile-icons">
+                <a href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                <a href="{{route('facebook')}}"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-pinterest-p"></span></a>
+            </div>
+            Dont Have An Account ?
+            <a href="{{route('register')}}">Register Here</a>
+            {{--<br>--}}
+            {{--<a href="{{route('home')}}">HomePage</a>--}}
+        </div>
+        <br>
+        <div class="copyright">
+            <p>© 2017 <a href="{{route('home')}}"> Foodee</a>. All rights reserved</p>
         </div>
     </div>
 @endsection

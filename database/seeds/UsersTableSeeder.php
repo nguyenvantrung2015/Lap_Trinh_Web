@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
             [
                 [
                     'email'         => 'nguyenvantrung2016@gmail.com',
-                    'password'      => bcrypt('anhtrung1996'),
+                    'password'      => bcrypt('flashteam1996'),
                     'name'          => 'admin',
                     'date_of_birth' => '19961104',
                     'gender'        => '1',
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
                 ],
                 [
                     'email'         => 'ynghiacuocsong2015@gmail.com',
-                    'password'      => bcrypt('anhtrung1996'),
+                    'password'      => bcrypt('flashteam1996'),
                     'name'          => 'duong',
                     'date_of_birth' => '19961105',
                     'gender'        => '1',
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
                 ],
                 [
                     'email'         => 'nguyenvantrung2017@gmail.com',
-                    'password'      => bcrypt('anhtrung1996'),
+                    'password'      => bcrypt('flashteam1996'),
                     'name'          => 'Pho Duc Dat',
                     'date_of_birth' => '19801005',
                     'gender'        => '1',

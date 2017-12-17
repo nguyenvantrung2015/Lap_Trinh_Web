@@ -234,5 +234,4 @@
     {{ HTML::script('js/sites/jquery.stellar.min.js') }}
     {{ HTML::script('js/sites/jquery.flexslider-min.js') }}
     {{ HTML::script('js/sites/main.js') }}
-    {{ HTML::script('js/sites/homepage.js') }}
 @endsection

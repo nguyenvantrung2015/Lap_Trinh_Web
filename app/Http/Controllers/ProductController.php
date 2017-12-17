@@ -8,9 +8,9 @@ use App\Models\Product;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Response;
 use Session;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -31,7 +31,6 @@ class ProductController extends Controller
         foreach ($listPrd as $prd1) {
             $rating = Comment::where('product_id', '=', $prd1->id)->where('rated', '>', '0')
                 ->avg('rated');
-//            $prd1->rated = round($rating * 2) / 2;
             $prd1->rated = $rating;
             $prd1->save();
         }
@@ -97,13 +96,13 @@ class ProductController extends Controller
         // dd($request);
         $this->validate($request,
             [
-                'name' => 'required|unique:products,name|min:3|max:30|',
-                'price' => 'required|min:0',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required' => 'Please Insert Name',
-                'price.required' => 'Please Insert Price',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         // dd($request->img);
@@ -121,13 +120,12 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name' => 'required|unique:products,name|min:3|max:30|',
-                'price' => 'required|min:0',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
                 'description' => 'required',
                 // 'image' => 'required',
             ],
             [
-
                 'name.required' => 'Please Insert Name',
                 'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
@@ -143,8 +141,6 @@ class ProductController extends Controller
             $new_category->product_id = $new_food->id;
             $new_category->image = $new_food->avatar;
             $new_category->save();
-
-
     }
 
     //drink
@@ -157,13 +153,13 @@ class ProductController extends Controller
     {
         $error = $this->validate($request,
             [
-                'name' => 'required|unique:products,name|min:3|max:30|',
-                'price' => 'required|min:0',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required' => 'Please Insert Name',
-                'price.required' => 'Please Insert Price',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         $product = Product::find($id);
@@ -180,23 +176,23 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name' => 'required|unique:products,name|min:3|max:30|',
-                'price' => 'required|min:0',
+                'name'        => 'required|unique:products,name|min:3|max:30|',
+                'price'       => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required' => 'Please Insert Name',
-                'price.required' => 'Please Insert Price',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
 
         return Product::create(
             [
 
-                'name' => $request->input(['name']),
-                'price' => $request->input(['price']),
+                'name'        => $request->input(['name']),
+                'price'       => $request->input(['price']),
                 'description' => $request->input(['description']),
-                'category' => "Drink",
+                'category'    => "Drink",
 
             ]);
     }
@@ -240,25 +236,25 @@ class ProductController extends Controller
         $rate = $request->rate1;
 
         $prd_detail = $this->prd_detail->where('id', '=', "$product")->first();
-//        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
-//            ->avg('rated');
+        $prd_detail->rated = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
+            ->avg('rated');
+        $count = Comment::where('product_id', '=', $product)->where('rated', '>', '0')
+            ->count();
+        $ratetb = ($prd_detail->rated * $count + $rate) / ($count + 1);
         $countuser = $this->countUser($prd_detail);
-        $ratetb = ($prd_detail->rated + $rate) / 2;
-//        $prd_detail->rated = $ratetb;
-//        $prd_detail->save();
+
         return view('sites.rate', compact('ratetb', 'countuser'));
 
     }
 
     public function countUser(Product $pdt)
     {
-        $count = 0;
         $listCmt = $this->cmt->where('product_id', $pdt->id)->get();
-//        $listUser = User::with('comment.product')->find($pdt->id);
         $users = DB::table('users')->join('comments', 'users.id', '=', 'comments.user_id')
             ->where('comments.product_id', '=', $pdt->id)->select('users.id')
             ->distinct()->get();
         $count = $users->count();
+
         return $count;
     }
 

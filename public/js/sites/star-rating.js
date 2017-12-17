@@ -544,8 +544,8 @@
         starCaptionClasses: {
             0.5: 'label label-danger',
             1: 'label label-danger',
-            1.5: 'label label-warning',
-            2: 'label label-warning',
+            1.5: 'label label-danger',
+            2: 'label label-danger',
             2.5: 'label label-info',
             3: 'label label-info',
             3.5: 'label label-primary',
@@ -570,8 +570,8 @@
     $.fn.ratingLocales.en = {
         defaultCaption: '{rating} Stars',
         starCaptions: {
-            0.5: 'Very Bad',
-            1: 'Very Bad',
+            0.5: 'Bad',
+            1: 'Bad',
             1.5: 'Bad',
             2: 'Bad',
             2.5: 'Mediocre',

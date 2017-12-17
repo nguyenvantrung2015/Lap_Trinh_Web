@@ -46,12 +46,11 @@
                     <div class="info-box">
                         <a href="" title="">
                         <span class="info-box-icon bg-red"><i class="fa fa-handshake-o"></i></span>
-
+                        </a>
                         <div class="info-box-content">
                             <span class="info-box-text">Customers Potential</span>
                             <span class="info-box-number">120</span>
                         </div>
-                        </a>
                     </div>
                 </div>
             </div>

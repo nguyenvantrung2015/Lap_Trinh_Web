@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     var nsOptions =
         {
             sliderId: "ninja-slider",
@@ -1566,11 +1566,12 @@ $(function () {
     var x = document.getElementById('label');
 
     openReviewBtn.click(function (e) {
+        $('#input-send').rating('reset');
         reviewBox.slideDown(400, function () {
             $('#new-review').trigger('autosize.resize');
             newReview.focus();
         });
-        if (x.style.display === 'none') {
+        if (x.style.display == 'none') {
             x.style.display = 'inline';
         } else {
             x.style.display = 'none';
@@ -1582,11 +1583,12 @@ $(function () {
 
     closeReviewBtn.click(function (e) {
         e.preventDefault();
+        newReview.val(" ");
         reviewBox.slideUp(300, function () {
             newReview.focus();
             openReviewBtn.fadeIn(200);
         });
-        if (x.style.display === 'none') {
+        if (x.style.display == 'none') {
             x.style.display = 'inline';
         } else {
             x.style.display = 'none';
