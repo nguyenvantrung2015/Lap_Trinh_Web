@@ -58,7 +58,18 @@ Route::group(['prefix' => 'api/v1'], function () {
     // drink
     Route::get('delete_drink/{id}', 'ProductController@delete_drink');
     Route::post('update_drink/{id}', 'ProductController@update_drink');
-    Route::post('create_drink', 'ProductController@create_drink');
+    Route::post('create_drink', 'ProductController@create_drink');  
+    Route::get('product_hot','ProductController@product_hot');
+    Route::get('totalamount','ProductController@totalamount');
+    Route::get('day_total','ProductController@day_total');
+    Route::get('user_oder/{id}','AdminController@user_order');
+    Route::get('order_detail/{id}','AdminController@order_detail');
+    Route::get('complete','AdminController@complete');
+    Route::get('waiting','AdminController@waiting');
+    Route::get('inprogress','AdminController@inprogress');
+    Route::get('food_sl','AdminController@food_sl');
+    Route::get('drink_sl','AdminController@drink_sl');
+
 });
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], function () {
@@ -73,3 +84,4 @@ Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
 Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
 
 Route::get('send_email','EmailController@sendEmailReminder');
+

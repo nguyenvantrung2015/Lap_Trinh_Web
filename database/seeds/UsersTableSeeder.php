@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert(
             [
                 [
-                    'email'         => 'admin@gmail.com',
-                    'password'      => bcrypt('admin'),
+                    'email'         => 'nguyenvantrung2016@gmail.com',
+                    'password'      => bcrypt('anhtrung1996'),
                     'name'          => 'admin',
                     'date_of_birth' => '19961104',
                     'gender'        => '1',
@@ -25,18 +25,18 @@ class UsersTableSeeder extends Seeder
                     'level'         => '1',
                 ],
                 [
-                    'email'         => 'duong@gmail.com',
-                    'password'      => bcrypt('123456'),
+                    'email'         => 'ynghiacuocsong2015@gmail.com',
+                    'password'      => bcrypt('anhtrung1996'),
                     'name'          => 'duong',
                     'date_of_birth' => '19961105',
                     'gender'        => '1',
                     'phone'         => '0943966988',
                     'address'       => '119 Hang Ma, Hoan Kiem, Ha Noi',
-                    'level'         => '1',
+                    'level'         => '0',
                 ],
                 [
-                    'email'         => 'pho.duc.dat@framgia.com',
-                    'password'      => bcrypt('167456'),
+                    'email'         => 'nguyenvantrung2017@gmail.com',
+                    'password'      => bcrypt('anhtrung1996'),
                     'name'          => 'Pho Duc Dat',
                     'date_of_birth' => '19801005',
                     'gender'        => '1',

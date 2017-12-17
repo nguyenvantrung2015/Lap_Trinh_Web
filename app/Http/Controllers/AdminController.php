@@ -9,7 +9,7 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use Auth;
 use Illuminate\Support\Facades\DB;
-
+use Response;
 class AdminController extends Controller
 {
     protected $information;
@@ -85,33 +85,20 @@ class AdminController extends Controller
 
     public function manage_customer ()
     {
-        $users = $this->information->orderBy('created_at', 'desc')->get();
-        $Order = $this->order->all();
-        $totalorder = $Order->count();
-        return view('admin.pages.manage_customer', compact(
-            'users',
-            'totalorder'
-        ));
+        $users = User::all();
+        return view('admin.pages.manage_customer1',compact('users'));
     }
 
     public function manage_order ()
     {
-        $orders = $this->order->orderBy('created_at', 'desc')->get();
-        $products = DB::table('products')
-            ->join('order_details', 'products.id', '=', 'order_details.product_id')
-            ->distinct()
-            ->get();
-        $users = DB::table('users')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->distinct()
-            ->get();
-        $totalorder = $orders->count();
-        return view('admin.pages.manage_adminorder', compact(
-            'users',
-            'orders',
-            'totalorder',
-            'products'
-        ));
+        // $orders  = DB::table('orders')
+        //     ->join('users' ,'orders.user_id' ,'=','users.id')
+        //     ->get();
+        $orders = DB::select('
+            select orders.id ,users.name, orders.created_at, orders.product_count, orders.sum ,orders.status from orders, users
+            where orders.user_id = users.id
+            ');
+        return view('admin.pages.manage_order', compact('orders'));
     }
 
     public function getUserID($id)
@@ -119,5 +106,73 @@ class AdminController extends Controller
         $inforUser = $this->information->where('id', '=', $id)->get();
 
         return view('admin.pages.user_profile_manage', compact('inforUser','id'));
+    }
+
+    public function user_order($user_id)
+    {
+        $so_luong = DB::table('orders')
+            ->where('user_id', '=', $user_id)
+            ->count();
+        return Response::json($so_luong);
+    }
+
+    public function order_detail($order_id)
+    {
+        $order_details  = DB::table('order_details')
+            ->join('products' ,'order_details.product_id' ,'=','products.id')
+            ->where('order_id',$order_id)->get();
+        return Response::json($order_details);
+    }
+
+    public function complete()
+    {
+        // $complete  = DB::table('orders')
+        // ->where('status','=' ,'complete')
+        // ->where(DATE('updated_at'),'=',Curdate())
+        // ->count();
+        $complete = DB::select('
+            select count(*) as so_luong
+            from orders
+            where DATE(orders.updated_at) = Curdate() and orders.status ="complete"
+            ');
+        return Response::json($complete);
+    }
+    public function waiting()
+    {
+        $waiting = DB::select('
+            select count(*) as so_luong
+            from orders
+            where DATE(orders.updated_at) = Curdate() and orders.status ="waiting"
+            ');
+        return Response::json($waiting);
+    }
+    public function inprogress()
+    {
+        $inprogress = DB::select('
+            select count(*) as so_luong
+            from orders
+            where DATE(orders.updated_at) = Curdate() and orders.status ="inprogress"
+            ');
+        return Response::json($inprogress);
+    }
+
+    public function food_sl()
+    {
+        $food_sl = DB::select('
+            select count(*) as so_luong
+            from products
+            where products.category = "Food"
+            ');
+        return Response::json($food_sl);
+    }
+
+     public function drink_sl()
+    {
+        $drink_sl = DB::select('
+            select count(*) as so_luong
+            from products
+            where products.category = "Drink"
+            ');
+        return Response::json($drink_sl);
     }
 }
