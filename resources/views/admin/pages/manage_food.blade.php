@@ -137,6 +137,18 @@
                                     <label for="">Description :</label>
                                     <textarea rows="5" type="text" class="form-control" name="description" v-model="new_food.description"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Images : </label>
+                                    {{-- <input type="file"  class="form-control" name="image_food" v-model="new_food.image_food" > --}}
+                                    <input id="fileupload" type="file" multiple="multiple" name='image' v-on:change="onChange"/>
+                                    </br>
+                                    <b>Live Preview</b>
+                                    <br />
+                                    <div id="dvPreview">
+                                    </div>
+                                </div>
+
+                                
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
@@ -155,9 +167,39 @@
     {{ HTML::script('bower/datatables.net-bs/js/dataTables.bootstrap.min.js') }}
     {{ HTML::script('bower/fastclick/lib/fastclick.js') }}
     <script>
-        $(function () {
+        $(document).ready(function () {
+            $(function () {
+                $("#fileupload").change(function () {
+                    if (typeof (FileReader) != "undefined") {
+                        var dvPreview = $("#dvPreview");
+                        dvPreview.html("");
+                        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                        $($(this)[0].files).each(function () {
+                            var file = $(this);
+                            if (regex.test(file[0].name.toLowerCase())) {
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var img = $("<img />");
+                                    img.attr("style", "height:150px;width: 200px");
+                                    img.attr("src", e.target.result);
+                                    dvPreview.append(img);
+                                }
+                                reader.readAsDataURL(file[0]);
+                            } else {
+                                alert(file[0].name + " is not a valid image file.");
+                                dvPreview.html("");
+                                return false;
+                            }
+                        });
+                    } else {
+                        alert("This browser does not support HTML5 FileReader.");
+                    }
+                });
+            });
+            $(function () {
             $('#example1').DataTable();
         })
+        });
     </script>
     {{ HTML::script('js/admin/manage_food.js') }}
 @endsection

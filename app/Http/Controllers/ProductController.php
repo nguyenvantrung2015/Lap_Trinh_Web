@@ -123,22 +123,24 @@ class ProductController extends Controller
                 'name'        => 'required|unique:products,name|min:3|max:30|',
                 'price'       => 'required|min:0',
                 'description' => 'required',
+                // 'image' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
-
-        return Product::create(
-            [
-
-                'name'        => $request->input(['name']),
-                'price'       => $request->input(['price']),
-                'description' => $request->input(['description']),
-                'category'    => "Food",
-
-            ]);
+            $new_food = new Product();
+            $new_food->name = $request->name;
+            $new_food->price = $request->price;
+            $new_food->description = $request->description;
+            $new_food->avatar = $request->image;
+            $new_food->category = "Food";
+            $new_food->save();
+            $new_category= new Gallery();
+            $new_category->product_id = $new_food->id;
+            $new_category->image = $new_food->avatar;
+            $new_category->save();
     }
 
     //drink
@@ -255,4 +257,48 @@ class ProductController extends Controller
 
         return $count;
     }
+
+    public function product_hot(){
+        $product_hot = DB::select('
+            select products.name, sum(order_details.quantity) as so_luong
+            from order_details,products 
+            where products.id=order_details.product_id
+            Group by products.name
+            Order by so_luong DESC
+            Limit 5
+            ');
+        $sum = DB::select('
+            select sum(order_details.quantity) as so_luong
+            from order_details
+            ');
+        $product_hot['sum']= $sum;
+        return Response::json($product_hot);
+    }
+
+    public function totalamount(){
+        $totalamount = DB::select('
+            select sum(sum) as tong_tien
+            from orders
+            ');
+        return Response::json($totalamount);
+    }
+
+    public function day_total(){
+        $ngay_hientai = DB::select('
+            select sum(sum) as tong_tien
+            from orders
+            where DATE(orders.created_at) = Curdate()
+            ');
+        return Response::json($ngay_hientai);
+    }
+
+    public function thang_total(){
+        $thang_hientai = DB::select('
+            select sum(sum) as tong_tien
+            from orders
+            where Month(orders.created_at) = Curdate()
+            ');
+        return Response::json($ngay_hientai);
+    }
+
 }

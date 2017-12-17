@@ -18,7 +18,7 @@ class CreatOrdersTable extends Migration
                 $table->increments('id');
                 $table->integer('user_id')->unsigned();
                 $table->integer('product_count')->nullable()->default(0);
-                $table->string('status')->nullable()->default('pending');
+                $table->string('status')->nullable()->default('inprogress');
                 $table->integer('sum')->nullable()->default(0);
                 $table->timestamps();
             });

@@ -108,8 +108,7 @@ class PagesController extends Controller
         $user = User::findOrFail($user->id);
         $data = new UserEmail();
         $data->subject = "Foodee Order Success";
-//        Mail::to($user)->send($data);
-
+        // Mail::to($user)->send($data);
         return redirect(route('thankyou'));
     }
 

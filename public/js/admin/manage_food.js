@@ -2,8 +2,9 @@ var manage_food = new Vue	({
     el:'#manage_food',
     data : {
         foods:[],
+        image:'',
         item_food:{'name':'','price':'','description':'',},
-        new_food:{'name':'','price':'','description':'','category':'',},
+        new_food:{'name':'','price':'','description':'','category':'','image':''},
     },
     computed: {
     },
@@ -17,7 +18,7 @@ var manage_food = new Vue	({
                 url: '/api/v1/all_foods',
                 json: true,
             }
-            axios(authOptions).then(response = > {
+            axios(authOptions).then(response => {
                 this.$set(this, 'foods', response.data);
             console.log(this.foods);
         });
@@ -63,6 +64,8 @@ var manage_food = new Vue	({
         },
         create_food : function(){
             var input = this.new_food;
+            this.new_food['image'] = this.image;
+            this.new_food['category'] = 'Food';
             console.log(input);
             var authOptions = {
                 method: 'post',
@@ -71,13 +74,18 @@ var manage_food = new Vue	({
                 json: true
             }
             axios(authOptions).then((response) => {
-                this.new_food ={'name':'','price':'','describle':'','category':'',};
+                this.new_food ={'name':'','price':'','describle':''};
             toastr.success('Add food success', 'Success', {timeOut: 1000});
         }).catch((error) => {
                 toastr.error('Add food error', 'Error', {timeOut: 1000});
         });
             // console.log('hihi')
         },
+        onChange: function(e) {
+            e.preventDefault()
+            this.image = e.target.files[0].name;
+            
+        }
 
 
     }

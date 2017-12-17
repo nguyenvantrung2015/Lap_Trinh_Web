@@ -19,7 +19,7 @@
     @yield('style')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+    <div class="wrapper" >
         <header class="main-header">
             <a href="{{ route('user.profile',Auth::user()->id) }}" class="logo">
                 <span class="logo-mini"><b>A</b></span>
@@ -237,7 +237,7 @@
                 </div>
             </nav>
         </header>
-        <aside class="main-sidebar">
+        <aside class="main-sidebar" id = "home">
             <section class="sidebar nav-fix-header">
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
@@ -268,16 +268,25 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ route('manage.customer') }}"><i class="fa fa-circle-o"></i> Manager User</a></li>
-                            <li><a href="{{ route('manage_food') }}"><i class="fa fa-circle-o"></i> Manager Food</a>
+                            <li><a href="{{ route('manage_food') }}"><i class="fa fa-circle-o"></i> <span>Manager Food</span>
+                            <span class="pull-right-container"><small class="label pull-right bg-red">@{{food_sl}}</small></span>
+                            </a>
                             </li>
-                            <li><a href="{{ route('manage_drink') }}"><i class="fa fa-circle-o"></i> Manager Drink</a></li>
+                            <li><a href="{{ route('manage_drink') }}"><i class="fa fa-circle-o"></i> <span>Manager Drink</span>
+                            <span class="pull-right-container"><small class="label pull-right bg-red">@{{drink_sl}}</small></span>
+                            </a>
+                            </li>
+                            <li></li>
+                            <li></li>
                         </ul>
                     </li>
-                    <li>
+                    <li >
                         <a href="{{ route('manage.order') }}">
                             <i class="fa fa-calendar"></i> <span>Manage Order</span>
                             <span class="pull-right-container">
-                                <small class="label pull-right bg-blue">{!! $totalorder !!}</small>
+                                <small class="label pull-right bg-blue">@{{inprogress_sl}}</small>
+                                <small class="label pull-right bg-yellow">@{{waiting_sl}}</small>
+                                <small class="label pull-right bg-green">@{{complete_sl}}</small>
                             </span>
                         </a>
                     </li>
@@ -479,6 +488,7 @@
     {{ HTML::script('bower/chart.js/Chart.js') }}
     {{ HTML::script('bower/admin-lte/dist/js/demo.js') }}
     {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
+    {{ HTML::script('js/admin/admin_page.js') }}
     <script>
         $(document).ready(function () {
             $('#logout-1').on('click', function () {

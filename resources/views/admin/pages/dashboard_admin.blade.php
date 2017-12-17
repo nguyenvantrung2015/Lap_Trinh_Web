@@ -2,7 +2,7 @@
 @section('style')
 @endsection
 @section('content')
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="thongke">
         <section class="content-header">
             <h1>
                 Report
@@ -39,6 +39,17 @@
                         <div class="info-box-content">
                             <span class="info-box-text"> Total Members</span>
                             <span class="info-box-number">{!! $totaluser !!}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <a href="" title="">
+                        <span class="info-box-icon bg-red"><i class="fa fa-handshake-o"></i></span>
+                        </a>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Customers Potential</span>
+                            <span class="info-box-number">120</span>
                         </div>
                     </div>
                 </div>
@@ -81,35 +92,18 @@
                                         <strong>Goal Completion</strong>
                                     </p>
 
-                                    <div class="progress-group">
-                                        <span class="progress-text">Add Products to Cart</span>
-                                        <span class="progress-number"><b>160</b>/200</span>
-
+                                    <div class="progress-group" v-for="prd in product">
+                                        <span class="progress-text">@{{prd.name}}</span>
+                                        <span class="progress-number"><b>@{{prd.so_luong}}</b>/@{{sum}}</span>
                                         <div class="progress sm">
-                                            <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-group">
-                                        <span class="progress-text">Complete Purchase</span>
-                                        <span class="progress-number"><b>310</b>/400</span>
-
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                                        </div>
-                                    </div>
-                                    <!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        <span class="progress-text">Visit Premium Page</span>
-                                        <span class="progress-number"><b>480</b>/800</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-group">
-                                        <span class="progress-text">Send Inquiries</span>
-                                        <span class="progress-number"><b>250</b>/500</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                                            <div v-if="prd.so_luong*100/sum>=50" class="progress-bar progress-bar-aqua" v-bind:style="{ width: prd.so_luong*100/sum +'%' }"></div>
+                                            <div v-if="prd.so_luong*100/sum>=40 && prd.so_luong*100/sum<50" class="progress-bar progress-bar-red" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
+                                            <div v-if="prd.so_luong*100/sum>=30 && prd.so_luong*100/sum<40" class="progress-bar progress-bar-yellow" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
+                                            <div v-if="prd.so_luong*100/sum>=20 && prd.so_luong*100/sum<30" class="progress-bar progress-bar-green" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
+                                            <div v-if="prd.so_luong*100/sum<20" class="progress-bar progress-bar-blue" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
+                                          {{--   <div v-if="prd.so_luong*100/sum>=30 && prd.so_luong*100/sum<40" class="progress-bar progress-bar-green" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div> --}}
+                                     {{--        <div v-if="prd.so_luong*100/sum>=20 && prd.so_luong*100/sum<30" class="progress-bar progress-bar-yellow" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div>
+                                            <div v-if="prd.so_luong*100/sum<20" class="progress-bar progress-bar-yellow" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +114,7 @@
                                 <div class="col-sm-3 col-xs-6">
                                     <div class="description-block border-right">
                                         <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                        <h5 class="description-header">$35,210.43</h5>
+                                        <h5 class="description-header">$ @{{tongtien}}</h5>
                                         <span class="description-text">TOTAL REVENUE</span>
                                     </div>
                                 </div>
@@ -128,7 +122,7 @@
                                     <div class="description-block border-right">
                                         <span class="description-percentage text-yellow"><i
                                                     class="fa fa-caret-left"></i> 0%</span>
-                                        <h5 class="description-header">$10,390.90</h5>
+                                        <h5 class="description-header">$ @{{tien_ngay}}</h5>
                                         <span class="description-text">TOTAL COST</span>
                                     </div>
                                 </div>
@@ -155,4 +149,5 @@
     </div>
 @endsection
 @section('script')
+    {{ HTML::script('js/admin/thongke.js')}}
 @endsection
