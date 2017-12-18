@@ -75,13 +75,14 @@
                             <div class="row">
                                 <div class="col-md-6 text-center">Status : </div>
                                 <div class="col-md-6 text-right">
-                                <form method="get" accept-charset="utf-8">
-                                    <select>
-                                        <option value="waiting" style="background-color:yellow">waiting</option>
-                                        <option value="inprogress">inprogress</option>
+                                <form method="POST" action="{{route('change_status')}}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="" name="id" v-model ="id" class="id_status">
+                                    <select name = "status" class="status" >
+                                        <option value="waiting" v-if="status == 'inprogress' || status == 'waiting'   "  style="background-color:yellow">waiting</option>
+                                        <option value="inprogress"  v-if="status == 'inprogress'" >inprogress</option>
                                         <option value="complete" style="background-color:green">complete</option>
                                     </select>
-                                    </br></br>
                                     <button type="submit" class="btn btn-primary">Check</button>
                                 </form>
                                 </div>

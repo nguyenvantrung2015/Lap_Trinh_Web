@@ -73,6 +73,14 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::get('food_sl','AdminController@food_sl');
     Route::get('drink_sl','AdminController@drink_sl');
 
+<<<<<<< HEAD
+    Route::get('day','AdminController@day');
+    Route::get('month','AdminController@month');
+    Route::get('year','AdminController@year');
+
+
+=======
+>>>>>>> 60a7d733b4ae56eecf8f6f2943643fa1cd2583bc
 });
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], function () {
@@ -82,9 +90,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
     Route::get('manage_customer', 'AdminController@manage_customer')->name('manage.customer');
     Route::post('postProducts', 'AdminController@post_products')->name('postProducts');
     Route::get('manage_order', 'AdminController@manage_order')->name('manage.order');
+    Route::post('change_status', 'AdminController@change_status')->name('change_status');
 });
 Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
 Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
 
 Route::get('send_email','EmailController@sendEmailReminder');
 
+<<<<<<< HEAD
+Route::get('chart',function(){
+    return view('admin.pages.chartjs');
+});
+
+=======
+>>>>>>> 60a7d733b4ae56eecf8f6f2943643fa1cd2583bc

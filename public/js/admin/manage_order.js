@@ -3,7 +3,9 @@ new Vue({
 	data: {
 		order_details:{},
 		order_sl: '',
-		url : '../img/'
+		url : '../img/',
+		id :'',
+		status :'',
 	},
 	computed: {
 
@@ -22,7 +24,9 @@ new Vue({
             };
             axios(authOptions).then(response => {
             	this.order_details = response.data;
-            	console.log(this.order_details);
+            	this.id = this.order_details[0].order_id;
+            	this.status = this.order_details[0].status;
+            	console.log(this.status);
 			});
        	}
 	}
