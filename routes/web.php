@@ -72,15 +72,9 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::get('inprogress','AdminController@inprogress');
     Route::get('food_sl','AdminController@food_sl');
     Route::get('drink_sl','AdminController@drink_sl');
-
-<<<<<<< HEAD
     Route::get('day','AdminController@day');
     Route::get('month','AdminController@month');
     Route::get('year','AdminController@year');
-
-
-=======
->>>>>>> 60a7d733b4ae56eecf8f6f2943643fa1cd2583bc
 });
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], function () {
@@ -97,10 +91,7 @@ Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
 
 Route::get('send_email','EmailController@sendEmailReminder');
 
-<<<<<<< HEAD
 Route::get('chart',function(){
     return view('admin.pages.chartjs');
 });
 
-=======
->>>>>>> 60a7d733b4ae56eecf8f6f2943643fa1cd2583bc
