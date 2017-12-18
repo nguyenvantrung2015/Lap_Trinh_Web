@@ -93,6 +93,7 @@
                                     <th class="text-center weight-title">Time</th>
                                     <th class="text-center weight-title">Products</th>
                                     <th class="text-center weight-title">Total</th>
+                                    <th class="text-center weight-title">Status</th>
                                     <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </thead>
@@ -102,6 +103,15 @@
                                     <td>{{$order->created_at}}</td>
                                     <td>{{$order->product_count}}</td>
                                     <td>${{$order->sum}}</td>
+                                    <td class="text-center">
+                                        @if($order->status == "inprogress" )
+                                            <div class="btn btn-info" style="width: 120px">{{$order->status}}</div>
+                                        @elseif($order->status == "waiting")
+                                            <div class="btn btn-warning" style="width: 120px" >{{$order->status}}</div>
+                                        @elseif($order->status == "complete")
+                                            <div class="btn btn-success" style="width: 120px" >{{$order->status}}</div>
+                                        @endif
+                                    </td>
                                     <td>
                                         <div class="aaa">
                                             <a class="orderID" href="javascript:void(0)" data-toggle="modal"

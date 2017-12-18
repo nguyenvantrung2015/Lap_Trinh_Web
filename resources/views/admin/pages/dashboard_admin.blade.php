@@ -1,5 +1,6 @@
 @extends('admin.layout.master')
 @section('style')
+ {{ HTML::style('bower/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}
 @endsection
 @section('content')
     <div class="content-wrapper" id="thongke">
@@ -58,7 +59,7 @@
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Monthly Recap Report</h3>
+                            <h3 class="box-title">Recap Report</h3>
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse">
                                     <i class="fa fa-minus"></i>
@@ -70,26 +71,37 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <!-- LINE CHART -->
-                                    <div class="box box-info">
-                                        <div class="box-header with-border">
-                                            <h3 class="box-title"><i class="fa fa-line-chart"></i>Sold Chart</h3>
-                                            <div class="box-tools pull-right">
-                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                            </div>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#day" aria-controls="home" role="tab" data-toggle="tab">Day</a></li>
+                                        <li role="presentation"><a href="#month" aria-controls="profile" role="tab" data-toggle="tab">Monthly</a></li>
+                                        <li role="presentation"><a href="#year" aria-controls="messages" role="tab" data-toggle="tab">Year</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="day">
+                                            <p class="text-center">
+                                            <strong>{{ __('Day Report') }} </strong>
+                                            </p>
+                                             <div id="bar-chart"></div>
                                         </div>
-                                        <div class="box-body chart-responsive">
-                                            <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="month">
+                                            <p class="text-center">
+                                            <strong>{{ __('Month Report') }} </strong>
+                                            </p>
+                                             <div id="bar-chart1"></div>
                                         </div>
-                                        <!-- /.box-body -->
+                                        <div role="tabpanel" class="tab-pane" id="year">
+                                            <p class="text-center">
+                                            <strong>{{ __('Year Report') }} </strong>
+                                            </p>
+                                             <div id="bar-chart2"></div>
+                                        </div>
                                     </div>
-                                    <!-- /.box -->
+
                                 </div>
                                 <div class="col-md-4">
                                     <p class="text-center">
-                                        <strong>Goal Completion</strong>
+                                        <strong>Top Products</strong>
                                     </p>
 
                                     <div class="progress-group" v-for="prd in product">
@@ -101,9 +113,6 @@
                                             <div v-if="prd.so_luong*100/sum>=30 && prd.so_luong*100/sum<40" class="progress-bar progress-bar-yellow" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
                                             <div v-if="prd.so_luong*100/sum>=20 && prd.so_luong*100/sum<30" class="progress-bar progress-bar-green" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
                                             <div v-if="prd.so_luong*100/sum<20" class="progress-bar progress-bar-blue" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>
-                                          {{--   <div v-if="prd.so_luong*100/sum>=30 && prd.so_luong*100/sum<40" class="progress-bar progress-bar-green" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div> --}}
-                                     {{--        <div v-if="prd.so_luong*100/sum>=20 && prd.so_luong*100/sum<30" class="progress-bar progress-bar-yellow" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div>
-                                            <div v-if="prd.so_luong*100/sum<20" class="progress-bar progress-bar-yellow" v-bind:style="{ prd.so_luong*100/sum + '%' }"></div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -149,5 +158,7 @@
     </div>
 @endsection
 @section('script')
-    {{ HTML::script('js/admin/thongke.js')}}
+    {{ HTML::script('js/admin/thongke.js') }}
+    {{ HTML::script('bower/jsapi/index') }}
+    {{ HTML::script('js/admin/report.js') }}
 @endsection

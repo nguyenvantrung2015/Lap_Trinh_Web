@@ -120,6 +120,7 @@ class AdminController extends Controller
     {
         $order_details  = DB::table('order_details')
             ->join('products' ,'order_details.product_id' ,'=','products.id')
+            ->join('orders','orders.id','=','order_details.order_id')
             ->where('order_id',$order_id)->get();
         return Response::json($order_details);
     }
@@ -174,5 +175,43 @@ class AdminController extends Controller
             where products.category = "Drink"
             ');
         return Response::json($drink_sl);
+    }
+
+    public function month(){
+        $month = DB::select('
+            select month(orders.created_at) as month , sum(orders.sum) as tong_so, count(*) as so_luong
+            from orders
+            where year(orders.created_at) = year(curdate())
+            group by month
+            ');
+        return Response::json($month);
+
+    }
+
+    public function day(){
+        $day = DB::select('
+            select day(orders.created_at) as days , sum(orders.sum) as tong_so, count(*) as so_luong
+            from orders
+            where month(orders.created_at) = month(curdate())
+            group by days
+            ');
+        return Response::json($day);
+    }
+
+    public function year(){
+        $years = DB::select('
+            select year(orders.created_at) as years , sum(orders.sum) as tong_so, count(*) as so_luong
+            from orders
+            group by years
+            ');
+        return Response::json($years);
+    }
+
+    public function change_status(Request $request){
+
+        $order = Order::where('id','=',$request->id)->first();
+        $order->status = $request->status;
+        $order->save();
+        return Redirect()->back(); 
     }
 }
