@@ -47,11 +47,6 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th class="text-center weight-title">User ID</th>
-                                    <th class="text-center weight-title">Name</th>
-                                    <th class="text-center weight-title">Email</th>
-                                    <th class="text-center weight-title">Phone</th>
-                                    <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </tfoot>
                             </table>
