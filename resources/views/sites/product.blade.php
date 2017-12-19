@@ -3,6 +3,7 @@
     <title>Product</title>
     {{ HTML::style('css/sites/product_detail.css') }}
     {{ HTML::style('bower/bootstrap-star-rating/css/star-rating.css') }}
+    {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
 @endsection
 
 @section('content')

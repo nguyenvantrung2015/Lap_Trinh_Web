@@ -52,35 +52,35 @@ class ProductController extends Controller
 
     public function getdata_product()
     {
-        $product = Product::all();
+        $product = Product::where('hidden','=',0)->get();
 
         return Response::json($product);
     }
 
     public function getdata_food()
     {
-        $food = Product::where('category', '=', 'Food')->paginate(30);
+        $food = Product::where('category', '=', 'Food')->where('hidden','=',0)->paginate(30);
 
         return Response::json($food);
     }
 
     public function getdata_drink()
     {
-        $drink = Product::where('category', '=', 'Drink')->paginate(30);
+        $drink = Product::where('category', '=', 'Drink')->where('hidden','=',0)->paginate(30);
 
         return Response::json($drink);
     }
 
     public function all_food()
     {
-        $food = Product::all()->where('category', '=', 'Food');
+        $food = Product::all()->where('category', '=', 'Food')->where('hidden','=',0);
 
         return Response::json($food);
     }
 
     public function all_drink()
     {
-        $drink = Product::all()->where('category', '=', 'Drink');
+        $drink = Product::all()->where('category', '=', 'Drink')->where('hidden','=',0);
 
         return Response::json($drink);
     }
@@ -88,7 +88,10 @@ class ProductController extends Controller
     // Food
     public function delete_food(Request $req)
     {
-        return Product::destroy($req->id);
+        $product = Product::where('id','=',$req->id)->first();
+        $product->hidden = 1;
+        $product->save();
+        return Response::json($product);
     }
 
     public function update_food(Request $request, $id)
@@ -123,7 +126,7 @@ class ProductController extends Controller
                 'name'        => 'required|unique:products,name|min:3|max:30|',
                 'price'       => 'required|min:0',
                 'description' => 'required',
-                // 'image' => 'required',
+                'image' => 'required',
             ],
             [
                 'name.required'        => 'Please Insert Name',
@@ -146,7 +149,12 @@ class ProductController extends Controller
     //drink
     public function delete_drink(Request $req)
     {
-        return Product::destroy($req->id);
+
+        $product = Product::where('id','=',$req->id)->first();
+        $product->hidden = 1;
+        $product->save();
+        return Response::json($product);
+
     }
 
     public function update_drink(Request $request, $id)
@@ -179,22 +187,24 @@ class ProductController extends Controller
                 'name'        => 'required|unique:products,name|min:3|max:30|',
                 'price'       => 'required|min:0',
                 'description' => 'required',
+                'image' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
-
-        return Product::create(
-            [
-
-                'name'        => $request->input(['name']),
-                'price'       => $request->input(['price']),
-                'description' => $request->input(['description']),
-                'category'    => "Drink",
-
-            ]);
+            $new_drink = new Product();
+            $new_drink->name = $request->name;
+            $new_drink->price = $request->price;
+            $new_drink->description = $request->description;
+            $new_drink->avatar = $request->image;
+            $new_drink->category = "drink";
+            $new_drink->save();
+            $new_category= new Gallery();
+            $new_category->product_id = $new_drink->id;
+            $new_category->image = $new_drink->avatar;
+            $new_category->save();
     }
 
 
