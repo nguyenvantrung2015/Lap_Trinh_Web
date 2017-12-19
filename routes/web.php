@@ -94,3 +94,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
 Route::get('chart', function () {
     return view('admin.pages.chartjs');
 });
+Route::get('addcart', 'ProductController@addCart')->name('addCart');

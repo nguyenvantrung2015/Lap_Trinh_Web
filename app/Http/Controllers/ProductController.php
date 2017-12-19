@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Gallery;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Cart;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,35 +53,35 @@ class ProductController extends Controller
 
     public function getdata_product()
     {
-        $product = Product::where('hidden','=',0)->get();
+        $product = Product::where('hidden', '=', 0)->get();
 
         return Response::json($product);
     }
 
     public function getdata_food()
     {
-        $food = Product::where('category', '=', 'Food')->where('hidden','=',0)->paginate(30);
+        $food = Product::where('category', '=', 'Food')->where('hidden', '=', 0)->paginate(30);
 
         return Response::json($food);
     }
 
     public function getdata_drink()
     {
-        $drink = Product::where('category', '=', 'Drink')->where('hidden','=',0)->paginate(30);
+        $drink = Product::where('category', '=', 'Drink')->where('hidden', '=', 0)->paginate(30);
 
         return Response::json($drink);
     }
 
     public function all_food()
     {
-        $food = Product::all()->where('category', '=', 'Food')->where('hidden','=',0);
+        $food = Product::all()->where('category', '=', 'Food')->where('hidden', '=', 0);
 
         return Response::json($food);
     }
 
     public function all_drink()
     {
-        $drink = Product::all()->where('category', '=', 'Drink')->where('hidden','=',0);
+        $drink = Product::all()->where('category', '=', 'Drink')->where('hidden', '=', 0);
 
         return Response::json($drink);
     }
@@ -88,7 +89,7 @@ class ProductController extends Controller
     // Food
     public function delete_food(Request $req)
     {
-        $product = Product::where('id','=',$req->id)->first();
+        $product = Product::where('id', '=', $req->id)->first();
         $product->hidden = 1;
         $product->save();
         return Response::json($product);
@@ -99,13 +100,13 @@ class ProductController extends Controller
         // dd($request);
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         // dd($request->img);
@@ -123,14 +124,14 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
                 'image' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         $new_food = new Product();
@@ -150,7 +151,7 @@ class ProductController extends Controller
     public function delete_drink(Request $req)
     {
 
-        $product = Product::where('id','=',$req->id)->first();
+        $product = Product::where('id', '=', $req->id)->first();
         $product->hidden = 1;
         $product->save();
         return Response::json($product);
@@ -161,13 +162,13 @@ class ProductController extends Controller
     {
         $error = $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
         $product = Product::find($id);
@@ -184,8 +185,8 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                'name'        => 'required|unique:products,name|min:3|max:30|',
-                'price'       => 'required|min:0',
+                'name' => 'required|unique:products,name|min:3|max:30|',
+                'price' => 'required|min:0',
                 'description' => 'required',
                 'image' => 'required',
             ],
@@ -194,17 +195,17 @@ class ProductController extends Controller
                 'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
-            $new_drink = new Product();
-            $new_drink->name = $request->name;
-            $new_drink->price = $request->price;
-            $new_drink->description = $request->description;
-            $new_drink->avatar = $request->image;
-            $new_drink->category = "drink";
-            $new_drink->save();
-            $new_category= new Gallery();
-            $new_category->product_id = $new_drink->id;
-            $new_category->image = $new_drink->avatar;
-            $new_category->save();
+        $new_drink = new Product();
+        $new_drink->name = $request->name;
+        $new_drink->price = $request->price;
+        $new_drink->description = $request->description;
+        $new_drink->avatar = $request->image;
+        $new_drink->category = "drink";
+        $new_drink->save();
+        $new_category = new Gallery();
+        $new_category->product_id = $new_drink->id;
+        $new_category->image = $new_drink->avatar;
+        $new_category->save();
     }
 
 
@@ -323,7 +324,7 @@ class ProductController extends Controller
             where Month(orders.created_at) = Curdate()
             ');
 
-        return Response::json($ngay_hientai);
+        return Response::json($thang_hientai);
     }
 
     public function editCmt(Request $request)
@@ -335,5 +336,28 @@ class ProductController extends Controller
 
         return redirect(route('product.detail', $cmt->product_id));
     }
+
+    public function addCart(Request $request)
+    {
+        $cart = Cart::where('product_id', '=', $request->prd)->where('user_id', '=', Auth::user()->id)->first();
+        if ($cart != null) {
+            $cart->quantity += $request->quantf;
+            $cart->save();
+        } else {
+            $cart = new Cart();
+            $cart->user_id = Auth::user()->id;
+            $cart->product_id = $request->prd;
+            $cart->quantity = $request->quantf;
+            $cart->save();
+            $user = Auth::user();
+            $user->cart += 1;
+            $user->save();
+        }
+
+
+        return view('sections.menu.header');
+
+    }
+
 
 }
