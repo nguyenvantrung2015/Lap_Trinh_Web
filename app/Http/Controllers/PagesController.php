@@ -20,7 +20,7 @@ class PagesController extends Controller
     public function showCart()
     {
         $user = Auth::user();
-        $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->distinct()->get();
+        $products = DB::table('products')->join('cart', 'products.id', '=', 'cart.product_id')->where('cart.user_id','=',Auth::user()->id)->distinct()->get();
         $user->cart = $products->count();
         $user->save();
 
