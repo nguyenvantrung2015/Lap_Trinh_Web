@@ -106,7 +106,7 @@
 
                                     <div class="progress-group" v-for="prd in product">
                                         <span class="progress-text">@{{prd.name}}</span>
-                                        <span class="progress-number"><b>@{{prd.so_luong*100/sum}}%</b></span>
+                                        <span class="progress-number"><b>@{{prd.so_luong*100/sum | currency('','')}}%</b></span>
                                         <div class="progress sm">
                                             <div v-if="prd.so_luong*100/sum>=50" class="progress-bar progress-bar-aqua" v-bind:style="{ width: prd.so_luong*100/sum +'%' }"></div>
                                             <div v-if="prd.so_luong*100/sum>=40 && prd.so_luong*100/sum<50" class="progress-bar progress-bar-red" v-bind:style="{ width: prd.so_luong*100/sum + '%' }"></div>

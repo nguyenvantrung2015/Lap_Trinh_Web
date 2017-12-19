@@ -35,9 +35,9 @@ var manage_drink = new Vue   ({
                 json: true,
             }
             axios(authOptions).then(response => {
-                toastr.success('Delete user success', 'Success', {timeOut: 1000});
+                toastr.success('Delete drink success', 'Success', {timeOut: 1000});
         }).catch((error) => {
-                toastr.error('Delete user error', 'Error', {timeOut: 1000});
+                toastr.error('Delete drink error', 'Error', {timeOut: 1000});
         });
             this.show_drink();
         },
@@ -53,9 +53,9 @@ var manage_drink = new Vue   ({
                 json: true,
             }
             axios(authOptions).then(response => {
-                toastr.success('Edit user success', 'Success', {timeOut: 1000});
+                toastr.success('Edit drink success', 'Success', {timeOut: 1000});
         }).catch((error) => {
-                toastr.error('Edit user error', 'Error', {timeOut: 1000});
+                toastr.error('Edit drink error', 'Error', {timeOut: 1000});
         });
             this.show_drink
         },

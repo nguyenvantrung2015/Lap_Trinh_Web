@@ -25,10 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $foods = Product::where('category', '=', 'Food')
+        $foods = Product::where('category', '=', 'Food')->where('hidden','=',0)
             ->take(4)->get();
 
-        $drinks = Product::where('category', '=', 'Drink')
+        $drinks = Product::where('category', '=', 'Drink')->where('hidden','=',0)
             ->take(4)->get();
 
         $order_details = OrderDetail::all();

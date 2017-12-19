@@ -56,7 +56,7 @@ class AdminController extends Controller
     {
         $Order = $this->order->all();
         $totalorder = $Order->count();
-        $all_foods = Product::where('category', '=', 'Food')->get();
+        $all_foods = Product::where('category', '=', 'Food')->where('hidden','=',0)->get();
 
         return view('admin.pages.manage_food', compact(
             'totalorder', 'all_foods'
@@ -81,7 +81,7 @@ class AdminController extends Controller
     {
         $Order = $this->order->all();
         $totalorder = $Order->count();
-        $all_drinks = Product::where('category', '=', 'drink')->get();
+        $all_drinks = Product::where('category', '=', 'drink')->where('hidden','=',0)->get();
 
         return view('admin.pages.manage_drink', compact(
             'totalorder', 'all_drinks'
@@ -141,7 +141,7 @@ class AdminController extends Controller
         $complete = DB::select('
             select count(*) as so_luong
             from orders
-            where DATE(orders.updated_at) = Curdate() and orders.status ="complete"
+            where DATE(orders.updated_at) = Curdate() and orders.status ="completed"
             ');
 
         return Response::json($complete);
@@ -174,7 +174,7 @@ class AdminController extends Controller
         $food_sl = DB::select('
             select count(*) as so_luong
             from products
-            where products.category = "Food"
+            where products.category = "Food" and products.hidden = 0
             ');
 
         return Response::json($food_sl);
@@ -185,7 +185,7 @@ class AdminController extends Controller
         $drink_sl = DB::select('
             select count(*) as so_luong
             from products
-            where products.category = "Drink"
+            where products.category = "Drink" and products.hidden = 0
             ');
 
         return Response::json($drink_sl);
