@@ -9,7 +9,7 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if (Auth::guest())
-                        <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a class="active" href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
@@ -52,18 +52,14 @@
             <div class="slider-page slider-page--right">
                 <div class="slider-page--skew">
                     <div class="slider-page__content" style="height: 400px">
-                        <h1 class="slider-page__title slider-page__title--big">
-                            Gray & White - Skewed Slider with Scrolling
+                        <h1 class="slider-page__title slider-page__title--big" style="font-size: 1.5em;
+    line-height: 54px;
+    margin-top: 84px;
+    margin-right: 9%;">
+                            One cannot think well, love well, sleep well, if one has not dined
+                            well...                        </p>
                         </h1>
                         <!-- /.slider-page__title slider-page__title--big -->
-                        <h2 class="slider-page__title">
-                            Start of your story
-                        </h2>
-                        <!-- /.slider-page__title -->
-                        <p class="slider-page__description">
-                            Please scroll down or press the down arrow on your keyboard
-                        </p>
-                        <!-- /.slider-page__description -->
                     </div>
                     <!-- /.slider-page__content -->
                 </div>
