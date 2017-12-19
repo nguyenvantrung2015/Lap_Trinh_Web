@@ -40,3 +40,26 @@ function myFunction() {
 
     });
 }
+
+$(document).ready(function () {
+    $('.cmtID').on('click', function () {
+        $id = $(this).parent('.bbb').find('.inputcmt').val();
+        console.log($id);
+        getCmt($id);
+    })
+
+    function getCmt($id) {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            url: '/getCmt/' + $id,
+            type: 'get',
+            data: {},
+            success: function (data) {
+                $('#result').html(data);
+            }
+        })
+    }
+
+})
