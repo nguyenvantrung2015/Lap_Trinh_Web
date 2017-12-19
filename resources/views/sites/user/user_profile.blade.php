@@ -253,7 +253,6 @@
                             {{ Form::password('old_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter old password',
                                 'required' => 'required',
                                 ]
                             ) }}
@@ -263,7 +262,6 @@
                             {{ Form::password('new_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter new password',
                                 'required' => 'required',
                                 ]
                             ) }}
@@ -273,7 +271,6 @@
                             {{ Form::password('confirm',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'confirm',
                                 'required' => 'required',
                                 ]
                             ) }}

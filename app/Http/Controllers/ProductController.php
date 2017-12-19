@@ -179,22 +179,24 @@ class ProductController extends Controller
                 'name'        => 'required|unique:products,name|min:3|max:30|',
                 'price'       => 'required|min:0',
                 'description' => 'required',
+                // 'image' => 'required',
             ],
             [
-                'name.required'        => 'Please Insert Name',
-                'price.required'       => 'Please Insert Price',
+                'name.required' => 'Please Insert Name',
+                'price.required' => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
-
-        return Product::create(
-            [
-
-                'name'        => $request->input(['name']),
-                'price'       => $request->input(['price']),
-                'description' => $request->input(['description']),
-                'category'    => "Drink",
-
-            ]);
+            $new_drink = new Product();
+            $new_drink->name = $request->name;
+            $new_drink->price = $request->price;
+            $new_drink->description = $request->description;
+            $new_drink->avatar = $request->image;
+            $new_drink->category = "drink";
+            $new_drink->save();
+            $new_category= new Gallery();
+            $new_category->product_id = $new_drink->id;
+            $new_category->image = $new_drink->avatar;
+            $new_category->save();
     }
 
 
