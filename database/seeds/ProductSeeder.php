@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
                     'category'    => 'Drink',
                     'price'       => '30',
                     'description' => 'Cold-brew coffee is the hottest trend across the beverage landscape. Brewed slowly with cold or room-temperature water, the result is a coffee product that’s rich and deep.',
-                    'avatar'      => 'Product_Page_893361-Mosaic_Orig-Strong-Mocha-Vanilla.jpg',
+                    'avatar'      => 'ColdBrew1.jpg',
                 ],
 
                 [
